@@ -64,7 +64,6 @@ struct LegalDocumentView: View {
                             .background(.regularMaterial)
                     }
                     LegalWebView(url: localizedURL, language: webLanguage)
-                        .ignoresSafeArea(edges: .bottom)
                 }
             case .offline:
                 OfflineLegalDocument(titleKey: titleKey, bodyKey: bodyKey)
@@ -103,7 +102,19 @@ private struct LegalWebView: UIViewRepresentable {
 
     private static let hideSiteChrome = """
     var style = document.createElement('style');
-    style.textContent = '.mock-header,.mock-footer{display:none !important;}';
+    style.textContent = `
+      .app-site-header,
+      .app-site-footer,
+      .mock-header,
+      .mock-footer {
+        display: none !important;
+      }
+      .content-page {
+        min-height: 0 !important;
+        padding-top: 24px !important;
+        padding-bottom: 40px !important;
+      }
+    `;
     document.documentElement.appendChild(style);
     """
 

@@ -31,12 +31,18 @@ struct RootTabView: View {
 
     var body: some View {
         TabView(selection: tabSelection) {
-            TodayView(displayedDay: $displayedDay)
+            TodayView(
+                displayedDay: $displayedDay,
+                isSelected: selection == .today
+            )
                 .tabItem {
                     Label("tab.today", systemImage: "circle")
                 }
                 .tag(Tab.today)
-            WeekView(displayedWeek: $displayedWeek) { day in
+            WeekView(
+                displayedWeek: $displayedWeek,
+                isSelected: selection == .week
+            ) { day in
                 displayedDay = day
                 selection = .today
             }
@@ -44,7 +50,10 @@ struct RootTabView: View {
                 Label("tab.week", systemImage: "rectangle.split.3x1")
             }
             .tag(Tab.week)
-            MonthView(displayedMonth: $displayedMonth) { day in
+            MonthView(
+                displayedMonth: $displayedMonth,
+                isSelected: selection == .month
+            ) { day in
                 displayedDay = day
                 selection = .today
             }

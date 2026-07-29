@@ -8,7 +8,7 @@ struct AdDisplayState {
     let consentCheckCompleted: Bool
     let canRequestAds: Bool
     let mobileAdsInitialized: Bool
-    let isHomeScreen: Bool
+    let isScreenEligible: Bool
     let isKeyboardVisible: Bool
     let isModalPresented: Bool
     let bannerLoadFailed: Bool
@@ -21,7 +21,7 @@ enum AdDisplayPolicy {
             state.consentCheckCompleted &&
             state.canRequestAds &&
             state.mobileAdsInitialized &&
-            state.isHomeScreen &&
+            state.isScreenEligible &&
             !state.isKeyboardVisible &&
             !state.isModalPresented &&
             !state.bannerLoadFailed

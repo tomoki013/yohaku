@@ -3,17 +3,13 @@ import SwiftData
 
 struct TodayView: View {
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(SupportPurchaseStore.self) private var purchaseStore
-    @Environment(AdConsentManager.self) private var adConsentManager
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
     @Binding var displayedDay: Date
+    var isSelected = true
     @State private var isAdding = false
     @State private var isShowingSettings = false
     @State private var editing: YohakuBlock?
     @State private var releasing: YohakuBlock?
-    @State private var keyboardObserver = KeyboardObserver()
-    @State private var bannerLoadFailed = false
     @State private var slideDirection = 1
     @State private var contentHeight: CGFloat?
 
@@ -28,7 +24,8 @@ struct TodayView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 28) {
+                    pageHeader
                     daySelector
 
                     // id を日付にして差し替え、横スライドの遷移で滑らかに切り替える
@@ -46,6 +43,7 @@ struct TodayView: View {
                     }
                 }
                 .padding(24)
+                .padding(.bottom, 72)
             }
             .scrollBounceBehavior(.basedOnSize)
             .simultaneousGesture(
@@ -60,14 +58,15 @@ struct TodayView: View {
                     }
             )
             .background(Color(.systemBackground))
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                if shouldShowHomeBanner {
-                    AdaptiveBannerAd(unitID: AdConfiguration.bannerUnitID) {
-                        bannerLoadFailed = true
-                    }
-                        .background(Color(.systemBackground))
-                }
+            .overlay(alignment: .bottomTrailing) {
+                addButton
+                    .padding(.trailing, 24)
+                    .padding(.bottom, 20)
             }
+            .yohakuBanner(
+                isScreenEligible: isSelected,
+                isModalPresented: isAdding || isShowingSettings || editing != nil || releasing != nil
+            )
             .toolbar {
                 BrandToolbarItem()
                 SettingsToolbarItem(isShowingSettings: $isShowingSettings)
@@ -96,18 +95,15 @@ struct TodayView: View {
         }
     }
 
-    private var shouldShowHomeBanner: Bool {
-        AdDisplayPolicy.shouldShowBanner(for: .init(
-            entitlementCheckCompleted: purchaseStore.entitlementCheckCompleted,
-            hasRemovedAds: purchaseStore.hasRemovedAds,
-            consentCheckCompleted: adConsentManager.consentCheckCompleted,
-            canRequestAds: adConsentManager.canRequestAds,
-            mobileAdsInitialized: adConsentManager.mobileAdsInitialized,
-            isHomeScreen: true,
-            isKeyboardVisible: keyboardObserver.isVisible,
-            isModalPresented: isAdding || isShowingSettings || editing != nil || releasing != nil,
-            bannerLoadFailed: bannerLoadFailed
-        ))
+    private var pageHeader: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("tab.today")
+                .font(.system(size: 36, weight: .semibold, design: .serif))
+
+            Text(displayedDay, format: .dateTime.year().month().day().weekday(.wide))
+                .font(.body)
+                .foregroundStyle(.secondary)
+        }
     }
 
     private var releaseBinding: Binding<Bool> {
@@ -120,13 +116,11 @@ struct TodayView: View {
     private var dayContent: some View {
         Group {
             if dayBlocks.isEmpty {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 20) {
                     EmptyStateView(message: isToday ? "empty.today" : "empty.day")
-
-                    ghostAddCard
                 }
             } else {
-                VStack(spacing: 12) {
+                VStack(spacing: 20) {
                     ForEach(dayBlocks) { block in
                         YohakuBlockCard(block: block)
                             .onTapGesture {
@@ -145,8 +139,6 @@ struct TodayView: View {
                                 }
                             }
                     }
-
-                    ghostAddCard
                 }
             }
         }
@@ -159,26 +151,16 @@ struct TodayView: View {
         )
     }
 
-    private var ghostAddCard: some View {
+    private var addButton: some View {
         Button {
             isAdding = true
         } label: {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.02))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(
-                            Color.primary.opacity(colorScheme == .dark ? 0.35 : 0.18),
-                            style: StrokeStyle(lineWidth: 1, dash: [6, 5])
-                        )
-                )
-                .frame(height: 72)
-                .overlay(
-                    Image(systemName: "plus")
-                        .font(.body)
-                        .foregroundStyle(colorScheme == .dark ? .primary : .secondary)
-                )
-                .contentShape(Rectangle())
+            Image(systemName: "plus")
+                .font(.title2.weight(.regular))
+                .foregroundStyle(Color(.systemBackground))
+                .frame(width: 60, height: 60)
+                .background(Color.primary, in: Circle())
+                .shadow(color: .black.opacity(0.16), radius: 8, y: 4)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text("add.title"))
@@ -198,7 +180,7 @@ struct TodayView: View {
 
             Text(displayedDay, format: .dateTime.month().day().weekday())
                 .font(.subheadline)
-                .foregroundStyle(isToday ? .primary : .secondary)
+                .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity)
 
             Button {

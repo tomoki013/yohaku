@@ -36,73 +36,88 @@ struct AddYohakuView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            header
-
-            TextField("field.name", text: $title)
-                .font(.title3)
-                .fontWeight(.medium)
-                .focused($isNameFocused)
-                .submitLabel(.done)
-                .padding(.vertical, 14)
-
-            hairline
-
-            if !nameSuggestions.isEmpty && title.isEmpty {
-                suggestionChips
-            }
-
-            VStack(spacing: 0) {
-                fieldRow("field.date") {
-                    DatePicker("field.date", selection: $date, displayedComponents: .date)
-                        .labelsHidden()
-                }
-                hairline
-                fieldRow("field.start") {
-                    DatePicker("field.start", selection: $startTime, displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-                hairline
-                fieldRow("field.end") {
-                    DatePicker("field.end", selection: $endTime, displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-            }
-
-            Spacer(minLength: 24)
-
-            Button(action: place) {
-                Text(editingBlock == nil ? "action.place" : "action.save")
-                    .font(.body)
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 0) {
+                TextField("field.name", text: $title)
+                    .font(.title3)
                     .fontWeight(.medium)
-                    .foregroundStyle(Color(.systemBackground))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 52)
-                    .background(Capsule().fill(Color.primary.opacity(canPlace ? 1 : 0.35)))
-            }
-            .disabled(!canPlace)
-            .animation(.easeInOut(duration: 0.15), value: canPlace)
+                    .focused($isNameFocused)
+                    .submitLabel(.done)
+                    .padding(.vertical, 14)
 
-            if editingBlock != nil {
-                Button {
-                    isConfirmingRelease = true
-                } label: {
-                    Text("action.release")
-                        .font(.footnote)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 16)
-                        .contentShape(Rectangle())
+                hairline
+
+                if !nameSuggestions.isEmpty && title.isEmpty {
+                    suggestionChips
                 }
-                .buttonStyle(.plain)
+
+                VStack(spacing: 0) {
+                    fieldRow("field.date") {
+                        DatePicker("field.date", selection: $date, displayedComponents: .date)
+                            .labelsHidden()
+                    }
+                    hairline
+                    fieldRow("field.start") {
+                        DatePicker("field.start", selection: $startTime, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                    }
+                    hairline
+                    fieldRow("field.end") {
+                        DatePicker("field.end", selection: $endTime, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                    }
+                }
+
+                Spacer(minLength: 24)
+
+                Button(action: place) {
+                    Text(editingBlock == nil ? "action.place" : "action.save")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundStyle(Color(.systemBackground))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 52)
+                        .background(Capsule().fill(Color.primary.opacity(canPlace ? 1 : 0.35)))
+                }
+                .disabled(!canPlace)
+                .animation(.easeInOut(duration: 0.15), value: canPlace)
+
+                if editingBlock != nil {
+                    Button {
+                        isConfirmingRelease = true
+                    } label: {
+                        Text("action.release")
+                            .font(.footnote)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 16)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 8)
+            .padding(.bottom, 20)
+            .background(Color(.systemBackground))
+            .navigationTitle(editingBlock == nil ? "add.title" : "edit.title")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.subheadline.weight(.medium))
+                    }
+                    .accessibilityLabel(Text("action.close"))
+                }
             }
         }
-        .padding(.horizontal, 24)
-        .padding(.bottom, 20)
-        .background(Color(.systemBackground))
+        .yohakuBanner()
         .tint(.primary)
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.large])
         .presentationDragIndicator(.hidden)
         .presentationCornerRadius(28)
         .confirmationDialog("confirm.release", isPresented: $isConfirmingRelease, titleVisibility: .visible) {
@@ -120,26 +135,6 @@ struct AddYohakuView: View {
                 isNameFocused = true
             }
         }
-    }
-
-    private var header: some View {
-        HStack {
-            Text(editingBlock == nil ? "add.title" : "edit.title")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-            Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: 44, height: 44)
-                    .contentShape(Rectangle())
-            }
-            .accessibilityLabel(Text("action.close"))
-        }
-        .padding(.top, 16)
     }
 
     private var suggestionChips: some View {

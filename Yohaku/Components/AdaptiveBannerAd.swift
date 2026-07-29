@@ -1,7 +1,7 @@
 import GoogleMobileAds
 import SwiftUI
 
-/// A bottom-anchored banner for the home screen only. It reserves the adaptive
+/// A bottom-anchored banner for the active screen. It reserves the adaptive
 /// size while loading, then collapses entirely if the request fails.
 struct AdaptiveBannerAd: View {
     let unitID: String
@@ -21,7 +21,10 @@ struct AdaptiveBannerAd: View {
             if isRunningInPreview || loadState == .failed || availableWidth <= 0 {
                 EmptyView()
             } else {
-                let adSize = largeAnchoredAdaptiveBanner(width: availableWidth)
+                // The large adaptive format can consume a substantial part of
+                // a compact iPhone screen. Use the standard anchored adaptive
+                // height so the app content remains the primary surface.
+                let adSize = currentOrientationAnchoredAdaptiveBanner(width: availableWidth)
                 AdaptiveBannerView(
                     unitID: unitID,
                     adSize: adSize,
@@ -50,6 +53,83 @@ struct AdaptiveBannerAd: View {
 
     private var isRunningInPreview: Bool {
         ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+    }
+}
+
+/// Keeps the banner lifecycle and its no-ad states consistent on every Yohaku
+/// screen. A screen only declares whether something is covering it.
+private struct YohakuBannerModifier: ViewModifier {
+    @Environment(SupportPurchaseStore.self) private var purchaseStore
+    @Environment(AdConsentManager.self) private var adConsentManager
+
+    let isScreenEligible: Bool
+    let isModalPresented: Bool
+
+    @State private var keyboardObserver = KeyboardObserver()
+    @State private var bannerLoadFailed = false
+    @State private var retryTask: Task<Void, Never>?
+
+    func body(content: Content) -> some View {
+        content
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if shouldShowBanner {
+                    VStack(spacing: 0) {
+                        Color.clear
+                            .frame(height: 16)
+
+                        AdaptiveBannerAd(unitID: AdConfiguration.bannerUnitID) {
+                            bannerLoadFailed = true
+                            scheduleRetry()
+                        }
+                    }
+                    .background(Color(.systemBackground))
+                }
+            }
+            .onDisappear {
+                retryTask?.cancel()
+                retryTask = nil
+            }
+    }
+
+    private var shouldShowBanner: Bool {
+        AdDisplayPolicy.shouldShowBanner(for: .init(
+            entitlementCheckCompleted: purchaseStore.entitlementCheckCompleted,
+            hasRemovedAds: purchaseStore.hasRemovedAds,
+            consentCheckCompleted: adConsentManager.consentCheckCompleted,
+            canRequestAds: adConsentManager.canRequestAds,
+            mobileAdsInitialized: adConsentManager.mobileAdsInitialized,
+            isScreenEligible: isScreenEligible,
+            isKeyboardVisible: keyboardObserver.isVisible,
+            isModalPresented: isModalPresented,
+            bannerLoadFailed: bannerLoadFailed
+        ))
+    }
+
+    /// A transient network/no-fill failure must not permanently remove the ad
+    /// from the active tab. Collapse it briefly, then create a fresh banner and
+    /// request again while the normal eligibility checks remain in force.
+    private func scheduleRetry() {
+        guard retryTask == nil else { return }
+        retryTask = Task { @MainActor in
+            try? await Task.sleep(for: .seconds(3))
+            guard !Task.isCancelled else { return }
+            bannerLoadFailed = false
+            retryTask = nil
+        }
+    }
+}
+
+extension View {
+    func yohakuBanner(
+        isScreenEligible: Bool = true,
+        isModalPresented: Bool = false
+    ) -> some View {
+        modifier(
+            YohakuBannerModifier(
+                isScreenEligible: isScreenEligible,
+                isModalPresented: isModalPresented
+            )
+        )
     }
 }
 

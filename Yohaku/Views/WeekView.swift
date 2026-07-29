@@ -4,6 +4,7 @@ import SwiftData
 struct WeekView: View {
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
     @Binding var displayedWeek: Date
+    var isSelected = true
     var onSelectDay: (Date) -> Void = { _ in }
     @State private var isShowingSettings = false
     @State private var slideDirection = 1
@@ -24,8 +25,7 @@ struct WeekView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     Text("tab.week")
-                        .font(.title2)
-                        .fontWeight(.medium)
+                        .font(.system(size: 36, weight: .semibold, design: .serif))
                         .foregroundStyle(.primary)
 
                     weekSelector
@@ -59,6 +59,10 @@ struct WeekView: View {
                     }
             )
             .background(Color(.systemBackground))
+            .yohakuBanner(
+                isScreenEligible: isSelected,
+                isModalPresented: isShowingSettings
+            )
             .toolbar {
                 BrandToolbarItem()
                 SettingsToolbarItem(isShowingSettings: $isShowingSettings)
@@ -70,19 +74,21 @@ struct WeekView: View {
     }
 
     private var weekContent: some View {
-        Group {
-            if hasAnyBlockThisWeek {
-                VStack(spacing: 0) {
-                    ForEach(weekDays, id: \.self) { day in
-                        dayRow(day)
-                        if day != weekDays.last {
-                            Divider()
-                                .overlay(Color.primary.opacity(0.1))
-                        }
-                    }
+        VStack(spacing: 0) {
+            ForEach(weekDays, id: \.self) { day in
+                dayRow(day)
+                if day != weekDays.last {
+                    Divider()
+                        .overlay(Color.primary.opacity(0.1))
                 }
-            } else {
-                EmptyStateView(message: "empty.week")
+            }
+
+            if !hasAnyBlockThisWeek {
+                Text("empty.week")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 18)
             }
         }
     }
@@ -144,36 +150,34 @@ struct WeekView: View {
         return Button {
             onSelectDay(day)
         } label: {
-            HStack(alignment: .top, spacing: 16) {
-                VStack(alignment: .leading, spacing: 2) {
+            HStack(alignment: .center, spacing: 20) {
+                HStack(spacing: 10) {
                     Text(day, format: .dateTime.weekday(.abbreviated))
-                        .font(.caption)
+                        .font(.body)
                         .foregroundStyle(isToday ? .primary : .secondary)
                     Text(day, format: .dateTime.day())
-                        .font(.subheadline)
+                        .font(.body)
                         .fontWeight(isToday ? .semibold : .regular)
                         .foregroundStyle(isToday ? .primary : .secondary)
                 }
-                .frame(minWidth: 44, alignment: .leading)
+                .frame(width: 90, alignment: .leading)
 
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(dayBlocks) { block in
-                        HStack(spacing: 8) {
-                            Capsule()
+                HStack(spacing: 12) {
+                    if dayBlocks.isEmpty {
+                        RoundedRectangle(cornerRadius: 3)
+                            .stroke(Color.primary.opacity(0.45), lineWidth: 1.25)
+                            .frame(width: 30, height: 30)
+                    } else {
+                        ForEach(dayBlocks.prefix(5)) { _ in
+                            RoundedRectangle(cornerRadius: 3)
                                 .fill(Color.primary)
-                                .frame(width: 24, height: 4)
-                            Text(block.title)
-                                .font(.footnote)
-                                .foregroundStyle(.primary)
-                            Text(block.startTime, format: .dateTime.hour().minute())
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
+                                .frame(width: 30, height: 30)
                         }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(.vertical, 12)
+            .frame(minHeight: 70)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

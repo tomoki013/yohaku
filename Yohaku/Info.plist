@@ -233,5 +233,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>YohakuAppStoreID</key>
+	<string>$(YOHAKU_APP_STORE_ID)</string>
+	<key>YohakuSiteBaseURL</key>
+	<string>$(YOHAKU_SITE_BASE_URL)</string>
 </dict>
 </plist>

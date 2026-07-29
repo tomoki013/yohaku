@@ -1,15 +1,21 @@
 import SwiftUI
 
-// 各画面の左上に静かに置かれるワードマーク。墨の一滴+セリフ体
+// 各画面の左上に静かに置かれるアプリアイコン+セリフ体のワードマーク
 struct BrandMark: View {
     var body: some View {
-        HStack(spacing: 7) {
-            Circle()
-                .fill(Color.primary)
-                .frame(width: 6, height: 6)
+        HStack(spacing: 8) {
+            Image("AppIconPreview")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                        .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
+                }
             Text(verbatim: "Yohaku")
                 .font(.system(size: 16, weight: .semibold, design: .serif))
-                .tracking(1.5)
+                .tracking(1.2)
                 .foregroundStyle(.primary)
         }
         .fixedSize()
