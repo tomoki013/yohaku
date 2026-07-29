@@ -6004,6 +6004,57 @@
         }
       }
     },
+    "month.summary.count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld quiet moments this month."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今月は%lld個の余白があります。"
+          }
+        }
+      }
+    },
+    "month.summary.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There is still room for a quiet moment."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "静かな時間を、これから置けます。"
+          }
+        }
+      }
+    },
+    "month.summary.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month's yohaku"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今月の余白"
+          }
+        }
+      }
+    },
     "support.success.message": {
       "extractionState": "manual",
       "localizations": {

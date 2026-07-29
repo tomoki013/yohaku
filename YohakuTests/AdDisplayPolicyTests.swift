@@ -26,8 +26,8 @@ final class AdDisplayPolicyTests: XCTestCase {
         XCTAssertFalse(shouldShow(mobileAdsInitialized: false))
     }
 
-    func testDoesNotShowOutsideTheHomeScreen() {
-        XCTAssertFalse(shouldShow(isHomeScreen: false))
+    func testDoesNotShowOnAnIneligibleScreen() {
+        XCTAssertFalse(shouldShow(isScreenEligible: false))
     }
 
     func testDoesNotShowWhileKeyboardIsVisible() {
@@ -48,7 +48,7 @@ final class AdDisplayPolicyTests: XCTestCase {
         consentCheckCompleted: Bool = true,
         canRequestAds: Bool = true,
         mobileAdsInitialized: Bool = true,
-        isHomeScreen: Bool = true,
+        isScreenEligible: Bool = true,
         isKeyboardVisible: Bool = false,
         isModalPresented: Bool = false,
         bannerLoadFailed: Bool = false
@@ -59,7 +59,7 @@ final class AdDisplayPolicyTests: XCTestCase {
             consentCheckCompleted: consentCheckCompleted,
             canRequestAds: canRequestAds,
             mobileAdsInitialized: mobileAdsInitialized,
-            isHomeScreen: isHomeScreen,
+            isScreenEligible: isScreenEligible,
             isKeyboardVisible: isKeyboardVisible,
             isModalPresented: isModalPresented,
             bannerLoadFailed: bannerLoadFailed

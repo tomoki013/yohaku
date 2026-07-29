@@ -4,21 +4,16 @@ import SwiftData
 struct MonthView: View {
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
     @Binding var displayedMonth: Date
+    var isSelected = true
     var onSelectDay: (Date) -> Void = { _ in }
 
     @State private var isShowingSettings = false
     @State private var slideDirection = 1
 
-    private let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 7)
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 7)
 
     private var days: [Date] {
         DateHelpers.daysOfMonth(containing: displayedMonth)
-    }
-
-    private var weekdaySymbols: [String] {
-        let symbols = DateHelpers.calendar.veryShortStandaloneWeekdaySymbols
-        let offset = DateHelpers.calendar.firstWeekday - 1
-        return Array(symbols[offset...]) + Array(symbols[..<offset])
     }
 
     var body: some View {
@@ -26,25 +21,22 @@ struct MonthView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     Text("tab.month")
-                        .font(.title2)
-                        .fontWeight(.medium)
+                        .font(.system(size: 36, weight: .semibold, design: .serif))
 
                     monthSelector
-
-                    LazyVGrid(columns: columns, spacing: 16) {
-                        ForEach(Array(weekdaySymbols.enumerated()), id: \.offset) { _, symbol in
-                            Text(symbol)
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
 
                     monthGrid
                         .id(DateHelpers.calendar.dateInterval(of: .month, for: displayedMonth)?.start)
                         .transition(pageTransition)
+
+                    Divider()
+                        .overlay(Color.primary.opacity(0.1))
+                        .padding(.top, 8)
+
+                    monthSummary
                 }
                 .padding(24)
+                .padding(.bottom, 32)
             }
             .scrollBounceBehavior(.basedOnSize)
             .simultaneousGesture(
@@ -55,6 +47,10 @@ struct MonthView: View {
                     }
             )
             .background(Color(.systemBackground))
+            .yohakuBanner(
+                isScreenEligible: isSelected,
+                isModalPresented: isShowingSettings
+            )
             .toolbar {
                 BrandToolbarItem()
                 SettingsToolbarItem(isShowingSettings: $isShowingSettings)
@@ -94,10 +90,10 @@ struct MonthView: View {
     }
 
     private var monthGrid: some View {
-        LazyVGrid(columns: columns, spacing: 12) {
+        LazyVGrid(columns: columns, spacing: 10) {
             ForEach(0..<DateHelpers.leadingEmptyCount(forMonthContaining: displayedMonth), id: \.self) { _ in
                 Color.clear
-                    .frame(height: 52)
+                    .aspectRatio(1, contentMode: .fit)
                     .accessibilityHidden(true)
             }
 
@@ -115,28 +111,13 @@ struct MonthView: View {
         return Button {
             onSelectDay(day)
         } label: {
-            VStack(spacing: 7) {
-                Text(day, format: .dateTime.day())
-                    .font(.subheadline)
-                    .fontWeight(isToday ? .semibold : .regular)
-                    .foregroundStyle(.primary)
-
-                HStack(spacing: 3) {
-                    ForEach(0..<min(dayBlocks.count, 3), id: \.self) { _ in
-                        Circle()
-                            .fill(Color.primary)
-                            .frame(width: 4, height: 4)
-                    }
-                }
-                .frame(height: 4)
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 52)
-            .background {
+            RoundedRectangle(cornerRadius: 2)
+                .fill(dayBlocks.isEmpty ? Color.primary.opacity(0.055) : Color.primary)
+            .aspectRatio(1, contentMode: .fit)
+            .overlay {
                 if isToday {
-                    Circle()
-                        .stroke(Color.primary.opacity(0.3), lineWidth: 1)
-                        .frame(width: 42, height: 42)
+                    RoundedRectangle(cornerRadius: 2)
+                        .stroke(Color.primary.opacity(0.55), lineWidth: 1.5)
                 }
             }
             .contentShape(Rectangle())
@@ -151,6 +132,27 @@ struct MonthView: View {
                 day.formatted(date: .long, time: .omitted)
             ))
         )
+    }
+
+    private var monthSummary: some View {
+        let count = days.reduce(into: 0) { result, day in
+            result += blocks.filter { DateHelpers.isSameDay($0.date, day) }.count
+        }
+
+        return VStack(alignment: .leading, spacing: 10) {
+            Text("month.summary.title")
+                .font(.title3)
+                .fontWeight(.medium)
+            Text(verbatim: String.localizedStringWithFormat(
+                NSLocalizedString(
+                    count == 0 ? "month.summary.empty" : "month.summary.count",
+                    comment: ""
+                ),
+                count
+            ))
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
     }
 
     private var pageTransition: AnyTransition {

@@ -21,6 +21,8 @@ targets:
         UILaunchScreen: {}
         GADApplicationIdentifier: $(ADMOB_APP_ID)
         AdMobBannerAdUnitID: $(ADMOB_BANNER_AD_UNIT_ID)
+        YohakuSiteBaseURL: $(YOHAKU_SITE_BASE_URL)
+        YohakuAppStoreID: $(YOHAKU_APP_STORE_ID)
         SKAdNetworkItems:
           - SKAdNetworkIdentifier: cstr6suwn9.skadnetwork
           - SKAdNetworkIdentifier: 4fzdc2evr5.skadnetwork
@@ -81,6 +83,8 @@ targets:
         LOCALIZATION_PREFERS_STRING_CATALOGS: YES
         DEVELOPMENT_TEAM: 7GU925RQ99
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.yohaku
+        YOHAKU_SITE_BASE_URL: https://tomokichi-yohaku.tomoki-ttttt.workers.dev/
+        YOHAKU_APP_STORE_ID: ""
       configs:
         Debug:
           # Google's official iOS test IDs. Never requests the live unit while developing.
@@ -108,5 +112,8 @@ targets:
     platform: iOS
     sources:
       - YohakuTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - target: Yohaku

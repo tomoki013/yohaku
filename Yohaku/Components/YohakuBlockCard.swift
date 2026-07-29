@@ -8,25 +8,36 @@ struct YohakuBlockCard: View {
         TimelineView(.everyMinute) { context in
             let isActive = block.startTime <= context.date && context.date < block.endTime
 
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 4) {
-                    Text(block.startTime, format: .dateTime.hour().minute())
-                    Text(verbatim: "–")
-                    Text(block.endTime, format: .dateTime.hour().minute())
-                }
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            HStack(spacing: 24) {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(isActive ? Color.primary : Color.clear)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.primary.opacity(isActive ? 1 : 0.5), lineWidth: 1.5)
+                    }
+                    .frame(width: 36, height: 36)
 
-                Text(block.title)
-                    .font(.body)
-                    .foregroundStyle(.primary)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(block.title)
+                        .font(.body)
+                        .foregroundStyle(.primary)
+
+                    HStack(spacing: 5) {
+                        Text(block.startTime, format: .dateTime.hour().minute())
+                        Text(verbatim: "–")
+                        Text(block.endTime, format: .dateTime.hour().minute())
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(16)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 22)
             .background(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 12)
                     .stroke(
-                        Color.primary.opacity(isActive ? (isBreathing ? 0.55 : 0.18) : 0.14),
+                        Color.primary.opacity(isActive ? (isBreathing ? 0.4 : 0.18) : 0.12),
                         lineWidth: 1
                     )
             )

@@ -3,9 +3,15 @@ import SwiftData
 import UIKit
 
 enum AppInfo {
-    static let privacyPolicyURL = URL(string: "https://yohaku.tmkch.io/privacy/")!
-    static let termsURL = URL(string: "https://yohaku.tmkch.io/terms/")!
-    static let officialSiteURL = URL(string: "https://yohaku.tmkch.io/")!
+    private static var configuredSiteURL: URL {
+        let configuredValue = Bundle.main.object(forInfoDictionaryKey: "YohakuSiteBaseURL") as? String
+        return URL(string: configuredValue ?? "") ??
+            URL(string: "https://tomokichi-yohaku.tomoki-ttttt.workers.dev/")!
+    }
+
+    static let officialSiteURL = configuredSiteURL
+    static let privacyPolicyURL = configuredSiteURL.appending(path: "privacy", directoryHint: .isDirectory)
+    static let termsURL = configuredSiteURL.appending(path: "terms", directoryHint: .isDirectory)
     static let developerWebsiteURL = URL(string: "https://tomokichi.dev")!
     static let developerAppsURL = URL(string: "https://tmkch.io")!
     static let developerName = "Tomokichi"
@@ -18,13 +24,19 @@ enum AppInfo {
     ).date!
     static let legalLastUpdatedDate = legalEnactedDate
 
-    // App Store Connectでアプリを作成した後、実際のIDへ差し替える。
-    static let appStoreID = "0000000000"
-    static var appStoreProductURL: URL {
-        URL(string: "https://apps.apple.com/app/id\(appStoreID)")!
+    static var appStoreID: String? {
+        guard let value = Bundle.main.object(forInfoDictionaryKey: "YohakuAppStoreID") as? String,
+              !value.isEmpty,
+              value != "0000000000" else {
+            return nil
+        }
+        return value
     }
-    static var appStoreReviewURL: URL {
-        URL(string: "https://apps.apple.com/app/id\(appStoreID)?action=write-review")!
+    static var appStoreProductURL: URL? {
+        appStoreID.flatMap { URL(string: "https://apps.apple.com/app/id\($0)") }
+    }
+    static var appStoreReviewURL: URL? {
+        appStoreID.flatMap { URL(string: "https://apps.apple.com/app/id\($0)?action=write-review") }
     }
 
     static var version: String {
@@ -79,26 +91,30 @@ struct SettingsView: View {
                             )
                         }
 
-                        rowDivider
+                        if let reviewURL = AppInfo.appStoreReviewURL {
+                            rowDivider
 
-                        Button {
-                            openURL(AppInfo.appStoreReviewURL)
-                        } label: {
-                            row(
-                                title: "settings.rate",
-                                subtitle: "settings.rate.subtitle",
-                                systemImage: "star"
-                            )
+                            Button {
+                                openURL(reviewURL)
+                            } label: {
+                                row(
+                                    title: "settings.rate",
+                                    subtitle: "settings.rate.subtitle",
+                                    systemImage: "star"
+                                )
+                            }
                         }
 
-                        rowDivider
+                        if let productURL = AppInfo.appStoreProductURL {
+                            rowDivider
 
-                        ShareLink(item: AppInfo.appStoreProductURL) {
-                            row(
-                                title: "settings.share",
-                                subtitle: "settings.share.subtitle",
-                                systemImage: "square.and.arrow.up"
-                            )
+                            ShareLink(item: productURL) {
+                                row(
+                                    title: "settings.share",
+                                    subtitle: "settings.share.subtitle",
+                                    systemImage: "square.and.arrow.up"
+                                )
+                            }
                         }
                     }
 
@@ -130,7 +146,10 @@ struct SettingsView: View {
                         Button {
                             openURL(AppInfo.officialSiteURL)
                         } label: {
-                            externalRow("settings.official_site", value: "yohaku.tmkch.io")
+                            externalRow(
+                                "settings.official_site",
+                                value: AppInfo.officialSiteURL.host() ?? "Yohaku"
+                            )
                         }
 
                         rowDivider
@@ -248,7 +267,9 @@ struct SettingsView: View {
                         }
                         Text("purchase.button")
                         Spacer()
-                        Text(purchaseStore.product?.displayPrice ?? "¥300")
+                        if let displayPrice = purchaseStore.product?.displayPrice {
+                            Text(verbatim: displayPrice)
+                        }
                     }
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Color(.systemBackground))
