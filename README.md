@@ -3,7 +3,8 @@
 予定を増やすのではなく、余白だけを置くアプリ。
 
 - Swift / SwiftUI / SwiftData
-- ローカル完結（外部通信なし、ログインなし）
+- 余白データは端末内で完結（ログイン・独自同期なし）
+- 外部通信は広告、StoreKit、法務文書、お問い合わせに限定
 - 白黒UI
 - 18言語対応（String Catalog）
 
@@ -17,14 +18,19 @@ Yohaku/
     RootTabView.swift
     TodayView.swift
     WeekView.swift
-    PatternView.swift
+    MonthView.swift
+    SettingsView.swift
+    LegalDocumentView.swift
     AddYohakuView.swift
   Components/
     YohakuBlockCard.swift
     EmptyStateView.swift
-    PatternGridView.swift
+    BrandMark.swift
+  Services/SupportService.swift
   Utilities/DateHelpers.swift
+  Utilities/SupportPurchaseStore.swift
   Resources/Localizable.xcstrings
+  Resources/Yohaku.storekit
 ```
 
 ## ビルド方法（Mac + Xcode 15以降）
@@ -46,6 +52,7 @@ open Yohaku.xcodeproj
 
 ## 画面
 
-- **Today** — 今日の余白だけを見る
-- **Week** — 一週間の余白の配置を眺める
-- **Shape** — 今月の余白が模様になる
+- **今日** — 一日の余白を見る・置く
+- **週** — 一週間の余白を一覧する
+- **月** — 月間カレンダーから余白のある日を見る
+- **設定** — 通知・外観・応援購入・お問い合わせ・法的情報

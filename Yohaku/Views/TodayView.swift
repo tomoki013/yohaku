@@ -4,13 +4,18 @@ import SwiftData
 struct TodayView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(SupportPurchaseStore.self) private var purchaseStore
+    @Environment(AdConsentManager.self) private var adConsentManager
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
     @Binding var displayedDay: Date
     @State private var isAdding = false
-    @State private var isShowingInfo = false
+    @State private var isShowingSettings = false
     @State private var editing: YohakuBlock?
     @State private var releasing: YohakuBlock?
+    @State private var keyboardObserver = KeyboardObserver()
+    @State private var bannerLoadFailed = false
     @State private var slideDirection = 1
+    @State private var contentHeight: CGFloat?
 
     private var dayBlocks: [YohakuBlock] {
         blocks.filter { DateHelpers.isSameDay($0.date, displayedDay) }
@@ -31,6 +36,13 @@ struct TodayView: View {
                         dayContent
                             .id(Calendar.current.startOfDay(for: displayedDay))
                             .transition(pageTransition)
+                            .measuringContentHeight()
+                    }
+                    .frame(height: contentHeight, alignment: .top)
+                    .onPreferenceChange(ContentHeightPreferenceKey.self) { newHeight in
+                        withAnimation(.easeOut(duration: 0.28)) {
+                            contentHeight = newHeight
+                        }
                     }
                 }
                 .padding(24)
@@ -48,23 +60,23 @@ struct TodayView: View {
                     }
             )
             .background(Color(.systemBackground))
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if shouldShowHomeBanner {
+                    AdaptiveBannerAd(unitID: AdConfiguration.bannerUnitID) {
+                        bannerLoadFailed = true
+                    }
+                        .background(Color(.systemBackground))
+                }
+            }
             .toolbar {
                 BrandToolbarItem()
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        isShowingInfo = true
-                    } label: {
-                        Image(systemName: "info.circle")
-                            .foregroundStyle(.primary)
-                    }
-                    .accessibilityLabel(Text("tab.about"))
-                }
+                SettingsToolbarItem(isShowingSettings: $isShowingSettings)
             }
             .sheet(isPresented: $isAdding) {
                 AddYohakuView(presetDate: displayedDay)
             }
-            .sheet(isPresented: $isShowingInfo) {
-                AboutView()
+            .sheet(isPresented: $isShowingSettings) {
+                SettingsView()
             }
             .sheet(item: $editing) { block in
                 AddYohakuView(editing: block)
@@ -82,6 +94,20 @@ struct TodayView: View {
                 }
             }
         }
+    }
+
+    private var shouldShowHomeBanner: Bool {
+        AdDisplayPolicy.shouldShowBanner(for: .init(
+            entitlementCheckCompleted: purchaseStore.entitlementCheckCompleted,
+            hasRemovedAds: purchaseStore.hasRemovedAds,
+            consentCheckCompleted: adConsentManager.consentCheckCompleted,
+            canRequestAds: adConsentManager.canRequestAds,
+            mobileAdsInitialized: adConsentManager.mobileAdsInitialized,
+            isHomeScreen: true,
+            isKeyboardVisible: keyboardObserver.isVisible,
+            isModalPresented: isAdding || isShowingSettings || editing != nil || releasing != nil,
+            bannerLoadFailed: bannerLoadFailed
+        ))
     }
 
     private var releaseBinding: Binding<Bool> {
@@ -199,4 +225,6 @@ struct TodayView: View {
 #Preview {
     TodayView(displayedDay: .constant(Date()))
         .modelContainer(for: YohakuBlock.self, inMemory: true)
+        .environment(SupportPurchaseStore())
+        .environment(AdConsentManager())
 }

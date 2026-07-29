@@ -39,3 +39,38 @@ struct BrandToolbarItem: ToolbarContent {
         #endif
     }
 }
+
+// 右上の設定ボタン。BrandToolbarItem とガラス背景の扱いを揃え、
+// 画面遷移のたびに背景カプセルが組み直されてちらつくのを防ぐ
+struct SettingsToolbarItem: ToolbarContent {
+    @Binding var isShowingSettings: Bool
+
+    var body: some ToolbarContent {
+        #if compiler(>=6.2)
+        if #available(iOS 26.0, *) {
+            ToolbarItem(placement: .topBarTrailing) {
+                settingsButton
+            }
+            .sharedBackgroundVisibility(.hidden)
+        } else {
+            ToolbarItem(placement: .topBarTrailing) {
+                settingsButton
+            }
+        }
+        #else
+        ToolbarItem(placement: .topBarTrailing) {
+            settingsButton
+        }
+        #endif
+    }
+
+    private var settingsButton: some View {
+        Button {
+            isShowingSettings = true
+        } label: {
+            Image(systemName: "gearshape")
+                .foregroundStyle(.primary)
+        }
+        .accessibilityLabel(Text("settings.title"))
+    }
+}

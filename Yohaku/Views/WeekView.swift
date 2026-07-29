@@ -3,10 +3,11 @@ import SwiftData
 
 struct WeekView: View {
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
+    @Binding var displayedWeek: Date
     var onSelectDay: (Date) -> Void = { _ in }
-    @State private var displayedWeek = Date()
-    @State private var isShowingInfo = false
+    @State private var isShowingSettings = false
     @State private var slideDirection = 1
+    @State private var contentHeight: CGFloat?
 
     private var weekDays: [Date] {
         DateHelpers.daysOfWeek(containing: displayedWeek)
@@ -34,6 +35,13 @@ struct WeekView: View {
                         weekContent
                             .id(weekDays.first)
                             .transition(pageTransition)
+                            .measuringContentHeight()
+                    }
+                    .frame(height: contentHeight, alignment: .top)
+                    .onPreferenceChange(ContentHeightPreferenceKey.self) { newHeight in
+                        withAnimation(.easeOut(duration: 0.28)) {
+                            contentHeight = newHeight
+                        }
                     }
                 }
                 .padding(24)
@@ -53,18 +61,10 @@ struct WeekView: View {
             .background(Color(.systemBackground))
             .toolbar {
                 BrandToolbarItem()
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        isShowingInfo = true
-                    } label: {
-                        Image(systemName: "info.circle")
-                            .foregroundStyle(.primary)
-                    }
-                    .accessibilityLabel(Text("tab.about"))
-                }
+                SettingsToolbarItem(isShowingSettings: $isShowingSettings)
             }
-            .sheet(isPresented: $isShowingInfo) {
-                AboutView()
+            .sheet(isPresented: $isShowingSettings) {
+                SettingsView()
             }
         }
     }
@@ -181,6 +181,6 @@ struct WeekView: View {
 }
 
 #Preview {
-    WeekView()
+    WeekView(displayedWeek: .constant(Date()))
         .modelContainer(for: YohakuBlock.self, inMemory: true)
 }

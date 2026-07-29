@@ -8,52 +8,101 @@
 
 /* Begin PBXBuildFile section */
 		012BE91CE516F1A5D2EC1761 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E8F9029F435EED2B26CF /* NotificationManager.swift */; };
+		04114A8DA6E57582B28180A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A97A44EE3FE18D4CCA35A /* SettingsView.swift */; };
+		13447149DBF9BD3A3E89B21C /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C240DE3A181745C5FFFFF6 /* MonthView.swift */; };
+		14C2462A51DE570345CC0AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F092F0DE75B3E872F3040C3 /* Assets.xcassets */; };
 		1691D8642BC97A213D44EBA9 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EBB3AC8EAA0431723B3466 /* AppearanceMode.swift */; };
-		3729F63AB22D174F4364BE4E /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7357DD0E09DDA99FF742513E /* PatternView.swift */; };
+		20B321C27ABB5B6A185E3D06 /* Yohaku.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 49144CB2F96525D5C91051CE /* Yohaku.storekit */; };
+		2990537E08BBB6A2E0D29BB5 /* AdConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1073B44E97149119A726B64 /* AdConsentManager.swift */; };
+		2DC23489DC38359461E4C6F4 /* SupportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860048F9494465792472FA38 /* SupportService.swift */; };
+		360AB918DDF22982C586E598 /* AdDisplayPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD3D06BAB59B74915CF73E /* AdDisplayPolicyTests.swift */; };
 		3CFAE99A42E88DC224AE2DBE /* AddYohakuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EA2DC1850379A76048D35 /* AddYohakuView.swift */; };
 		3DCDECDB3ADBF80334B8856F /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE43DAE1E6617C993B05CD1 /* TodayView.swift */; };
 		3FE61772F8CF28D995E60E1F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB770627E34D2560B52F828 /* Localizable.xcstrings */; };
 		440F3BBA3B399522507C3F48 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870B6E792B885AD5F5EDA693 /* WeekView.swift */; };
 		598FC3D9D83CDC3352441417 /* YohakuBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A4A4F61195C5164C7DE79 /* YohakuBlock.swift */; };
-		71F636D3B3FC8A5EC5A9ADFA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544AC5F6DB36E0A0513978DF /* AboutView.swift */; };
+		68C8CAE6F7C4D95D604E9279 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C36C2BE935E655B137533E /* KeyboardObserver.swift */; };
+		78141451B4BB24DF29D8F70F /* AdDisplayPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E17284B4A6F3AE3B624FA1 /* AdDisplayPolicy.swift */; };
 		785D8A267EB3FBF192930277 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AC1F0D5843EABED8542210 /* RootTabView.swift */; };
 		834D621AE258F5DE34DAA205 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FD93A888C50554836CA837 /* EmptyStateView.swift */; };
 		875ACA2E68BB1DE03ACC605C /* YohakuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCDDF786D1144B611B3E24 /* YohakuApp.swift */; };
+		890E5D7F2BC4A52EA3002367 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 6C8E96DD5AAEDE13AD78FBA9 /* GoogleMobileAds */; };
+		AA4B4116E391B5BB1FF2B802 /* AdaptiveBannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3BD1310E5E013F26975FB1 /* AdaptiveBannerAd.swift */; };
 		B68E5AE9300622F4FE8A6733 /* YohakuBlockCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3388FFBA7CB6D1E613CE085A /* YohakuBlockCard.swift */; };
 		B71E8A71E066B573F3B8F8D1 /* BrandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B521A3F6BD4673EE055EBF /* BrandMark.swift */; };
 		F3A5EAEE03304D28D6902C83 /* AppearanceApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F377889FA31EAA5176245A /* AppearanceApplier.swift */; };
 		F7E84CE573C51AA864B511AB /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A9E89FFD6C51B7C9B71B07 /* DateHelpers.swift */; };
+		FAB2D12AEE4A590319E1E9AF /* ContentHeightPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F72BC7027617A79805FD4 /* ContentHeightPreferenceKey.swift */; };
+		FCC12A1451CBBFC36CEDB7BD /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D8B3540EBE8145B1AEDAD /* LegalDocumentView.swift */; };
+		FD4B09C00E0AA26FD9733392 /* SupportPurchaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0EF608C05347081410519 /* SupportPurchaseStore.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		66989308D8B9B30F16524E1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2D98540ABE35DBADE2B2A85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A6E7ADDCFC11D0286209E9B;
+			remoteInfo = Yohaku;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		17C36C2BE935E655B137533E /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		300F72BC7027617A79805FD4 /* ContentHeightPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeightPreferenceKey.swift; sourceTree = "<group>"; };
+		314A97A44EE3FE18D4CCA35A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3388FFBA7CB6D1E613CE085A /* YohakuBlockCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YohakuBlockCard.swift; sourceTree = "<group>"; };
-		544AC5F6DB36E0A0513978DF /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		49144CB2F96525D5C91051CE /* Yohaku.storekit */ = {isa = PBXFileReference; path = Yohaku.storekit; sourceTree = "<group>"; };
 		69AC1F0D5843EABED8542210 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		6EB770627E34D2560B52F828 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		7357DD0E09DDA99FF742513E /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
+		6F092F0DE75B3E872F3040C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77BD3D06BAB59B74915CF73E /* AdDisplayPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDisplayPolicyTests.swift; sourceTree = "<group>"; };
 		78A9E89FFD6C51B7C9B71B07 /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		7A1A4A4F61195C5164C7DE79 /* YohakuBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YohakuBlock.swift; sourceTree = "<group>"; };
 		7AF7E8F9029F435EED2B26CF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		860048F9494465792472FA38 /* SupportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportService.swift; sourceTree = "<group>"; };
 		870B6E792B885AD5F5EDA693 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		98FD93A888C50554836CA837 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		99F377889FA31EAA5176245A /* AppearanceApplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceApplier.swift; sourceTree = "<group>"; };
+		A2C240DE3A181745C5FFFFF6 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		BAD0EF608C05347081410519 /* SupportPurchaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPurchaseStore.swift; sourceTree = "<group>"; };
 		BF5D4DBEDAD84CBC80FD3689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C1073B44E97149119A726B64 /* AdConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConsentManager.swift; sourceTree = "<group>"; };
+		C31F952F4FE199553764631D /* YohakuTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YohakuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EBB3AC8EAA0431723B3466 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		CB3D8B3540EBE8145B1AEDAD /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
 		CE5F4974B81AF775AFB52DD1 /* Yohaku.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Yohaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E17284B4A6F3AE3B624FA1 /* AdDisplayPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDisplayPolicy.swift; sourceTree = "<group>"; };
 		DA6EA2DC1850379A76048D35 /* AddYohakuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYohakuView.swift; sourceTree = "<group>"; };
 		DBDCDDF786D1144B611B3E24 /* YohakuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YohakuApp.swift; sourceTree = "<group>"; };
+		DE3BD1310E5E013F26975FB1 /* AdaptiveBannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveBannerAd.swift; sourceTree = "<group>"; };
 		E3B521A3F6BD4673EE055EBF /* BrandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandMark.swift; sourceTree = "<group>"; };
 		ECE43DAE1E6617C993B05CD1 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12B54D12AA51D11B870C4CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890E5D7F2BC4A52EA3002367 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		01B45316D7FCC53D495E6686 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D5E17284B4A6F3AE3B624FA1 /* AdDisplayPolicy.swift */,
 				99F377889FA31EAA5176245A /* AppearanceApplier.swift */,
 				C4EBB3AC8EAA0431723B3466 /* AppearanceMode.swift */,
+				300F72BC7027617A79805FD4 /* ContentHeightPreferenceKey.swift */,
 				78A9E89FFD6C51B7C9B71B07 /* DateHelpers.swift */,
+				17C36C2BE935E655B137533E /* KeyboardObserver.swift */,
 				7AF7E8F9029F435EED2B26CF /* NotificationManager.swift */,
+				BAD0EF608C05347081410519 /* SupportPurchaseStore.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -62,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5F4974B81AF775AFB52DD1 /* Yohaku.app */,
+				C31F952F4FE199553764631D /* YohakuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,10 +119,11 @@
 		21688F6D52F046D2FCB6B29E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				544AC5F6DB36E0A0513978DF /* AboutView.swift */,
 				DA6EA2DC1850379A76048D35 /* AddYohakuView.swift */,
-				7357DD0E09DDA99FF742513E /* PatternView.swift */,
+				CB3D8B3540EBE8145B1AEDAD /* LegalDocumentView.swift */,
+				A2C240DE3A181745C5FFFFF6 /* MonthView.swift */,
 				69AC1F0D5843EABED8542210 /* RootTabView.swift */,
+				314A97A44EE3FE18D4CCA35A /* SettingsView.swift */,
 				ECE43DAE1E6617C993B05CD1 /* TodayView.swift */,
 				870B6E792B885AD5F5EDA693 /* WeekView.swift */,
 			);
@@ -82,25 +133,45 @@
 		434DD0D3320E23AD118F860A /* Yohaku */ = {
 			isa = PBXGroup;
 			children = (
+				6F092F0DE75B3E872F3040C3 /* Assets.xcassets */,
 				BF5D4DBEDAD84CBC80FD3689 /* Info.plist */,
 				DBDCDDF786D1144B611B3E24 /* YohakuApp.swift */,
 				A2354F1AEEB0C08854B161C0 /* Components */,
 				A9E41D5E95DF91A066D23340 /* Models */,
 				B95D246898CAA8282CC58DD9 /* Resources */,
+				A28C0E495A49A163C85F35FB /* Services */,
 				01B45316D7FCC53D495E6686 /* Utilities */,
 				21688F6D52F046D2FCB6B29E /* Views */,
 			);
 			path = Yohaku;
 			sourceTree = "<group>";
 		};
+		63B52D2F8878F9B04F29B6B5 /* YohakuTests */ = {
+			isa = PBXGroup;
+			children = (
+				77BD3D06BAB59B74915CF73E /* AdDisplayPolicyTests.swift */,
+			);
+			path = YohakuTests;
+			sourceTree = "<group>";
+		};
 		A2354F1AEEB0C08854B161C0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE3BD1310E5E013F26975FB1 /* AdaptiveBannerAd.swift */,
 				E3B521A3F6BD4673EE055EBF /* BrandMark.swift */,
 				98FD93A888C50554836CA837 /* EmptyStateView.swift */,
 				3388FFBA7CB6D1E613CE085A /* YohakuBlockCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A28C0E495A49A163C85F35FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1073B44E97149119A726B64 /* AdConsentManager.swift */,
+				860048F9494465792472FA38 /* SupportService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A9E41D5E95DF91A066D23340 /* Models */ = {
@@ -115,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB770627E34D2560B52F828 /* Localizable.xcstrings */,
+				49144CB2F96525D5C91051CE /* Yohaku.storekit */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				434DD0D3320E23AD118F860A /* Yohaku */,
+				63B52D2F8878F9B04F29B6B5 /* YohakuTests */,
 				16832DB3963ADF6F270A7C0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,12 +203,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		715E5CC1427EF0E8BC47B87E /* YohakuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC534DA01D15ABDC86CDF001 /* Build configuration list for PBXNativeTarget "YohakuTests" */;
+			buildPhases = (
+				D4CC06F641E6FA1BD26CE44B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				333BA99F33AE521A6D01944D /* PBXTargetDependency */,
+			);
+			name = YohakuTests;
+			packageProductDependencies = (
+			);
+			productName = YohakuTests;
+			productReference = C31F952F4FE199553764631D /* YohakuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7A6E7ADDCFC11D0286209E9B /* Yohaku */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 776D8483E401D029DC52546D /* Build configuration list for PBXNativeTarget "Yohaku" */;
 			buildPhases = (
+				26C275D2F91C954AC40DDB25 /* Validate Release AdMob configuration */,
 				4B192AC6E7B44F6BB68F1250 /* Sources */,
 				ED68B1CD12DA767AB14C81FC /* Resources */,
+				12B54D12AA51D11B870C4CBB /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +236,7 @@
 			);
 			name = Yohaku;
 			packageProductDependencies = (
+				6C8E96DD5AAEDE13AD78FBA9 /* GoogleMobileAds */,
 			);
 			productName = Yohaku;
 			productReference = CE5F4974B81AF775AFB52DD1 /* Yohaku.app */;
@@ -188,12 +282,16 @@
 			);
 			mainGroup = CD3EA64C2AD6ACED8A13593B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				66E2AF35EE40EE291C3978C9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16832DB3963ADF6F270A7C0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				7A6E7ADDCFC11D0286209E9B /* Yohaku */,
+				715E5CC1427EF0E8BC47B87E /* YohakuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,27 +301,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C2462A51DE570345CC0AE0 /* Assets.xcassets in Resources */,
 				3FE61772F8CF28D995E60E1F /* Localizable.xcstrings in Resources */,
+				20B321C27ABB5B6A185E3D06 /* Yohaku.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26C275D2F91C954AC40DDB25 /* Validate Release AdMob configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Validate Release AdMob configuration";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nset -eu\n\n# Debug is intentionally configured with Google's official test IDs. This check\n# protects only distribution builds from shipping a missing, malformed, or test\n# identifier.\nif [ \"${CONFIGURATION:-}\" != \"Release\" ]; then\n  exit 0\nfi\n\napp_id=\"${ADMOB_APP_ID:-}\"\nunit_id=\"${ADMOB_BANNER_AD_UNIT_ID:-}\"\ntest_app_id=\"ca-app-pub-3940256099942544~1458002511\"\ntest_unit_id=\"ca-app-pub-3940256099942544/2435281174\"\n\nfail() {\n  echo \"error: AdMob Release configuration invalid: $1\" >&2\n  exit 1\n}\n\n[ -n \"$app_id\" ] || fail \"ADMOB_APP_ID is empty\"\n[ -n \"$unit_id\" ] || fail \"ADMOB_BANNER_AD_UNIT_ID is empty\"\n[ \"$app_id\" != \"$test_app_id\" ] || fail \"ADMOB_APP_ID must not be Google's test app ID\"\n[ \"$unit_id\" != \"$test_unit_id\" ] || fail \"ADMOB_BANNER_AD_UNIT_ID must not be Google's test unit ID\"\ncase \"$app_id\" in *__*|*PRODUCTION*|*PLACEHOLDER*) fail \"ADMOB_APP_ID is a placeholder\";; esac\ncase \"$unit_id\" in *__*|*PRODUCTION*|*PLACEHOLDER*) fail \"ADMOB_BANNER_AD_UNIT_ID is a placeholder\";; esac\necho \"$app_id\" | grep -Eq '^ca-app-pub-[0-9]+~[0-9]+$' || fail \"ADMOB_APP_ID has the wrong format\"\necho \"$unit_id\" | grep -Eq '^ca-app-pub-[0-9]+/[0-9]+$' || fail \"ADMOB_BANNER_AD_UNIT_ID has the wrong format\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B192AC6E7B44F6BB68F1250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F636D3B3FC8A5EC5A9ADFA /* AboutView.swift in Sources */,
+				2990537E08BBB6A2E0D29BB5 /* AdConsentManager.swift in Sources */,
+				78141451B4BB24DF29D8F70F /* AdDisplayPolicy.swift in Sources */,
+				AA4B4116E391B5BB1FF2B802 /* AdaptiveBannerAd.swift in Sources */,
 				3CFAE99A42E88DC224AE2DBE /* AddYohakuView.swift in Sources */,
 				F3A5EAEE03304D28D6902C83 /* AppearanceApplier.swift in Sources */,
 				1691D8642BC97A213D44EBA9 /* AppearanceMode.swift in Sources */,
 				B71E8A71E066B573F3B8F8D1 /* BrandMark.swift in Sources */,
+				FAB2D12AEE4A590319E1E9AF /* ContentHeightPreferenceKey.swift in Sources */,
 				F7E84CE573C51AA864B511AB /* DateHelpers.swift in Sources */,
 				834D621AE258F5DE34DAA205 /* EmptyStateView.swift in Sources */,
+				68C8CAE6F7C4D95D604E9279 /* KeyboardObserver.swift in Sources */,
+				FCC12A1451CBBFC36CEDB7BD /* LegalDocumentView.swift in Sources */,
+				13447149DBF9BD3A3E89B21C /* MonthView.swift in Sources */,
 				012BE91CE516F1A5D2EC1761 /* NotificationManager.swift in Sources */,
-				3729F63AB22D174F4364BE4E /* PatternView.swift in Sources */,
 				785D8A267EB3FBF192930277 /* RootTabView.swift in Sources */,
+				04114A8DA6E57582B28180A6 /* SettingsView.swift in Sources */,
+				FD4B09C00E0AA26FD9733392 /* SupportPurchaseStore.swift in Sources */,
+				2DC23489DC38359461E4C6F4 /* SupportService.swift in Sources */,
 				3DCDECDB3ADBF80334B8856F /* TodayView.swift in Sources */,
 				440F3BBA3B399522507C3F48 /* WeekView.swift in Sources */,
 				875ACA2E68BB1DE03ACC605C /* YohakuApp.swift in Sources */,
@@ -232,7 +363,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4CC06F641E6FA1BD26CE44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360AB918DDF22982C586E598 /* AdDisplayPolicyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		333BA99F33AE521A6D01944D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A6E7ADDCFC11D0286209E9B /* Yohaku */;
+			targetProxy = 66989308D8B9B30F16524E1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		04AEBBFD15EAD8C428DFA526 /* Release */ = {
@@ -291,9 +438,27 @@
 			};
 			name = Release;
 		};
+		43059395BE47583A0B34F618 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.YohakuTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yohaku.app/Yohaku";
+			};
+			name = Release;
+		};
 		4DE20821F2F287A606B33982 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADMOB_APP_ID = "ca-app-pub-3940256099942544~1458002511";
+				ADMOB_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/2435281174";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
@@ -303,16 +468,34 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yohaku.Yohaku;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.yohaku;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
+		86324D6FFE340AE3780A994C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.YohakuTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yohaku.app/Yohaku";
+			};
+			name = Debug;
+		};
 		D5CA110A0C4B30EF95A6831F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADMOB_APP_ID = "ca-app-pub-8687520805381056~6166567024";
+				ADMOB_BANNER_AD_UNIT_ID = "ca-app-pub-8687520805381056/6272975863";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
@@ -322,7 +505,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yohaku.Yohaku;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.yohaku;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -413,7 +596,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		AC534DA01D15ABDC86CDF001 /* Build configuration list for PBXNativeTarget "YohakuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86324D6FFE340AE3780A994C /* Debug */,
+				43059395BE47583A0B34F618 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		66E2AF35EE40EE291C3978C9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6C8E96DD5AAEDE13AD78FBA9 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66E2AF35EE40EE291C3978C9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A2D98540ABE35DBADE2B2A85 /* Project object */;
 }
