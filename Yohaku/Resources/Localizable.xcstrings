@@ -3346,6 +3346,23 @@
         }
       }
     },
+    "legal.online_required": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect to the internet to view the latest disclosure on the official Yohaku website."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公式Yohakuサイトで最新の表記を確認するには、インターネットに接続してください。"
+          }
+        }
+      }
+    },
     "legal.updated": {
       "extractionState": "manual",
       "localizations": {
@@ -5545,6 +5562,23 @@
         }
       }
     },
+    "settings.commercial_transactions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commercial Transactions Disclosure"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "特定商取引法に基づく表記"
+          }
+        }
+      }
+    },
     "settings.legal": {
       "extractionState": "manual",
       "localizations": {
@@ -5694,6 +5728,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "何もしない時間を、予定に。"
+          }
+        }
+      }
+    },
+    "settings.support_email": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support email"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サポートメール"
           }
         }
       }

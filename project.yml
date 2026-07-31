@@ -83,7 +83,7 @@ targets:
         LOCALIZATION_PREFERS_STRING_CATALOGS: YES
         DEVELOPMENT_TEAM: 7GU925RQ99
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.yohaku
-        YOHAKU_SITE_BASE_URL: https://tomokichi-yohaku.tomoki-ttttt.workers.dev/
+        YOHAKU_SITE_BASE_URL: https://yohaku.tmkch.io/
         YOHAKU_APP_STORE_ID: ""
       configs:
         Debug:

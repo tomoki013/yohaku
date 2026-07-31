@@ -474,7 +474,7 @@
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 				YOHAKU_APP_STORE_ID = "";
-				YOHAKU_SITE_BASE_URL = "https://tomokichi-yohaku.tomoki-ttttt.workers.dev/";
+				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
 			};
 			name = Debug;
 		};
@@ -514,7 +514,7 @@
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 				YOHAKU_APP_STORE_ID = "";
-				YOHAKU_SITE_BASE_URL = "https://tomokichi-yohaku.tomoki-ttttt.workers.dev/";
+				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
 			};
 			name = Release;
 		};

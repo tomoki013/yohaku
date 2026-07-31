@@ -6,12 +6,18 @@ enum AppInfo {
     private static var configuredSiteURL: URL {
         let configuredValue = Bundle.main.object(forInfoDictionaryKey: "YohakuSiteBaseURL") as? String
         return URL(string: configuredValue ?? "") ??
-            URL(string: "https://tomokichi-yohaku.tomoki-ttttt.workers.dev/")!
+            URL(string: "https://yohaku.tmkch.io/")!
     }
 
     static let officialSiteURL = configuredSiteURL
-    static let privacyPolicyURL = configuredSiteURL.appending(path: "privacy", directoryHint: .isDirectory)
-    static let termsURL = configuredSiteURL.appending(path: "terms", directoryHint: .isDirectory)
+    static let privacyPolicyURL = configuredSiteURL.appending(path: "privacy", directoryHint: .notDirectory)
+    static let termsURL = configuredSiteURL.appending(path: "terms", directoryHint: .notDirectory)
+    static let commercialTransactionsURL = configuredSiteURL.appending(
+        path: "commercial-transactions",
+        directoryHint: .notDirectory
+    )
+    static let supportEmail = "support@tmkch.io"
+    static let supportEmailURL = URL(string: "mailto:support@tmkch.io?subject=Yohaku")!
     static let developerWebsiteURL = URL(string: "https://tomokichi.dev")!
     static let developerAppsURL = URL(string: "https://tmkch.io")!
     static let developerName = "Tomokichi"
@@ -140,6 +146,18 @@ struct SettingsView: View {
                         } label: {
                             compactRow("settings.terms")
                         }
+
+                        rowDivider
+
+                        NavigationLink {
+                            LegalDocumentView(
+                                titleKey: "settings.commercial_transactions",
+                                bodyKey: nil,
+                                url: AppInfo.commercialTransactionsURL
+                            )
+                        } label: {
+                            compactRow("settings.commercial_transactions")
+                        }
                     }
 
                     settingsSection("settings.about") {
@@ -150,6 +168,14 @@ struct SettingsView: View {
                                 "settings.official_site",
                                 value: AppInfo.officialSiteURL.host() ?? "Yohaku"
                             )
+                        }
+
+                        rowDivider
+
+                        Button {
+                            openURL(AppInfo.supportEmailURL)
+                        } label: {
+                            externalRow("settings.support_email", value: AppInfo.supportEmail)
                         }
 
                         rowDivider
