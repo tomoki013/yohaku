@@ -5064,13 +5064,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This Privacy Policy explains how Tomokichi (the “Developer”) handles information in Yohaku (the “App”).\n\n1. Information stored on your device\nThe yohaku you create, including names, dates, and times, as well as appearance and notification settings, are stored on your device. No account is required, and this information is not sent to the Developer’s server.\n\n2. Advertising\nThe free version may display unobtrusive advertising. An advertising provider may process information needed to deliver and measure ads and prevent fraud, such as device information, IP address, approximate location derived from the IP address, advertising identifiers when permitted, and interactions with ads. The handling of this information is governed by the provider’s policy and your iOS privacy choices. The Developer does not provide your yohaku content, name, or email address to the advertising provider.\n\n3. In-app purchase\nThe one-time “Buy the developer a coffee” purchase is processed by Apple. The App reads only the purchase entitlement needed to remove ads and never receives your payment card information. Purchase history and refunds are managed by Apple.\n\n4. Notifications\nLocal notifications are created and delivered on your device only after you grant permission. You can change permission in iOS Settings at any time.\n\n5. Contact\nWhen you submit the in-app contact form, your category, name (optional), email address, subject, message, app version, build number, OS version, display language, submission time, and random inquiry identifiers are sent to the Developer’s shared support API and email delivery provider for support and rate limiting. Yohaku records are never attached.\n\n6. Retention and deletion\nA yohaku is deleted from the device when you release it. Uninstalling the App deletes its local data. Apple’s purchase records cannot be deleted from within the App.\n\n7. Changes\nThis policy may be updated to reflect changes to the App, advertising providers, or legal requirements. The latest version is published on the official website.\n\n8. Contact\nFor privacy questions, use Contact in the App."
+            "value": "This Privacy Policy explains how Tomokichi (the “Operator”) handles information in the iOS app Yohaku (the “App”) and the official brand website. The website is authoritative.\n\nEffective date: July 29, 2026\nLast updated: August 2, 2026\n\n1. Information stored on your device\nSpace names, dates, start/end times, created/updated timestamps, appearance settings, notification settings, a random support client id, and related local settings are stored on your device. No account is required. During ordinary use, space contents are not sent to the Operator’s servers.\n\n2. Advertising and tracking\nThe App uses the Google Mobile Ads SDK. The free version may show banner ads. Google and partners may process device information, IP address, approximate region, advertising identifiers, ad interactions, diagnostics and consent status for delivery, measurement and fraud prevention. With your App Tracking Transparency (ATT) permission, an advertising identifier may be used to deliver and measure personalized ads across other companies’ apps and websites. If you decline, ads may still appear without access to that identifier. The Operator does not provide space contents or support-form names/emails to advertising providers for ads.\n\n3. Consent and choices\nThe App uses Google’s User Messaging Platform (UMP). A consent form may appear by region, and the iOS ATT prompt is shown before tracking is allowed. You can change ATT permission in iOS Settings and, where required, reopen ad privacy choices in the App. If consent cannot be resolved, ads are not requested for that launch. After purchasing ad removal, you are not ad-supported and the ads SDK is generally not started.\n\n4. In-app purchases\n“Remove ads permanently” is a non-consumable one-time purchase via Apple StoreKit. Apple processes payment; the Operator never receives card details. Restore is supported. This is not a subscription.\n\n5. Notifications\nWith permission, local notifications fire at each space’s start time. Space contents are not sent to an external server for notifications.\n\n6. Support\nOnly when you submit a form may category, name, email, subject, message, app/OS info, locale, timestamps, enquiry id and client id be sent to the support API and email provider. Spaces are never attached automatically.\n\n7. Service providers\nApple (StoreKit, notifications), Google Mobile Ads, UMP, Cloudflare Workers (support API), Resend (email), and website hosting.\n\n8. Retention and deletion\nDeleting a space or uninstalling the App removes on-device data; the Operator cannot restore it. Purchase records are managed by Apple.\n\n9. Contact\nUse in-app support or support@tmkch.io. The latest policy is at https://yohaku.tmkch.io/privacy"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本ポリシーは、Tomokichi（以下「開発者」といいます）が提供するiOSアプリ「Yohaku」（以下「本アプリ」といいます）における利用者情報の取扱いを定めるものです。\n\n1. 端末内に保存する情報\n利用者が作成した余白の名称・日付・時刻、外観設定および通知設定は、利用者の端末内に保存されます。アカウント登録は不要で、これらの情報を開発者のサーバーへ送信することはありません。\n\n2. 広告\n無料版では、操作を妨げない広告を表示する場合があります。広告配信事業者は、広告の配信・効果測定・不正防止に必要な範囲で、端末情報、IPアドレス、IPアドレスから推定されるおおよその地域、許可されている場合の広告識別子、広告への反応などを取り扱うことがあります。これらの取扱いには広告配信事業者の方針およびiOSのプライバシー設定が適用されます。余白の内容、氏名、メールアドレスを開発者から広告配信事業者へ提供することはありません。\n\n3. アプリ内課金\n「開発者にコーヒーを一杯」の買い切り課金はAppleが処理します。本アプリが取得するのは広告を削除するための購入権利情報のみで、クレジットカード情報を取得することはありません。購入履歴および返金はAppleが管理します。\n\n4. 通知\n利用者が許可した場合に限り、ローカル通知を端末内で生成・表示します。許可はiOSの設定からいつでも変更できます。\n\n5. お問い合わせ\nアプリ内のお問い合わせフォームを送信した場合に限り、カテゴリ、氏名（任意）、メールアドレス、件名、内容、アプリバージョン、ビルド番号、OSバージョン、表示言語、送信日時、ランダムな問い合わせ識別子が、サポート対応および送信回数の制限のため、開発者の共通サポートAPIおよびメール配信事業者へ送信されます。余白の記録が添付されることはありません。\n\n6. 保存期間と削除\n余白を「手放す」と、その記録は端末から削除されます。本アプリをアンインストールすると端末内のデータは削除されます。Appleが管理する購入履歴は本アプリ内から削除できません。\n\n7. 本ポリシーの変更\n本アプリ、広告配信事業者または法令の変更に応じて、本ポリシーを改定することがあります。最新版は公式Webサイトに掲載します。\n\n8. お問い合わせ\nプライバシーに関するお問い合わせは、アプリ内の「お問い合わせ」からご連絡ください。"
+            "value": "本ポリシーは、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」（以下「本アプリ」）および公式ブランドサイトにおける利用者情報の取扱いを定めるものです。公式Webサイト掲載版を正本とします。\n\n制定日：2026年7月29日\n最終更新日：2026年8月2日\n\n1. 端末内に保存する情報\n余白の名前・日付・開始時刻・終了時刻、作成／更新日時、外観設定、通知設定、サポート用のランダムなクライアントIDなどは端末内に保存されます。アカウント登録は不要で、通常利用では余白の内容を運営者のサーバーへ送信しません。\n\n2. 広告とトラッキング\n本アプリはGoogle Mobile Ads SDKを使用します。無料版ではバナー広告が表示される場合があります。Googleおよび広告パートナーは、広告配信・効果測定・不正防止等のため、端末情報、IPアドレス、推定地域、広告識別子、広告への反応、診断情報、同意状況等を取り扱う場合があります。App Tracking Transparency（ATT）を許可した場合、他社のアプリやWebサイトをまたぐ広告の最適化・効果測定に広告識別子が使われることがあります。許可しない場合も、広告識別子を使わない広告が表示される場合があります。運営者は余白の内容や問い合わせの氏名・メールアドレスを広告目的で広告事業者へ提供しません。\n\n3. 広告の同意と選択\n同意管理にGoogle User Messaging Platform（UMP）を使用します。地域により同意画面が表示され、トラッキングを開始する前にiOSのATT画面を表示します。ATTの許可はiOSの設定から変更でき、必要な地域ではアプリの設定から広告プライバシー設定を再表示できます。同意取得に失敗した場合、その起動中は広告を要求しません。広告削除購入済みの場合は広告配信対象外となり、原則として広告SDKを起動しません。\n\n4. アプリ内課金\n「広告を永久に削除」はAppleのStoreKitによる非消耗型の一回払いです。決済はAppleが処理し、運営者はカード情報を取得しません。購入復元に対応しています。サブスクリプションではありません。\n\n5. 通知\n許可した場合に限り、余白の開始時刻にローカル通知を表示します。通知のために余白内容を外部サーバーへ送信しません。\n\n6. お問い合わせ\nフォーム送信時のみ、カテゴリ、名前、メール、件名、本文、アプリ／OS情報、ロケール、送信日時、問い合わせID、クライアントID等がサポートAPIおよびメール配信事業者へ送られます。余白の記録は自動添付されません。\n\n7. 外部サービス\nApple（StoreKit・通知等）、Google Mobile Ads、UMP、Cloudflare Workers（サポートAPI）、Resend（メール）等を利用します。\n\n8. 保存期間と削除\n余白の削除またはアプリ削除で端末内データは削除され、運営者は復旧できません。購入記録はAppleが管理します。\n\n9. お問い合わせ\nアプリ内お問い合わせまたはsupport@tmkch.ioへご連絡ください。最新版は https://yohaku.tmkch.io/privacy に掲載します。"
           }
         }
       }
@@ -5194,13 +5194,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buy one coffee"
+            "value": "Remove ads permanently"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "コーヒーを一杯おごる"
+            "value": "広告を永久に削除"
           }
         }
       }
@@ -5228,13 +5228,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your first coffee permanently removes ads from Yohaku. Every core feature stays free."
+            "value": "A one-time purchase permanently removes ads from Yohaku. Every core feature stays free."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "最初の一杯で、Yohakuから広告が永久になくなります。機能は無料のまま、これからも静かに使えます。"
+            "value": "一度の購入で、Yohakuから広告が永久になくなります。機能は無料のまま、これからも静かに使えます。"
           }
         }
       }
@@ -5262,13 +5262,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Thank you for the coffee."
+            "value": "Thank you for supporting Yohaku."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "コーヒーをありがとう。"
+            "value": "Yohakuを応援してくれてありがとうございます。"
           }
         }
       }
@@ -5296,13 +5296,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buy the developer a coffee"
+            "value": "Remove ads and support Yohaku"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "開発者にコーヒーを一杯"
+            "value": "広告を削除してYohakuを応援"
           }
         }
       }
@@ -5313,13 +5313,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "About"
+            "value": "Links"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "アプリについて"
+            "value": "関連リンク"
           }
         }
       }
@@ -6389,13 +6389,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "These Terms of Use govern your use of Yohaku (the “App”) provided by Tomokichi (the “Developer”). By using the App, you agree to these terms.\n\n1. The App\nYohaku is an app for setting aside time to do nothing. All core features are available free of charge, no account is required, and yohaku records are stored on your device.\n\n2. Advertising and support purchase\nThe free version may display unobtrusive ads. A one-time, non-consumable “Buy the developer a coffee” purchase removes ads permanently as a thank-you for supporting development. It does not unlock additional core features and is not a subscription. Purchases, restoration, and refunds are handled under Apple’s terms.\n\n3. License\nThe Developer grants you a personal, non-transferable right to use the App in accordance with these terms. You may not unlawfully copy, modify, reverse engineer, or redistribute the App.\n\n4. Your data\nYohaku records are stored on your device. You are responsible for device backups. The Developer cannot restore data lost through device failure, replacement, or deletion of the App.\n\n5. Disclaimer\nThe App is provided “as is.” The Developer does not guarantee uninterrupted operation, accuracy, fitness for a particular purpose, or freedom from defects. To the extent permitted by law, the Developer is not liable for damages arising from use or inability to use the App, except in cases of intent or gross negligence.\n\n6. Changes or discontinuation\nThe Developer may make changes needed for OS compatibility, security, legal compliance, advertising, purchasing, or maintenance, and may suspend or discontinue the App.\n\n7. Changes to these terms\nThese terms may be revised when necessary. The latest version is published in the App and on the official website.\n\n8. Governing law and jurisdiction\nThese terms are governed by Japanese law. The court with jurisdiction over the Developer’s location is the agreed court of first instance, except where mandatory law provides otherwise.\n\n9. Contact\nFor questions about these terms, use Contact in the App."
+            "value": "These Terms govern the iOS app Yohaku and the official brand website provided by Tomokichi (the “Operator”).\n\nEffective date: July 29, 2026\nLast updated: August 2, 2026\n\n1. The Service\nYohaku lets you leave time with nothing planned—named and timed—and review it on Today, Week and Month. Core features are free; no account is required.\n\n2. Advertising\nThe free version may show banner ads via an external provider.\n\n3. Support purchase\nA non-consumable one-time “Remove ads permanently” purchase removes ads. It does not unlock extra core features and is not a subscription. Purchases, restores and refunds follow Apple’s terms; the App Store price is authoritative.\n\n4. Prohibited conduct\nDo not break the law, gain unauthorized access, disrupt the service, evade payment, manipulate ads, unlawfully copy the App, or abuse support.\n\n5. Data\nSpaces are stored on your device. There is no Yohaku cloud sync, export or import. The Operator cannot restore data lost to uninstall, device failure or similar events.\n\n6. Notifications\nNotifications are an aid only; delivery is not guaranteed. Do not rely on them as a critical alarm.\n\n7. Medical disclaimer\nThe App is not a medical device and does not guarantee health outcomes.\n\n8. Disclaimer and liability\nThe Service is provided “as is.” Except for willful misconduct, gross negligence or mandatory law, liability is limited to the extent permitted by law.\n\n9. Changes and governing law\nThe Operator may change the Service or these Terms. Japanese law applies; unless mandatory consumer law provides otherwise, the Tokyo District Court has exclusive first-instance jurisdiction.\n\n10. Contact\nIn-app support or support@tmkch.io. Latest Terms: https://yohaku.tmkch.io/terms"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本規約は、Tomokichi（以下「開発者」といいます）が提供するiOSアプリ「Yohaku」（以下「本アプリ」といいます）の利用条件を定めるものです。本アプリを利用することで、本規約に同意したものとみなされます。\n\n第1条（本アプリ）\nYohakuは、何もしない時間を予定として置いておくためのアプリです。すべての基本機能を無料で利用でき、アカウント登録は不要です。余白の記録は端末内に保存されます。\n\n第2条（広告および応援購入）\n無料版には、操作を妨げない広告を表示する場合があります。非消耗型の買い切り商品「開発者にコーヒーを一杯」を購入すると、開発への応援のお礼として広告が永久に削除されます。基本機能が追加されるものではなく、サブスクリプションでもありません。購入、復元および返金にはAppleの条件が適用されます。\n\n第3条（利用許諾）\n開発者は、本規約に従うことを条件として、本アプリを個人的に利用する譲渡不能な権利を許諾します。法令に反する複製、改変、リバースエンジニアリングまたは再配布を禁止します。\n\n第4条（データの管理）\n余白の記録は利用者の端末内に保存されます。端末のバックアップは利用者の責任で行ってください。端末の故障・変更または本アプリの削除等によって失われたデータを、開発者が復旧することはできません。\n\n第5条（免責事項）\n本アプリは現状有姿で提供されます。開発者は、動作の中断がないこと、正確性、特定目的への適合性または不具合がないことを保証しません。開発者の故意または重過失による場合を除き、法令で認められる範囲で、本アプリの利用または利用不能により生じた損害について責任を負いません。\n\n第6条（変更・中断・終了）\n開発者は、OS対応、セキュリティ、法令、広告、課金または保守のために必要な変更を行い、本アプリの提供を中断または終了することがあります。\n\n第7条（本規約の変更）\n必要に応じて本規約を改定することがあります。最新版は本アプリおよび公式Webサイトに掲載します。\n\n第8条（準拠法および管轄）\n本規約は日本法に準拠します。強行法規に別段の定めがある場合を除き、開発者の所在地を管轄する裁判所を第一審の合意管轄裁判所とします。\n\n第9条（お問い合わせ）\n本規約に関するお問い合わせは、アプリ内の「お問い合わせ」からご連絡ください。"
+            "value": "本規約は、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」および公式ブランドサイトの利用条件を定めます。\n\n制定日：2026年7月29日\n最終更新日：2026年8月2日\n\n第1条（サービス内容）\nYohakuは、何もしない時間を名前と日時で置き、Today・Week・Monthで確認するアプリです。基本機能は無料で、アカウント登録は不要です。\n\n第2条（広告）\n無料版にはバナー広告が表示される場合があります。広告配信には外部事業者を利用します。\n\n第3条（応援購入）\n非消耗型の一回払い「広告を永久に削除」を購入すると広告が表示されなくなります。基本機能の追加やサブスクリプションではありません。購入・復元・返金はAppleの条件に従い、価格はApp Storeの表示が正しいものとします。\n\n第4条（禁止事項）\n法令違反、不正アクセス、運営妨害、不正な課金回避・広告操作、違法な複製・再配布、サポートの荒らし等を禁止します。\n\n第5条（データ）\n余白は端末内に保存されます。独自同期・書き出し・読み込みはありません。アプリ削除や端末故障等で失われたデータを運営者が復旧することはできません。\n\n第6条（通知）\n通知は補助機能であり配信を保証しません。重要な予定やアラーム用途に依存しないでください。\n\n第7条（医療・健康）\n本アプリは医療機器ではなく、医療・心理・健康上の効果を保証しません。\n\n第8条（保証の否認・責任制限）\n本サービスは現状有姿で提供されます。故意・重過失および強行法規の範囲を除き、法令で認められる範囲で責任を限定します。\n\n第9条（変更・準拠法）\n運営者はサービスや規約を変更することがあります。日本法に準拠し、強行法規に別段の定めがある場合を除き東京地方裁判所を第一審の専属的合意管轄とします。\n\n第10条（お問い合わせ）\nアプリ内お問い合わせまたはsupport@tmkch.ioへご連絡ください。最新版は https://yohaku.tmkch.io/terms に掲載します。"
           }
         }
       }

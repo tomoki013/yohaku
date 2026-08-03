@@ -18,8 +18,7 @@ enum AppInfo {
     )
     static let supportEmail = "support@tmkch.io"
     static let supportEmailURL = URL(string: "mailto:support@tmkch.io?subject=Yohaku")!
-    static let developerWebsiteURL = URL(string: "https://tomokichi.dev")!
-    static let developerAppsURL = URL(string: "https://tmkch.io")!
+    static let developerAppsURL = URL(string: "https://tmkch.io/apps")!
     static let developerName = "Tomokichi"
 
     static let legalEnactedDate = DateComponents(
@@ -28,7 +27,12 @@ enum AppInfo {
         month: 7,
         day: 29
     ).date!
-    static let legalLastUpdatedDate = legalEnactedDate
+    static let legalLastUpdatedDate = DateComponents(
+        calendar: .init(identifier: .gregorian),
+        year: 2026,
+        month: 8,
+        day: 2
+    ).date!
 
     static var appStoreID: String? {
         guard let value = Bundle.main.object(forInfoDictionaryKey: "YohakuAppStoreID") as? String,
@@ -181,14 +185,6 @@ struct SettingsView: View {
                         rowDivider
 
                         Button {
-                            openURL(AppInfo.developerWebsiteURL)
-                        } label: {
-                            externalRow("settings.developer", value: AppInfo.developerName)
-                        }
-
-                        rowDivider
-
-                        Button {
                             openURL(AppInfo.developerAppsURL)
                         } label: {
                             externalRow("settings.other_apps", value: "tmkch.io")
@@ -293,7 +289,7 @@ struct SettingsView: View {
                         }
                         Text("purchase.button")
                         Spacer()
-                        if let displayPrice = purchaseStore.product?.displayPrice {
+                        if let displayPrice = purchaseStore.displayPrice {
                             Text(verbatim: displayPrice)
                         }
                     }
