@@ -51,6 +51,17 @@
                ReferencedContainer = "container:Yohaku.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EE6DABBC15B11311AE3812C8"
+               BuildableName = "YohakuUITests.xctest"
+               BlueprintName = "YohakuUITests"
+               ReferencedContainer = "container:Yohaku.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>

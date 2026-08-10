@@ -3,15 +3,18 @@ import SwiftData
 
 struct TodayView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
     @Query(sort: \YohakuBlock.startTime) private var blocks: [YohakuBlock]
     @Binding var displayedDay: Date
     var isSelected = true
+    var onReflectionPresented: () -> Void = {}
     @State private var isAdding = false
     @State private var isShowingSettings = false
     @State private var editing: YohakuBlock?
     @State private var releasing: YohakuBlock?
     @State private var slideDirection = 1
     @State private var contentHeight: CGFloat?
+    @State private var activeReflectionID: UUID?
 
     private var dayBlocks: [YohakuBlock] {
         blocks.filter { DateHelpers.isSameDay($0.date, displayedDay) }
@@ -21,12 +24,26 @@ struct TodayView: View {
         DateHelpers.isSameDay(displayedDay, Date())
     }
 
+    private var activeReflection: YohakuBlock? {
+        guard let activeReflectionID else { return nil }
+        return blocks.first { $0.id == activeReflectionID }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     pageHeader
                     daySelector
+
+                    if isToday, let activeReflection {
+                        ReflectionPromptCard(
+                            block: activeReflection,
+                            onRespond: { respond($0, to: activeReflection) },
+                            onDismiss: dismissReflection
+                        )
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                    }
 
                     // id を日付にして差し替え、横スライドの遷移で滑らかに切り替える
                     ZStack(alignment: .top) {
@@ -91,6 +108,15 @@ struct TodayView: View {
                 Button("action.close", role: .cancel) {
                     releasing = nil
                 }
+            }
+            .onAppear(perform: prepareReflectionIfNeeded)
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active {
+                    prepareReflectionIfNeeded()
+                }
+            }
+            .onChange(of: blocks.count) { _, _ in
+                prepareReflectionIfNeeded()
             }
         }
     }
@@ -164,6 +190,7 @@ struct TodayView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text("add.title"))
+        .accessibilityIdentifier("add-button")
     }
 
     private var daySelector: some View {
@@ -200,6 +227,39 @@ struct TodayView: View {
         slideDirection = value
         withAnimation(.easeOut(duration: 0.28)) {
             displayedDay = shifted
+        }
+    }
+
+    private func prepareReflectionIfNeeded() {
+        guard activeReflectionID == nil,
+              !(ProcessInfo.processInfo.arguments.contains("-ScreenshotMode")
+                && !ProcessInfo.processInfo.arguments.contains("-ReflectionPreview")) else { return }
+
+        let candidates = YohakuReflectionPolicy.unpresentedEndedBlocks(from: blocks, now: Date())
+        guard let latest = candidates.first else { return }
+
+        // Only the most recent ended space is shown. Older ones are quietly
+        // acknowledged so opening the app never becomes a backlog of prompts.
+        let presentedAt = Date()
+        candidates.forEach { $0.reflectionPresentedAt = presentedAt }
+        try? modelContext.save()
+
+        withAnimation(.easeOut(duration: 0.25)) {
+            activeReflectionID = latest.id
+        }
+        onReflectionPresented()
+    }
+
+    private func respond(_ response: YohakuReflectionResponse, to block: YohakuBlock) {
+        block.reflectionResponseRawValue = response.rawValue
+        block.reflectionRespondedAt = Date()
+        try? modelContext.save()
+        dismissReflection()
+    }
+
+    private func dismissReflection() {
+        withAnimation(.easeOut(duration: 0.2)) {
+            activeReflectionID = nil
         }
     }
 }

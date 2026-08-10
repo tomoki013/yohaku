@@ -5,7 +5,7 @@ import WebKit
 /// available when the website cannot be reached.
 struct LegalDocumentView: View {
     let titleKey: LocalizedStringKey
-    let bodyKey: LocalizedStringKey
+    let bodyKey: LocalizedStringKey?
     let url: URL
 
     @State private var availability: Availability = .checking
@@ -139,7 +139,7 @@ private struct LegalWebView: UIViewRepresentable {
 
 private struct OfflineLegalDocument: View {
     let titleKey: LocalizedStringKey
-    let bodyKey: LocalizedStringKey
+    let bodyKey: LocalizedStringKey?
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -160,7 +160,7 @@ private struct OfflineLegalDocument: View {
                     legalDate("legal.updated", AppInfo.legalLastUpdatedDate)
                 }
 
-                Text(bodyKey)
+                Text(bodyKey ?? "legal.online_required")
                     .font(.subheadline)
                     .foregroundStyle(.primary.opacity(0.85))
                     .lineSpacing(8)

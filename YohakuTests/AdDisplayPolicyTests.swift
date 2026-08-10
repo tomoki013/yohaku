@@ -10,7 +10,7 @@ final class AdDisplayPolicyTests: XCTestCase {
         XCTAssertFalse(shouldShow(entitlementCheckCompleted: false))
     }
 
-    func testDoesNotShowAfterCoffeePurchase() {
+    func testDoesNotShowAfterAdRemovalPurchase() {
         XCTAssertFalse(shouldShow(hasRemovedAds: true))
     }
 

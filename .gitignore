@@ -28,3 +28,7 @@ Package.resolved
 *.swp
 *.swo
 *~
+
+# Generated App Store screenshots (21MB, reproducible from
+# YohakuUITests/AppStoreScreenshotTests — see AppStore/Screenshots/README.md)
+/AppStore/Screenshots/generated/

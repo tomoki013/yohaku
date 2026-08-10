@@ -6,14 +6,19 @@ enum AppInfo {
     private static var configuredSiteURL: URL {
         let configuredValue = Bundle.main.object(forInfoDictionaryKey: "YohakuSiteBaseURL") as? String
         return URL(string: configuredValue ?? "") ??
-            URL(string: "https://tomokichi-yohaku.tomoki-ttttt.workers.dev/")!
+            URL(string: "https://yohaku.tmkch.io/")!
     }
 
     static let officialSiteURL = configuredSiteURL
-    static let privacyPolicyURL = configuredSiteURL.appending(path: "privacy", directoryHint: .isDirectory)
-    static let termsURL = configuredSiteURL.appending(path: "terms", directoryHint: .isDirectory)
-    static let developerWebsiteURL = URL(string: "https://tomokichi.dev")!
-    static let developerAppsURL = URL(string: "https://tmkch.io")!
+    static let privacyPolicyURL = configuredSiteURL.appending(path: "privacy", directoryHint: .notDirectory)
+    static let termsURL = configuredSiteURL.appending(path: "terms", directoryHint: .notDirectory)
+    static let commercialTransactionsURL = configuredSiteURL.appending(
+        path: "commercial-transactions",
+        directoryHint: .notDirectory
+    )
+    static let supportEmail = "support@tmkch.io"
+    static let supportEmailURL = URL(string: "mailto:support@tmkch.io?subject=Yohaku")!
+    static let developerAppsURL = URL(string: "https://tmkch.io/apps")!
     static let developerName = "Tomokichi"
 
     static let legalEnactedDate = DateComponents(
@@ -22,7 +27,12 @@ enum AppInfo {
         month: 7,
         day: 29
     ).date!
-    static let legalLastUpdatedDate = legalEnactedDate
+    static let legalLastUpdatedDate = DateComponents(
+        calendar: .init(identifier: .gregorian),
+        year: 2026,
+        month: 8,
+        day: 4
+    ).date!
 
     static var appStoreID: String? {
         guard let value = Bundle.main.object(forInfoDictionaryKey: "YohakuAppStoreID") as? String,
@@ -66,6 +76,18 @@ struct SettingsView: View {
                         appearanceRow
                         rowDivider
                         notificationRow
+                        rowDivider
+                        Button {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                openURL(url)
+                            }
+                        } label: {
+                            row(
+                                title: "settings.language",
+                                subtitle: "settings.language.subtitle",
+                                systemImage: "globe"
+                            )
+                        }
                         if !purchaseStore.hasRemovedAds && adConsentManager.privacyOptionsRequired {
                             rowDivider
                             Button {
@@ -140,6 +162,18 @@ struct SettingsView: View {
                         } label: {
                             compactRow("settings.terms")
                         }
+
+                        rowDivider
+
+                        NavigationLink {
+                            LegalDocumentView(
+                                titleKey: "settings.commercial_transactions",
+                                bodyKey: nil,
+                                url: AppInfo.commercialTransactionsURL
+                            )
+                        } label: {
+                            compactRow("settings.commercial_transactions")
+                        }
                     }
 
                     settingsSection("settings.about") {
@@ -155,9 +189,9 @@ struct SettingsView: View {
                         rowDivider
 
                         Button {
-                            openURL(AppInfo.developerWebsiteURL)
+                            openURL(AppInfo.supportEmailURL)
                         } label: {
-                            externalRow("settings.developer", value: AppInfo.developerName)
+                            externalRow("settings.support_email", value: AppInfo.supportEmail)
                         }
 
                         rowDivider
@@ -190,6 +224,7 @@ struct SettingsView: View {
                             .font(.subheadline.weight(.medium))
                     }
                     .accessibilityLabel(Text("action.close"))
+                    .accessibilityIdentifier("close-button")
                 }
             }
             .alert("notification.denied.title", isPresented: $isShowingDeniedAlert) {
@@ -267,7 +302,7 @@ struct SettingsView: View {
                         }
                         Text("purchase.button")
                         Spacer()
-                        if let displayPrice = purchaseStore.product?.displayPrice {
+                        if let displayPrice = purchaseStore.displayPrice {
                             Text(verbatim: displayPrice)
                         }
                     }

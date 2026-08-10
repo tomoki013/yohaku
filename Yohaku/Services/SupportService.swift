@@ -3,7 +3,7 @@ import Observation
 import UIKit
 
 enum SupportAPIConfiguration {
-    static let endpoint = URL(string: "https://tomokichi-api.tomoki-ttttt.workers.dev/api/support")!
+    static let endpoint = URL(string: "https://api.tmkch.io/api/support")!
 }
 
 enum SupportCategory: String, CaseIterable, Codable, Identifiable, Sendable {

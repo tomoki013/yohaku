@@ -50,9 +50,19 @@ open Yohaku.xcodeproj
 3. Deployment Target を iOS 17.0 以上に設定
 4. ビルドして実行
 
+## App Store提出
+
+提出用のメタデータ、プライバシー回答、審査メモ、最終チェックは
+[`AppStore/README.md`](AppStore/README.md) にまとめています。
+
+```sh
+./Scripts/validate-app-store-readiness.sh
+./Scripts/validate-app-store-readiness.sh --online # 公開URLも確認
+```
+
 ## 画面
 
-- **今日** — 一日の余白を見る・置く
+- **今日** — 一日の余白を見る・置く、終了後に任意でひとこと振り返る
 - **週** — 一週間の余白を一覧する
 - **月** — 月間カレンダーから余白のある日を見る
-- **設定** — 通知・外観・応援購入・お問い合わせ・法的情報
+- **設定** — 開始前通知・外観・応援購入・お問い合わせ・法的情報

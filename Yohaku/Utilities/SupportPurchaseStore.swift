@@ -5,13 +5,27 @@ import StoreKit
 @MainActor
 @Observable
 final class SupportPurchaseStore {
-    static let productID = "io.tmkch.yohaku.coffee"
+    static let productID = "io.tmkch.yohaku.removeads"
 
     private(set) var product: Product?
     private(set) var hasRemovedAds = false
     private(set) var entitlementCheckCompleted = false
     private(set) var isLoading = false
     private(set) var errorMessage: String?
+
+    var displayPrice: String? {
+        if let displayPrice = product?.displayPrice {
+            return displayPrice
+        }
+        #if DEBUG
+        // UI tests launch outside the app scheme's StoreKit session. Mirror
+        // the local Yohaku.storekit price only for generated review images.
+        if ProcessInfo.processInfo.arguments.contains("-ScreenshotMode") {
+            return "¥400"
+        }
+        #endif
+        return nil
+    }
 
     @ObservationIgnored
     private var updatesTask: Task<Void, Never>?

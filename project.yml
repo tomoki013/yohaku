@@ -13,14 +13,22 @@ targets:
     type: application
     platform: iOS
     sources:
-      - Yohaku
+      - path: Yohaku
+        excludes:
+          - Resources/Yohaku.storekit
     info:
       path: Yohaku/Info.plist
       properties:
         CFBundleDisplayName: Yohaku
-        UILaunchScreen: {}
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "3"
+        UILaunchScreen:
+          UIImageName: LaunchIcon
+          UIColorName: LaunchBackground
         GADApplicationIdentifier: $(ADMOB_APP_ID)
         AdMobBannerAdUnitID: $(ADMOB_BANNER_AD_UNIT_ID)
+        NSUserTrackingUsageDescription: Advertising permission helps fund Yohaku with more relevant ads. Your spaces are never used for tracking.
+        ITSAppUsesNonExemptEncryption: false
         YohakuSiteBaseURL: $(YOHAKU_SITE_BASE_URL)
         YohakuAppStoreID: $(YOHAKU_APP_STORE_ID)
         SKAdNetworkItems:
@@ -83,7 +91,7 @@ targets:
         LOCALIZATION_PREFERS_STRING_CATALOGS: YES
         DEVELOPMENT_TEAM: 7GU925RQ99
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.yohaku
-        YOHAKU_SITE_BASE_URL: https://tomokichi-yohaku.tomoki-ttttt.workers.dev/
+        YOHAKU_SITE_BASE_URL: https://yohaku.tmkch.io/
         YOHAKU_APP_STORE_ID: ""
       configs:
         Debug:
@@ -106,12 +114,23 @@ targets:
       storeKitConfiguration: Yohaku/Resources/Yohaku.storekit
       testTargets:
         - YohakuTests
+        - YohakuUITests
       gatherCoverageData: true
   YohakuTests:
     type: bundle.unit-test
     platform: iOS
     sources:
       - YohakuTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: Yohaku
+  YohakuUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - YohakuUITests
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES

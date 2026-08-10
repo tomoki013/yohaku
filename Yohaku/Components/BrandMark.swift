@@ -78,5 +78,6 @@ struct SettingsToolbarItem: ToolbarContent {
                 .foregroundStyle(.primary)
         }
         .accessibilityLabel(Text("settings.title"))
+        .accessibilityIdentifier("settings-button")
     }
 }
