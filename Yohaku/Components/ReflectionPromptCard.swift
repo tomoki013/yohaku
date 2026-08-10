@@ -62,7 +62,7 @@ struct ReflectionPromptCard: View {
                 .stroke(Color.primary.opacity(0.08), lineWidth: 1)
         }
         .offset(x: horizontalOffset)
-        .opacity(1 - min(abs(horizontalOffset) / 240, 0.7))
+        .opacity(Double(1 - min(abs(horizontalOffset) / CGFloat(240), CGFloat(0.7))))
         .gesture(
             DragGesture(minimumDistance: 18)
                 .onChanged { value in
