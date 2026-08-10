@@ -10,6 +10,9 @@ final class YohakuBlock {
     var endTime: Date
     var createdAt: Date
     var updatedAt: Date
+    var reflectionResponseRawValue: String?
+    var reflectionPresentedAt: Date?
+    var reflectionRespondedAt: Date?
 
     init(
         id: UUID = UUID(),
@@ -18,7 +21,10 @@ final class YohakuBlock {
         startTime: Date,
         endTime: Date,
         createdAt: Date = Date(),
-        updatedAt: Date = Date()
+        updatedAt: Date = Date(),
+        reflectionResponseRawValue: String? = nil,
+        reflectionPresentedAt: Date? = nil,
+        reflectionRespondedAt: Date? = nil
     ) {
         self.id = id
         self.title = title
@@ -27,5 +33,8 @@ final class YohakuBlock {
         self.endTime = endTime
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+        self.reflectionResponseRawValue = reflectionResponseRawValue
+        self.reflectionPresentedAt = reflectionPresentedAt
+        self.reflectionRespondedAt = reflectionRespondedAt
     }
 }

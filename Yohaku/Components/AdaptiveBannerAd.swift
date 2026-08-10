@@ -21,10 +21,10 @@ struct AdaptiveBannerAd: View {
             if isRunningInPreview || loadState == .failed || availableWidth <= 0 {
                 EmptyView()
             } else {
-                // The large adaptive format can consume a substantial part of
-                // a compact iPhone screen. Use the standard anchored adaptive
-                // height so the app content remains the primary surface.
-                let adSize = currentOrientationAnchoredAdaptiveBanner(width: availableWidth)
+                // Yohaku is iPhone-only. Keep the standard 320x50 format so an
+                // ad never grows into a 90-150pt large adaptive banner and the
+                // app content remains the primary surface.
+                let adSize = AdSizeBanner
                 AdaptiveBannerView(
                     unitID: unitID,
                     adSize: adSize,

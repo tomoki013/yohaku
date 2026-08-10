@@ -38,7 +38,13 @@ enum NotificationManager {
 
     static func schedule(for block: YohakuBlock) {
         cancel(id: block.id)
-        guard isEnabled, block.startTime > Date() else { return }
+        let now = Date()
+        guard isEnabled,
+              let notificationDate = notificationDate(
+                for: block.startTime,
+                now: now,
+                blockID: block.id
+              ) else { return }
 
         let content = UNMutableNotificationContent()
         content.title = block.title
@@ -47,7 +53,7 @@ enum NotificationManager {
 
         let components = Calendar.current.dateComponents(
             [.year, .month, .day, .hour, .minute],
-            from: block.startTime
+            from: notificationDate
         )
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(
@@ -56,6 +62,26 @@ enum NotificationManager {
             trigger: trigger
         )
         UNUserNotificationCenter.current().add(request)
+    }
+
+    /// Uses a stable, per-space lead time between three and seven minutes so
+    /// rescheduling the same space does not unexpectedly move its notification.
+    /// For a space created at short notice, use half of the remaining time while
+    /// keeping at least one minute.
+    static func notificationDate(for startTime: Date, now: Date, blockID: UUID) -> Date? {
+        let remaining = startTime.timeIntervalSince(now)
+        guard remaining > 60 else { return nil }
+        let leadTime = min(randomizedLeadTime(for: blockID), max(60, remaining / 2))
+        return startTime.addingTimeInterval(-leadTime)
+    }
+
+    static func randomizedLeadTime(for blockID: UUID) -> TimeInterval {
+        // Swift's Hashable seed changes between launches, so use a tiny stable
+        // hash of the UUID instead. Five buckets map to 3, 4, 5, 6, or 7 minutes.
+        let hash = blockID.uuidString.utf8.reduce(UInt64(14_695_981_039_346_656_037)) {
+            ($0 ^ UInt64($1)) &* 1_099_511_628_211
+        }
+        return TimeInterval(3 + (hash % 5)) * 60
     }
 
     static func cancel(id: UUID) {

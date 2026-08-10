@@ -18,11 +18,17 @@ struct AddYohakuView: View {
     private static let namePoolKeys = (1...10).map { "name.pool.\($0)" }
 
     init(editing block: YohakuBlock? = nil, presetDate: Date? = nil) {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let requestedDay = calendar.startOfDay(for: presetDate ?? Date())
+        let initialDate = block?.date ?? max(today, requestedDay)
+        let initialStart = block?.startTime ?? Self.nextQuarterHour(after: Date())
+
         editingBlock = block
         _title = State(initialValue: block?.title ?? "")
-        _date = State(initialValue: block?.date ?? presetDate ?? Date())
-        _startTime = State(initialValue: block?.startTime ?? Date())
-        _endTime = State(initialValue: block?.endTime ?? Date().addingTimeInterval(3600))
+        _date = State(initialValue: initialDate)
+        _startTime = State(initialValue: initialStart)
+        _endTime = State(initialValue: block?.endTime ?? initialStart.addingTimeInterval(3600))
         // 先頭は定番の「何もしない時間」で固定、残りはシャッフル
         _nameSuggestions = State(initialValue: block == nil
             ? ([Self.namePoolKeys[0]] + Self.namePoolKeys.dropFirst().shuffled())
@@ -32,7 +38,20 @@ struct AddYohakuView: View {
 
     private var canPlace: Bool {
         !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            && startTime < endTime
+            && selectedStartTime < selectedEndTime
+            && (editingBlock != nil || selectedStartTime > Date())
+    }
+
+    private var hasPastStartTime: Bool {
+        editingBlock == nil && selectedStartTime <= Date()
+    }
+
+    private var selectedStartTime: Date {
+        time(startTime, on: date)
+    }
+
+    private var selectedEndTime: Date {
+        time(endTime, on: date)
     }
 
     var body: some View {
@@ -53,8 +72,18 @@ struct AddYohakuView: View {
 
                 VStack(spacing: 0) {
                     fieldRow("field.date") {
-                        DatePicker("field.date", selection: $date, displayedComponents: .date)
+                        if editingBlock == nil {
+                            DatePicker(
+                                "field.date",
+                                selection: $date,
+                                in: Calendar.current.startOfDay(for: Date())...,
+                                displayedComponents: .date
+                            )
                             .labelsHidden()
+                        } else {
+                            DatePicker("field.date", selection: $date, displayedComponents: .date)
+                                .labelsHidden()
+                        }
                     }
                     hairline
                     fieldRow("field.start") {
@@ -66,6 +95,13 @@ struct AddYohakuView: View {
                         DatePicker("field.end", selection: $endTime, displayedComponents: .hourAndMinute)
                             .labelsHidden()
                     }
+                }
+
+                if hasPastStartTime {
+                    Text("validation.future_time")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .padding(.top, 10)
                 }
 
                 Spacer(minLength: 24)
@@ -112,6 +148,7 @@ struct AddYohakuView: View {
                             .font(.subheadline.weight(.medium))
                     }
                     .accessibilityLabel(Text("action.close"))
+                    .accessibilityIdentifier("close-button")
                 }
             }
         }
@@ -140,7 +177,7 @@ struct AddYohakuView: View {
     private var suggestionChips: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(nameSuggestions, id: \.self) { name in
+                ForEach(Array(nameSuggestions.enumerated()), id: \.element) { index, name in
                     Button {
                         title = name
                     } label: {
@@ -156,6 +193,7 @@ struct AddYohakuView: View {
                             .contentShape(Capsule())
                     }
                     .buttonStyle(.plain)
+                    .accessibilityIdentifier("suggestion-\(index)")
                 }
             }
             .padding(.vertical, 12)
@@ -183,41 +221,55 @@ struct AddYohakuView: View {
     private func place() {
         let calendar = Calendar.current
         let day = calendar.startOfDay(for: date)
-
-        func onSelectedDay(_ time: Date) -> Date {
-            let components = calendar.dateComponents([.hour, .minute], from: time)
-            return calendar.date(
-                bySettingHour: components.hour ?? 0,
-                minute: components.minute ?? 0,
-                second: 0,
-                of: day
-            ) ?? day
-        }
+        let placedStartTime = time(startTime, on: day)
+        let placedEndTime = time(endTime, on: day)
 
         let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
 
         if let block = editingBlock {
             block.title = trimmedTitle
             block.date = day
-            block.startTime = onSelectedDay(startTime)
-            block.endTime = onSelectedDay(endTime)
+            block.startTime = placedStartTime
+            block.endTime = placedEndTime
             block.updatedAt = Date()
             NotificationManager.schedule(for: block)
         } else {
             let block = YohakuBlock(
                 title: trimmedTitle,
                 date: day,
-                startTime: onSelectedDay(startTime),
-                endTime: onSelectedDay(endTime)
+                startTime: placedStartTime,
+                endTime: placedEndTime
             )
             modelContext.insert(block)
+            try? modelContext.save()
             NotificationManager.requestInitialAuthorizationIfNeeded { granted in
                 if granted {
                     NotificationManager.schedule(for: block)
                 }
             }
+            NotificationCenter.default.post(name: .yohakuBlockPlaced, object: nil)
         }
         dismiss()
+    }
+
+    private func time(_ time: Date, on day: Date) -> Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: time)
+        return calendar.date(
+            bySettingHour: components.hour ?? 0,
+            minute: components.minute ?? 0,
+            second: 0,
+            of: calendar.startOfDay(for: day)
+        ) ?? calendar.startOfDay(for: day)
+    }
+
+    private static func nextQuarterHour(after date: Date) -> Date {
+        let calendar = Calendar.current
+        let startOfMinute = calendar.dateInterval(of: .minute, for: date)?.start ?? date
+        let minute = calendar.component(.minute, from: startOfMinute)
+        let minutesToAdd = 15 - (minute % 15)
+        return calendar.date(byAdding: .minute, value: minutesToAdd, to: startOfMinute)
+            ?? date.addingTimeInterval(15 * 60)
     }
 }
 

@@ -15,23 +15,23 @@
   ],
   "products" : [
     {
-      "displayPrice" : "300",
+      "displayPrice" : "400",
       "familyShareable" : false,
       "internalID" : "0F6309E1",
       "localizations" : [
         {
-          "description" : "最初の一杯でYohakuの広告を永久に削除し、開発を応援します。",
-          "displayName" : "開発者にコーヒーを一杯",
+          "description" : "一度の購入で広告を永久に削除し、Yohakuの開発を応援できます。",
+          "displayName" : "広告を永久に削除",
           "locale" : "ja_JP"
         },
         {
-          "description" : "Your first coffee permanently removes ads and supports Yohaku.",
-          "displayName" : "Buy the developer a coffee",
+          "description" : "Permanently remove ads with a one-time purchase and support Yohaku.",
+          "displayName" : "Remove ads permanently",
           "locale" : "en_US"
         }
       ],
-      "productID" : "io.tmkch.yohaku.coffee",
-      "referenceName" : "Coffee (remove ads)",
+      "productID" : "io.tmkch.yohaku.removeads",
+      "referenceName" : "Remove ads permanently",
       "type" : "NonConsumable"
     }
   ],

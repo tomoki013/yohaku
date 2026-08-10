@@ -31,7 +31,7 @@ enum AppInfo {
         calendar: .init(identifier: .gregorian),
         year: 2026,
         month: 8,
-        day: 2
+        day: 4
     ).date!
 
     static var appStoreID: String? {
@@ -76,6 +76,18 @@ struct SettingsView: View {
                         appearanceRow
                         rowDivider
                         notificationRow
+                        rowDivider
+                        Button {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                openURL(url)
+                            }
+                        } label: {
+                            row(
+                                title: "settings.language",
+                                subtitle: "settings.language.subtitle",
+                                systemImage: "globe"
+                            )
+                        }
                         if !purchaseStore.hasRemovedAds && adConsentManager.privacyOptionsRequired {
                             rowDivider
                             Button {
@@ -212,6 +224,7 @@ struct SettingsView: View {
                             .font(.subheadline.weight(.medium))
                     }
                     .accessibilityLabel(Text("action.close"))
+                    .accessibilityIdentifier("close-button")
                 }
             }
             .alert("notification.denied.title", isPresented: $isShowingDeniedAlert) {

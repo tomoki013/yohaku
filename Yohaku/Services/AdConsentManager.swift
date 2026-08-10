@@ -1,4 +1,5 @@
 import Foundation
+import AppTrackingTransparency
 import GoogleMobileAds
 import Observation
 import UIKit
@@ -33,6 +34,13 @@ final class AdConsentManager {
         guard entitlementCheckCompleted, !hasRemovedAds, !hasStarted else { return }
         hasStarted = true
 
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-ScreenshotMode") {
+            consentCheckCompleted = true
+            return
+        }
+        #endif
+
         let parameters = RequestParameters()
         do {
             try await ConsentInformation.shared.requestConsentInfoUpdate(with: parameters)
@@ -46,6 +54,13 @@ final class AdConsentManager {
             canRequestAds = false
             privacyOptionsRequired = false
             return
+        }
+
+        // UMP presents the configured IDFA explainer before ATT. If no UMP
+        // message applies in this region, still make the system ATT choice
+        // explicit before the ads SDK can access the advertising identifier.
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            _ = await ATTrackingManager.requestTrackingAuthorization()
         }
 
         consentCheckCompleted = true
