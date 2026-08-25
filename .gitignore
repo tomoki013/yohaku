@@ -32,3 +32,9 @@ Package.resolved
 # Generated App Store screenshots (21MB, reproducible from
 # YohakuUITests/AppStoreScreenshotTests — see AppStore/Screenshots/README.md)
 /AppStore/Screenshots/generated/
+
+# Rendered localized marketing screenshots (~429MB). Keep the reproducible
+# translation cache and shared background asset under version control.
+/AppStore/Screenshots/marketing/*/*.png
+!/AppStore/Screenshots/marketing/assets/
+!/AppStore/Screenshots/marketing/assets/ivory-paper-background.png

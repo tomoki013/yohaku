@@ -36,3 +36,20 @@ xcrun xcresulttool export attachments \
 The run shows no test ads and no ATT/UMP prompt — only demo data — so these are
 submittable as-is. The brand site imports a bilingual subset of the same files
 via `scripts/import-app-screenshots.mjs` in the app-studio monorepo.
+
+## Localized marketing compositions
+
+`Scripts/generate-marketing-screenshots.py` combines the real localized app
+captures above with the shared ivory-paper background and localized marketing
+copy. It writes ten 1320x2868 RGB screenshots for each of the 18 shipped
+languages under `AppStore/Screenshots/marketing/<language>/`.
+
+```sh
+python3 Scripts/generate-marketing-screenshots.py
+```
+
+Translations are cached in `AppStore/Screenshots/marketing/translations.json`
+so subsequent runs are deterministic. Use `--refresh-translations` only when
+the English source copy changes. The renderer requires Google Chrome and uses
+`Scripts/render-marketing-pages.mjs` to capture every page in one browser
+session.

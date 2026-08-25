@@ -1,0 +1,938 @@
+{
+  "en": [
+    {
+      "label": "Today",
+      "headline": "Plan less. Make space.",
+      "body": "Name a quiet moment and time. Look back gently across today, week, and month."
+    },
+    {
+      "label": "Today",
+      "headline": "A name and time become space.",
+      "body": "Give ‘doing nothing’ a name. Keep a small quiet moment in your day."
+    },
+    {
+      "label": "Week",
+      "headline": "See your week at a glance.",
+      "body": "Days with space line up quietly. Look back without cramming in more."
+    },
+    {
+      "label": "Month",
+      "headline": "Your month keeps its rhythm.",
+      "body": "Days with space remain as quiet marks. See your pace, not perfection."
+    },
+    {
+      "label": "Reflection",
+      "headline": "A gentle reflection, only once.",
+      "body": "A quiet check-in appears before space begins and once after it ends."
+    },
+    {
+      "label": "Create",
+      "headline": "Place a little space, right away.",
+      "body": "Choose a name, date, and time. Add nothing else to your schedule."
+    },
+    {
+      "label": "No pressure",
+      "headline": "No streaks. No pressure.",
+      "body": "There are no goals or completion rates. Return whenever it feels right."
+    },
+    {
+      "label": "Privacy",
+      "headline": "No account required.",
+      "body": "Your spaces stay on this device. Privacy comes first."
+    },
+    {
+      "label": "Pricing",
+      "headline": "Core features stay free.",
+      "body": "Today, Week, Month, notifications, and reflections are free. Removing ads is a one-time purchase."
+    },
+    {
+      "label": "Examples",
+      "headline": "Give ‘doing nothing’ a name.",
+      "body": "Do nothing. Have tea slowly. Take a short walk. Your space can be your own."
+    }
+  ],
+  "ja": [
+    {
+      "label": "今日",
+      "headline": "予定を増やさない。余白をつくる。",
+      "body": "何もしない時間に名前と時間をつけるだけ。Yohakuは、今日・週・月で静かに振り返る小さなアプリです。"
+    },
+    {
+      "label": "今日",
+      "headline": "名前と時間だけで、余白になる。",
+      "body": "「何もしない時間」に、名前と時間をつけるだけ。その日の余白をやさしく残せます。"
+    },
+    {
+      "label": "週",
+      "headline": "一週間を、ひと目で。",
+      "body": "余白を置いた日が静かに並びます。詰め込まずに過ごせた一週間を、あとから見渡せます。"
+    },
+    {
+      "label": "月",
+      "headline": "月のリズムが、残っていく。",
+      "body": "余白をつくれた日が静かな印として残ります。完璧さではなく、自分らしいペースを見返せます。"
+    },
+    {
+      "label": "振り返り",
+      "headline": "通知はやさしく、一度だけ。",
+      "body": "余白が始まる前にそっと知らせて、終わったあとに一度だけ振り返ります。"
+    },
+    {
+      "label": "作成",
+      "headline": "余白は、すぐ置ける。",
+      "body": "名前・日付・時間を決めるだけ。やることを増やさず、何もしない予定を静かに置けます。"
+    },
+    {
+      "label": "プレッシャーなし",
+      "headline": "続けなくていい。それでも、残る。",
+      "body": "連続記録も、達成率もありません。空いた日に戻ってきて、そのままのペースで使えます。"
+    },
+    {
+      "label": "プライバシー",
+      "headline": "アカウント不要。余白は手元に。",
+      "body": "登録なしですぐ使えます。記録はこの端末に保存され、プライバシーを大切にします。"
+    },
+    {
+      "label": "料金",
+      "headline": "大事な機能は、ずっと無料。",
+      "body": "Today・Week・Month、通知、振り返りは無料。広告削除だけ、一度きりの買い切りです。"
+    },
+    {
+      "label": "例",
+      "headline": "『何もしない』にも、名前をつける。",
+      "body": "「ぼーっとする」「お茶をゆっくり」「散歩する」。小さな余白が、一日に残ります。"
+    }
+  ],
+  "ar": [
+    {
+      "label": "اليوم",
+      "headline": "خطط أقل. إفساح المجال.",
+      "body": "قم بتسمية لحظة ووقت هادئ. انظر إلى الوراء بلطف عبر اليوم والأسبوع والشهر."
+    },
+    {
+      "label": "اليوم",
+      "headline": "الاسم والزمان يصبحان مكانًا.",
+      "body": "قم بتسمية \"عدم القيام بأي شيء\". احتفظ بلحظة هادئة صغيرة في يومك."
+    },
+    {
+      "label": "الأسبوع",
+      "headline": "انظر أسبوعك في لمحة.",
+      "body": "الأيام مع الفضاء تصطف بهدوء. انظر إلى الوراء دون حشر المزيد."
+    },
+    {
+      "label": "شهر",
+      "headline": "شهرك يحافظ على إيقاعه.",
+      "body": "تبقى الأيام ذات المساحة بمثابة علامات هادئة. انظر إلى سرعتك، وليس الكمال."
+    },
+    {
+      "label": "انعكاس",
+      "headline": "انعكاس لطيف، مرة واحدة فقط.",
+      "body": "يظهر تسجيل الوصول الهادئ قبل بدء المساحة ومرة واحدة بعد انتهائها."
+    },
+    {
+      "label": "إنشاء",
+      "headline": "ضع مساحة صغيرة على الفور.",
+      "body": "اختر الاسم والتاريخ والوقت. أضف أي شيء آخر إلى جدولك الزمني."
+    },
+    {
+      "label": "لا يوجد ضغط",
+      "headline": "لا الشرائط. لا يوجد ضغط.",
+      "body": "لا توجد أهداف أو معدلات الإنجاز. العودة عندما تشعر أنه على حق."
+    },
+    {
+      "label": "الخصوصية",
+      "headline": "لا يوجد حساب مطلوب.",
+      "body": "تبقى مساحاتك على هذا الجهاز. الخصوصية تأتي أولاً."
+    },
+    {
+      "label": "التسعير",
+      "headline": "تظل الميزات الأساسية مجانية.",
+      "body": "اليوم والأسبوع والشهر والإخطارات والتأملات مجانية. إزالة الإعلانات هي عملية شراء لمرة واحدة."
+    },
+    {
+      "label": "أمثلة",
+      "headline": "قم بتسمية \"عدم القيام بأي شيء\".",
+      "body": "لا تفعل شيئا. تناول الشاي ببطء. قم بنزهة قصيرة. المساحة الخاصة بك يمكن أن تكون خاصة بك."
+    }
+  ],
+  "de": [
+    {
+      "label": "Heute",
+      "headline": "Planen Sie weniger. Platz schaffen.",
+      "body": "Nennen Sie einen ruhigen Moment und eine ruhige Zeit. Schauen Sie sanft auf den heutigen Tag, die Woche und den Monat zurück."
+    },
+    {
+      "label": "Heute",
+      "headline": "Ein Name und eine Zeit werden zum Raum.",
+      "body": "Geben Sie „Nichtstun“ einen Namen. Gönnen Sie sich einen kleinen ruhigen Moment in Ihrem Tag."
+    },
+    {
+      "label": "Woche",
+      "headline": "Sehen Sie Ihre Woche auf einen Blick.",
+      "body": "Tage mit Platz reihen sich ruhig aneinander. Schauen Sie zurück, ohne sich noch mehr hineinzudrängen."
+    },
+    {
+      "label": "Monat",
+      "headline": "Dein Monat behält seinen Rhythmus.",
+      "body": "Tage mit Platz bleiben als ruhige Markierungen. Achten Sie auf Ihr Tempo, nicht auf Perfektion."
+    },
+    {
+      "label": "Reflexion",
+      "headline": "Eine sanfte Reflexion, nur einmal.",
+      "body": "Ein stiller Check-in erscheint vor Beginn des Spaces und einmal nach dessen Ende."
+    },
+    {
+      "label": "Erstellen",
+      "headline": "Platzieren Sie sofort ein wenig Platz.",
+      "body": "Wählen Sie einen Namen, ein Datum und eine Uhrzeit. Fügen Sie Ihrem Zeitplan nichts anderes hinzu."
+    },
+    {
+      "label": "Kein Druck",
+      "headline": "Keine Streifen. Kein Druck.",
+      "body": "Es gibt keine Ziele oder Abschlussquoten. Kehren Sie zurück, wann immer es sich richtig anfühlt."
+    },
+    {
+      "label": "Privatsphäre",
+      "headline": "Kein Konto erforderlich.",
+      "body": "Ihre Leerzeichen bleiben auf diesem Gerät. Privatsphäre steht an erster Stelle."
+    },
+    {
+      "label": "Preise",
+      "headline": "Kernfunktionen bleiben kostenlos.",
+      "body": "Heute, Woche, Monat, Benachrichtigungen und Reflexionen sind kostenlos. Das Entfernen von Anzeigen ist ein einmaliger Kauf."
+    },
+    {
+      "label": "Beispiele",
+      "headline": "Geben Sie „Nichtstun“ einen Namen.",
+      "body": "Nichts tun. Trinken Sie langsam Tee. Machen Sie einen kurzen Spaziergang. Ihr Raum kann Ihr eigener sein."
+    }
+  ],
+  "es": [
+    {
+      "label": "hoy",
+      "headline": "Planifica menos. Haz espacio.",
+      "body": "Nombra un momento y una hora de tranquilidad. Mire retrospectivamente el día de hoy, la semana y el mes."
+    },
+    {
+      "label": "hoy",
+      "headline": "Un nombre y un tiempo se convierten en espacio.",
+      "body": "Dale un nombre a “no hacer nada”. Mantenga un pequeño momento de tranquilidad en su día."
+    },
+    {
+      "label": "Semana",
+      "headline": "Vea su semana de un vistazo.",
+      "body": "Los días con espacio se alinean tranquilamente. Mira hacia atrás sin abarrotarte más."
+    },
+    {
+      "label": "Mes",
+      "headline": "Tu mes mantiene su ritmo.",
+      "body": "Los días con espacio siguen siendo marcas tranquilas. Vea su ritmo, no la perfección."
+    },
+    {
+      "label": "Reflexión",
+      "headline": "Una suave reflexión, sólo una vez.",
+      "body": "Un registro silencioso aparece antes de que comience el espacio y una vez finalizado."
+    },
+    {
+      "label": "crear",
+      "headline": "Coloca un poco de espacio, de inmediato.",
+      "body": "Elija un nombre, fecha y hora. No agregue nada más a su agenda."
+    },
+    {
+      "label": "Sin presión",
+      "headline": "Sin rayas. Sin presión.",
+      "body": "No hay metas ni tasas de finalización. Regrese cuando lo sienta bien."
+    },
+    {
+      "label": "Privacidad",
+      "headline": "No se requiere cuenta.",
+      "body": "Tus espacios permanecen en este dispositivo. La privacidad es lo primero."
+    },
+    {
+      "label": "Precios",
+      "headline": "Las funciones principales siguen siendo gratuitas.",
+      "body": "Hoy, Semana, Mes, notificaciones y reflexiones son gratis. La eliminación de anuncios es una compra única."
+    },
+    {
+      "label": "Ejemplos",
+      "headline": "Dale un nombre a “no hacer nada”.",
+      "body": "No hagas nada. Toma el té lentamente. Da un corto paseo. Tu espacio puede ser tuyo."
+    }
+  ],
+  "fr": [
+    {
+      "label": "Aujourd'hui",
+      "headline": "Planifiez moins. Faites de la place.",
+      "body": "Nommez un moment et une heure calmes. Revenez doucement sur la journée, la semaine et le mois."
+    },
+    {
+      "label": "Aujourd'hui",
+      "headline": "Un nom et un temps deviennent espace.",
+      "body": "Donnez un nom à « ne rien faire ». Gardez un petit moment de calme dans votre journée."
+    },
+    {
+      "label": "Semaine",
+      "headline": "Visualisez votre semaine en un coup d'œil.",
+      "body": "Les journées avec de l'espace s'alignent tranquillement. Regardez en arrière sans vous embêter davantage."
+    },
+    {
+      "label": "Mois",
+      "headline": "Votre mois garde son rythme.",
+      "body": "Les jours avec espace restent comme des marques tranquilles. Voyez votre rythme, pas la perfection."
+    },
+    {
+      "label": "Réflexion",
+      "headline": "Une douce réflexion, une seule fois.",
+      "body": "Un enregistrement silencieux apparaît avant le début de l'espace et une fois après sa fin."
+    },
+    {
+      "label": "Créer",
+      "headline": "Faites un peu d'espace, tout de suite.",
+      "body": "Choisissez un nom, une date et une heure. N'ajoutez rien d'autre à votre emploi du temps."
+    },
+    {
+      "label": "Aucune pression",
+      "headline": "Aucune trace. Aucune pression.",
+      "body": "Il n'y a pas d'objectifs ni de taux d'achèvement. Revenez quand cela vous convient."
+    },
+    {
+      "label": "Confidentialité",
+      "headline": "Aucun compte requis.",
+      "body": "Vos espaces restent sur cet appareil. La confidentialité passe avant tout."
+    },
+    {
+      "label": "Tarifs",
+      "headline": "Les fonctionnalités de base restent gratuites.",
+      "body": "Aujourd'hui, semaine, mois, les notifications et les réflexions sont gratuites. La suppression des publicités est un achat unique."
+    },
+    {
+      "label": "Exemples",
+      "headline": "Donnez un nom à « ne rien faire ».",
+      "body": "Ne faites rien. Prenez le thé lentement. Faites une petite promenade. Votre espace peut être le vôtre."
+    }
+  ],
+  "hi": [
+    {
+      "label": "आज",
+      "headline": "कम योजना बनाएं. जगह बनाना।",
+      "body": "किसी शांत क्षण और समय का नाम बताइए। आज, सप्ताह और महीने पर धीरे से पीछे मुड़कर देखें।"
+    },
+    {
+      "label": "आज",
+      "headline": "एक नाम और समय स्थान बन जाते हैं।",
+      "body": "'कुछ न करने' को एक नाम दें। अपने दिन में एक छोटा सा शांत क्षण रखें।"
+    },
+    {
+      "label": "सप्ताह",
+      "headline": "एक नज़र में अपना सप्ताह देखें.",
+      "body": "अंतरिक्ष के साथ दिन चुपचाप पंक्तिबद्ध होते हैं। अधिक बातें रटे बिना पीछे मुड़कर देखें।"
+    },
+    {
+      "label": "महीना",
+      "headline": "आपका महीना अपनी लय बनाए रखता है.",
+      "body": "अंतरिक्ष वाले दिन शांत निशान बनकर रह जाते हैं। अपनी गति देखें, पूर्णता नहीं।"
+    },
+    {
+      "label": "प्रतिबिम्ब",
+      "headline": "एक सौम्य चिंतन, केवल एक बार।",
+      "body": "स्पेस शुरू होने से पहले और ख़त्म होने के बाद एक बार शांत चेक-इन होता है।"
+    },
+    {
+      "label": "बनाएँ",
+      "headline": "तुरंत थोड़ी जगह रखें.",
+      "body": "एक नाम, दिनांक और समय चुनें. अपने शेड्यूल में और कुछ न जोड़ें."
+    },
+    {
+      "label": "कोई दबाव नहीं",
+      "headline": "कोई धारियाँ नहीं. कोई दबाव नहीं।",
+      "body": "कोई लक्ष्य या पूर्णता दर नहीं हैं। जब भी ठीक लगे वापस आ जाना."
+    },
+    {
+      "label": "गोपनीयता",
+      "headline": "किसी खाते की आवश्यकता नहीं.",
+      "body": "आपके स्थान इस उपकरण पर रहते हैं. गोपनीयता सबसे पहले आती है."
+    },
+    {
+      "label": "मूल्य निर्धारण",
+      "headline": "मुख्य सुविधाएँ निःशुल्क रहती हैं।",
+      "body": "आज, सप्ताह, महीना, सूचनाएं और विचार निःशुल्क हैं। विज्ञापन हटाना एक बार की खरीदारी है।"
+    },
+    {
+      "label": "उदाहरण",
+      "headline": "'कुछ न करने' को एक नाम दें।",
+      "body": "कुछ भी नहीं है। धीरे धीरे चाय पिओ. थोड़ी देर टहलें. आपकी जगह आपकी अपनी हो सकती है."
+    }
+  ],
+  "id": [
+    {
+      "label": "Hari ini",
+      "headline": "Rencanakan lebih sedikit. Beri ruang.",
+      "body": "Sebutkan momen dan waktu tenang. Lihatlah ke belakang secara perlahan pada hari ini, minggu, dan bulan."
+    },
+    {
+      "label": "Hari ini",
+      "headline": "Sebuah nama dan waktu menjadi ruang.",
+      "body": "Beri nama 'tidak melakukan apa-apa'. Ciptakan momen tenang kecil dalam hari Anda."
+    },
+    {
+      "label": "Minggu",
+      "headline": "Lihat sekilas minggu Anda.",
+      "body": "Hari-hari dengan ruang berbaris dengan tenang. Lihat ke belakang tanpa menjejalkan lebih banyak lagi."
+    },
+    {
+      "label": "Bulan",
+      "headline": "Bulan Anda menjaga ritmenya.",
+      "body": "Hari-hari dengan ruang tetap menjadi tanda sepi. Lihat kecepatan Anda, bukan kesempurnaan."
+    },
+    {
+      "label": "Refleksi",
+      "headline": "Refleksi yang lembut, hanya sekali.",
+      "body": "Check-in yang tenang muncul sebelum ruang dimulai dan satu kali setelah ruang berakhir."
+    },
+    {
+      "label": "Buat",
+      "headline": "Tempatkan sedikit ruang, segera.",
+      "body": "Pilih nama, tanggal, dan waktu. Jangan tambahkan hal lain ke jadwal Anda."
+    },
+    {
+      "label": "Tidak ada tekanan",
+      "headline": "Tidak ada coretan. Tidak ada tekanan.",
+      "body": "Tidak ada sasaran atau tingkat penyelesaian. Kembalilah kapan pun dirasa tepat."
+    },
+    {
+      "label": "Privasi",
+      "headline": "Tidak diperlukan akun.",
+      "body": "Space Anda tetap ada di perangkat ini. Privasi adalah yang utama."
+    },
+    {
+      "label": "Harga",
+      "headline": "Fitur inti tetap gratis.",
+      "body": "Hari ini, Minggu, Bulan, notifikasi, dan refleksi gratis. Menghapus iklan adalah pembelian satu kali."
+    },
+    {
+      "label": "Contoh",
+      "headline": "Beri nama 'tidak melakukan apa-apa'.",
+      "body": "Jangan lakukan apa pun. Minum teh perlahan. Berjalan-jalan sebentar. Ruang Anda bisa menjadi milik Anda sendiri."
+    }
+  ],
+  "it": [
+    {
+      "label": "Oggi",
+      "headline": "Pianifica meno. Fai spazio.",
+      "body": "Nomina un momento e un momento tranquillo. Guarda indietro con delicatezza oggi, settimana e mese."
+    },
+    {
+      "label": "Oggi",
+      "headline": "Un nome e un tempo diventano spazio.",
+      "body": "Dai un nome a \"non fare nulla\". Conserva un piccolo momento tranquillo nella tua giornata."
+    },
+    {
+      "label": "Settimana",
+      "headline": "Visualizza la tua settimana in un colpo d'occhio.",
+      "body": "I giorni con lo spazio si susseguono tranquillamente. Guarda indietro senza aggiungere altro."
+    },
+    {
+      "label": "Mese",
+      "headline": "Il tuo mese mantiene il suo ritmo.",
+      "body": "I giorni con spazio rimangono segni tranquilli. Guarda il tuo ritmo, non la perfezione."
+    },
+    {
+      "label": "Riflessione",
+      "headline": "Una riflessione gentile, solo una volta.",
+      "body": "Un check-in silenzioso viene visualizzato prima dell'inizio dello spazio e una volta dopo la sua fine."
+    },
+    {
+      "label": "Crea",
+      "headline": "Metti subito un po' di spazio.",
+      "body": "Scegli un nome, una data e un'ora. Non aggiungere nient'altro al tuo programma."
+    },
+    {
+      "label": "Nessuna pressione",
+      "headline": "Nessuna striscia. Nessuna pressione.",
+      "body": "Non ci sono obiettivi o tassi di completamento. Ritorna ogni volta che ti sembra giusto."
+    },
+    {
+      "label": "Privacy",
+      "headline": "Nessun account richiesto.",
+      "body": "I tuoi spazi rimangono su questo dispositivo. La privacy viene prima di tutto."
+    },
+    {
+      "label": "Prezzi",
+      "headline": "Le funzionalità principali rimangono gratuite.",
+      "body": "Oggi, settimana, mese, notifiche e riflessioni sono gratuite. La rimozione degli annunci è un acquisto una tantum."
+    },
+    {
+      "label": "Esempi",
+      "headline": "Dai un nome a \"non fare nulla\".",
+      "body": "Non fare nulla. Prendi il tè lentamente. Fai una breve passeggiata. Il tuo spazio può essere tuo."
+    }
+  ],
+  "ko": [
+    {
+      "label": "오늘",
+      "headline": "적은 비용으로 계획하세요. 공간을 만드세요.",
+      "body": "조용한 순간과 시간을 말해보세요. 오늘, 한 주, 한 달을 천천히 돌아보세요."
+    },
+    {
+      "label": "오늘",
+      "headline": "이름과 시간이 공간이 된다.",
+      "body": "'아무것도 하지 않음'에 이름을 지어주세요. 하루 중 작은 조용한 순간을 유지하세요."
+    },
+    {
+      "label": "주",
+      "headline": "한 주를 한눈에 확인하세요.",
+      "body": "공간이 있는 날들이 조용히 늘어선다. 더 이상 벼락치기하지 말고 돌아보세요."
+    },
+    {
+      "label": "월",
+      "headline": "당신의 달은 리듬을 유지합니다.",
+      "body": "공간이 있는 날들은 조용한 흔적으로 남는다. 완벽함이 아니라 속도를 보십시오."
+    },
+    {
+      "label": "반사",
+      "headline": "단 한 번만이라도 부드러운 반성을 해보세요.",
+      "body": "조용한 체크인은 공간이 시작되기 전과 끝난 후에 한 번 나타납니다."
+    },
+    {
+      "label": "만들기",
+      "headline": "바로 작은 공간을 확보하세요.",
+      "body": "이름, 날짜, 시간을 선택하세요. 일정에 다른 것을 추가하지 마세요."
+    },
+    {
+      "label": "압력 없음",
+      "headline": "줄무늬가 없습니다. 압력이 없습니다.",
+      "body": "목표나 완료율은 없습니다. 기분이 좋을 때마다 돌아 오십시오."
+    },
+    {
+      "label": "개인 정보 보호",
+      "headline": "계정이 필요하지 않습니다.",
+      "body": "공간은 이 기기에 유지됩니다. 개인정보 보호가 최우선입니다."
+    },
+    {
+      "label": "가격",
+      "headline": "핵심 기능은 무료로 유지됩니다.",
+      "body": "오늘, 주, 월, 알림, 반성 모두 무료입니다. 광고 제거는 일회성 구매입니다."
+    },
+    {
+      "label": "예",
+      "headline": "'아무것도 하지 않음'에 이름을 지어주세요.",
+      "body": "아무것도 하지 마세요. 천천히 차를 마셔보세요. 짧은 산책을 해보세요. 당신의 공간은 당신만의 공간이 될 수 있습니다."
+    }
+  ],
+  "nl": [
+    {
+      "label": "Vandaag",
+      "headline": "Plan minder. Maak ruimte.",
+      "body": "Noem een rustig moment en tijd. Kijk rustig terug naar vandaag, week en maand."
+    },
+    {
+      "label": "Vandaag",
+      "headline": "Een naam en tijd worden ruimte.",
+      "body": "Geef ‘niets doen’ een naam. Houd een klein rustig moment in je dag."
+    },
+    {
+      "label": "Week",
+      "headline": "Bekijk uw week in één oogopslag.",
+      "body": "Dagen met ruimte staan rustig op een rij. Kijk terug zonder er meer in te proppen."
+    },
+    {
+      "label": "Maand",
+      "headline": "Jouw maand behoudt zijn ritme.",
+      "body": "Dagen met ruimte blijven stille plekken. Let op uw tempo, niet op perfectie."
+    },
+    {
+      "label": "Reflectie",
+      "headline": "Een zachte reflectie, slechts één keer.",
+      "body": "Er vindt een rustige check-in plaats voordat de ruimte begint en één keer nadat deze is geëindigd."
+    },
+    {
+      "label": "Creëer",
+      "headline": "Plaats meteen wat ruimte.",
+      "body": "Kies een naam, datum en tijd. Voeg niets anders toe aan uw schema."
+    },
+    {
+      "label": "Geen druk",
+      "headline": "Geen strepen. Geen druk.",
+      "body": "Er zijn geen doelen of voltooiingspercentages. Keer terug wanneer het goed voelt."
+    },
+    {
+      "label": "Privacy",
+      "headline": "Geen account vereist.",
+      "body": "Uw ruimtes blijven op dit apparaat staan. Privacy staat voorop."
+    },
+    {
+      "label": "Prijzen",
+      "headline": "Kernfuncties blijven gratis.",
+      "body": "Vandaag zijn week, maand, meldingen en reflecties gratis. Het verwijderen van advertenties is een eenmalige aankoop."
+    },
+    {
+      "label": "Voorbeelden",
+      "headline": "Geef ‘niets doen’ een naam.",
+      "body": "Doe niets. Drink langzaam thee. Maak een korte wandeling. Jouw ruimte kan van jou zijn."
+    }
+  ],
+  "pl": [
+    {
+      "label": "Dzisiaj",
+      "headline": "Planuj mniej. Zrób miejsce.",
+      "body": "Nazwij spokojną chwilę i czas. Spójrz delikatnie wstecz na dzień dzisiejszy, tydzień i miesiąc."
+    },
+    {
+      "label": "Dzisiaj",
+      "headline": "Imię i czas stają się przestrzenią.",
+      "body": "Nazwij „nicnierobienie”. Zachowaj w ciągu dnia małą, cichą chwilę."
+    },
+    {
+      "label": "Tydzień",
+      "headline": "Zobacz w skrócie swój tydzień.",
+      "body": "Dni z kosmosem układają się spokojnie. Spójrz wstecz, nie wkuwając więcej."
+    },
+    {
+      "label": "Miesiąc",
+      "headline": "Twój miesiąc zachowuje swój rytm.",
+      "body": "Dni z przestrzenią pozostają cichymi śladami. Zobacz swoje tempo, a nie doskonałość."
+    },
+    {
+      "label": "Odbicie",
+      "headline": "Delikatna refleksja, tylko raz.",
+      "body": "Ciche zameldowanie następuje przed rozpoczęciem miejsca i raz po jego zakończeniu."
+    },
+    {
+      "label": "Utwórz",
+      "headline": "Od razu umieść trochę miejsca.",
+      "body": "Wybierz imię, datę i godzinę. Nie dodawaj niczego więcej do swojego harmonogramu."
+    },
+    {
+      "label": "Brak ciśnienia",
+      "headline": "Żadnych smug. Brak ciśnienia.",
+      "body": "Nie ma żadnych celów ani wskaźników ukończenia. Wróć, kiedy uznasz to za stosowne."
+    },
+    {
+      "label": "Prywatność",
+      "headline": "Nie jest wymagane konto.",
+      "body": "Twoje przestrzenie pozostają na tym urządzeniu. Prywatność jest na pierwszym miejscu."
+    },
+    {
+      "label": "Ceny",
+      "headline": "Podstawowe funkcje pozostają bezpłatne.",
+      "body": "Dzisiaj tydzień, miesiąc, powiadomienia i refleksje są bezpłatne. Usunięcie reklam to zakup jednorazowy."
+    },
+    {
+      "label": "Przykłady",
+      "headline": "Nazwij „nicnierobienie”.",
+      "body": "Nie rób nic. Pij herbatę powoli. Wybierz się na krótki spacer. Twoja przestrzeń może być Twoja."
+    }
+  ],
+  "pt-BR": [
+    {
+      "label": "Today",
+      "headline": "Plan less. Make space.",
+      "body": "Name a quiet moment and time. Look back gently across today, week, and month."
+    },
+    {
+      "label": "Today",
+      "headline": "A name and time become space.",
+      "body": "Give ‘doing nothing’ a name. Keep a small quiet moment in your day."
+    },
+    {
+      "label": "Week",
+      "headline": "See your week at a glance.",
+      "body": "Days with space line up quietly. Look back without cramming in more."
+    },
+    {
+      "label": "Month",
+      "headline": "Your month keeps its rhythm.",
+      "body": "Days with space remain as quiet marks. See your pace, not perfection."
+    },
+    {
+      "label": "Reflection",
+      "headline": "A gentle reflection, only once.",
+      "body": "A quiet check-in appears before space begins and once after it ends."
+    },
+    {
+      "label": "Create",
+      "headline": "Place a little space, right away.",
+      "body": "Choose a name, date, and time. Add nothing else to your schedule."
+    },
+    {
+      "label": "No pressure",
+      "headline": "No streaks. No pressure.",
+      "body": "There are no goals or completion rates. Return whenever it feels right."
+    },
+    {
+      "label": "Privacy",
+      "headline": "No account required.",
+      "body": "Your spaces stay on this device. Privacy comes first."
+    },
+    {
+      "label": "Pricing",
+      "headline": "Core features stay free.",
+      "body": "Today, Week, Month, notifications, and reflections are free. Removing ads is a one-time purchase."
+    },
+    {
+      "label": "Examples",
+      "headline": "Give ‘doing nothing’ a name.",
+      "body": "Do nothing. Have tea slowly. Take a short walk. Your space can be your own."
+    }
+  ],
+  "th": [
+    {
+      "label": "วันนี้",
+      "headline": "วางแผนให้น้อยลง ทำให้มีพื้นที่",
+      "body": "ตั้งชื่อช่วงเวลาและเวลาที่เงียบสงบ มองย้อนกลับไปเบาๆ ในวันนี้ สัปดาห์ และเดือน"
+    },
+    {
+      "label": "วันนี้",
+      "headline": "ชื่อและเวลากลายเป็นช่องว่าง",
+      "body": "ตั้งชื่อ 'ไม่ทำอะไรเลย' เก็บช่วงเวลาเงียบๆ เล็กๆ น้อยๆ ไว้ในแต่ละวันของคุณ"
+    },
+    {
+      "label": "สัปดาห์",
+      "headline": "ดูสัปดาห์ของคุณได้อย่างรวดเร็ว",
+      "body": "วันที่มีพื้นที่เรียงกันอย่างเงียบๆ มองย้อนกลับไปโดยไม่ต้องอัดแน่นมากขึ้น"
+    },
+    {
+      "label": "เดือน",
+      "headline": "เดือนของคุณคงจังหวะของมัน",
+      "body": "วันที่มีช่องว่างยังคงเป็นเครื่องหมายที่เงียบสงบ มองก้าวของคุณ ไม่ใช่ความสมบูรณ์แบบ"
+    },
+    {
+      "label": "การสะท้อนกลับ",
+      "headline": "สะท้อนอย่างอ่อนโยนเพียงครั้งเดียวเท่านั้น",
+      "body": "การเช็คอินแบบเงียบๆ จะปรากฏขึ้นก่อนที่พื้นที่จะเริ่มต้นและอีกครั้งหลังจากที่พื้นที่ว่างสิ้นสุดลง"
+    },
+    {
+      "label": "สร้าง",
+      "headline": "วางพื้นที่เล็กน้อยทันที",
+      "body": "เลือกชื่อ วันที่ และเวลา เพิ่มอะไรอื่นลงในตารางเวลาของคุณ"
+    },
+    {
+      "label": "ไม่มีความกดดัน",
+      "headline": "ไม่มีริ้วรอย ไม่มีความกดดัน",
+      "body": "ไม่มีเป้าหมายหรืออัตราการสำเร็จ กลับมาทุกครั้งที่รู้สึกว่าใช่"
+    },
+    {
+      "label": "ความเป็นส่วนตัว",
+      "headline": "ไม่จำเป็นต้องมีบัญชี",
+      "body": "Space ของคุณยังอยู่ในอุปกรณ์นี้ ความเป็นส่วนตัวต้องมาก่อน"
+    },
+    {
+      "label": "ราคา",
+      "headline": "คุณสมบัติหลักยังคงฟรี",
+      "body": "วันนี้ สัปดาห์ เดือน การแจ้งเตือน และการสะท้อนกลับฟรี การลบโฆษณาเป็นการซื้อเพียงครั้งเดียว"
+    },
+    {
+      "label": "ตัวอย่าง",
+      "headline": "ตั้งชื่อ 'ไม่ทำอะไรเลย'",
+      "body": "ไม่ต้องทำอะไรเลย จิบชาช้าๆ. เดินไปไม่ไกล พื้นที่ของคุณสามารถเป็นของคุณเองได้"
+    }
+  ],
+  "tr": [
+    {
+      "label": "Bugün",
+      "headline": "Daha az plan yapın. Yer açın.",
+      "body": "Sessiz bir an ve zamanı adlandırın. Bugüne, haftaya ve aya nazikçe geriye bakın."
+    },
+    {
+      "label": "Bugün",
+      "headline": "Bir isim ve zaman mekân haline gelir.",
+      "body": "'Hiçbir şey yapmamaya' bir isim verin. Gününüzde küçük, sessiz bir an ayırın."
+    },
+    {
+      "label": "Hafta",
+      "headline": "Haftanızı bir bakışta görün.",
+      "body": "Uzayın olduğu günler sessizce sıralanıyor. Daha fazlasını sıkıştırmadan geriye bakın."
+    },
+    {
+      "label": "Ay",
+      "headline": "Ayınız ritmini koruyor.",
+      "body": "Uzayın olduğu günler sessiz işaretler olarak kalıyor. Mükemmelliği değil, hızınızı görün."
+    },
+    {
+      "label": "Yansıma",
+      "headline": "Nazik bir yansıma, yalnızca bir kez.",
+      "body": "Alan başlamadan önce ve bittikten sonra sessiz bir giriş görünür."
+    },
+    {
+      "label": "Oluştur",
+      "headline": "Hemen biraz boşluk bırakın.",
+      "body": "Bir ad, tarih ve saat seçin. Programınıza başka hiçbir şey eklemeyin."
+    },
+    {
+      "label": "Baskı yok",
+      "headline": "Çizgi yok. Baskı yok.",
+      "body": "Hedefler veya tamamlama oranları yoktur. Doğru hissettiğinde geri dön."
+    },
+    {
+      "label": "Gizlilik",
+      "headline": "Hesap gerekmez.",
+      "body": "Alanlarınız bu cihazda kalır. Gizlilik önce gelir."
+    },
+    {
+      "label": "Fiyatlandırma",
+      "headline": "Temel özellikler ücretsiz kalır.",
+      "body": "Bugün, Hafta, Ay, bildirimler ve yansımalar ücretsizdir. Reklamları kaldırmak tek seferlik bir satın alma işlemidir."
+    },
+    {
+      "label": "Örnekler",
+      "headline": "'Hiçbir şey yapmamaya' bir isim verin.",
+      "body": "Hiçbir şey yapma. Yavaş yavaş çay iç. Kısa bir yürüyüş yapın. Alanınız size ait olabilir."
+    }
+  ],
+  "vi": [
+    {
+      "label": "hôm nay",
+      "headline": "Lập kế hoạch ít hơn. Tạo không gian.",
+      "body": "Kể tên một khoảnh khắc và thời gian yên tĩnh. Nhẹ nhàng nhìn lại ngày hôm nay, tuần và tháng."
+    },
+    {
+      "label": "hôm nay",
+      "headline": "Tên và thời gian trở thành không gian.",
+      "body": "Đặt tên cho “không làm gì cả”. Giữ một khoảnh khắc yên tĩnh nhỏ trong ngày của bạn."
+    },
+    {
+      "label": "Tuần",
+      "headline": "Xem nhanh tuần của bạn.",
+      "body": "Days with space line up quietly. Nhìn lại mà không nhồi nhét thêm."
+    },
+    {
+      "label": "Tháng",
+      "headline": "Tháng của bạn giữ nhịp điệu của nó.",
+      "body": "Days with space remain as quiet marks. See your pace, not perfection."
+    },
+    {
+      "label": "Sự phản ánh",
+      "headline": "Một sự phản ánh nhẹ nhàng, chỉ một lần.",
+      "body": "Quá trình đăng ký yên lặng xuất hiện trước khi không gian bắt đầu và một lần sau khi không gian kết thúc."
+    },
+    {
+      "label": "Tạo",
+      "headline": "Place a little space, right away.",
+      "body": "Chọn tên, ngày và giờ. Không thêm gì khác vào lịch trình của bạn."
+    },
+    {
+      "label": "Không có áp lực",
+      "headline": "Không có vệt. Không có áp lực.",
+      "body": "Không có mục tiêu hoặc tỷ lệ hoàn thành. Return whenever it feels right."
+    },
+    {
+      "label": "Quyền riêng tư",
+      "headline": "Không cần tài khoản.",
+      "body": "Không gian của bạn vẫn còn trên thiết bị này. Quyền riêng tư được đặt lên hàng đầu."
+    },
+    {
+      "label": "Định giá",
+      "headline": "Các tính năng cốt lõi vẫn miễn phí.",
+      "body": "Hôm nay, Tuần, Tháng, thông báo và phản ánh đều miễn phí. Removing ads is a one-time purchase."
+    },
+    {
+      "label": "Ví dụ",
+      "headline": "Đặt tên cho “không làm gì cả”.",
+      "body": "Không làm gì cả. Uống trà từ từ. Đi bộ một đoạn ngắn. Your space can be your own."
+    }
+  ],
+  "zh-Hans": [
+    {
+      "label": "今天",
+      "headline": "计划少一些。腾出空间。",
+      "body": "说出一个安静的时刻和时间。轻轻地回顾一下今天、一周和一个月。"
+    },
+    {
+      "label": "今天",
+      "headline": "名字和时间变成了空间。",
+      "body": "给“什么都不做”起个名字。一天中保持一小段安静的时刻。"
+    },
+    {
+      "label": "周",
+      "headline": "一目了然地了解您的一周。",
+      "body": "与空间的日子静静地排列着。回顾一下，不要塞得更多。"
+    },
+    {
+      "label": "月份",
+      "headline": "你的月份保持其节奏。",
+      "body": "有空间的日子仍然是安静的痕迹。看你的节奏，而不是完美。"
+    },
+    {
+      "label": "反思",
+      "headline": "温柔的反思，只有一次。",
+      "body": "在空间开始之前和结束之后都会出现一次安静的签到。"
+    },
+    {
+      "label": "创建",
+      "headline": "立即留出一点空间。",
+      "body": "选择名称、日期和时间。不要在你的日程安排中添加任何其他内容。"
+    },
+    {
+      "label": "无压力",
+      "headline": "无条纹。没有压力。",
+      "body": "没有目标或完成率。只要感觉合适就回来。"
+    },
+    {
+      "label": "隐私",
+      "headline": "无需帐户。",
+      "body": "您的空间保留在此设备上。隐私至上。"
+    },
+    {
+      "label": "定价",
+      "headline": "核心功能保持免费。",
+      "body": "今天、周、月、通知和反思都是免费的。删除广告是一次性购买。"
+    },
+    {
+      "label": "示例",
+      "headline": "给“什么都不做”起个名字。",
+      "body": "什么都不做。慢慢喝茶。步行一小段路。您的空间可以是您自己的。"
+    }
+  ],
+  "zh-Hant": [
+    {
+      "label": "今天",
+      "headline": "計劃少一些。騰出空間。",
+      "body": "說出一個安靜的時刻和時間。輕輕地回顧一下今天、一週和一個月。"
+    },
+    {
+      "label": "今天",
+      "headline": "名字和時間變成了空間。",
+      "body": "給「什麼都不做」取個名字。一天中保持一小段安靜的時刻。"
+    },
+    {
+      "label": "週",
+      "headline": "一目了然地了解您的一週。",
+      "body": "與空間的日子靜靜地排列著。回顧一下，不要塞得更多。"
+    },
+    {
+      "label": "月",
+      "headline": "你的月份保持其節奏。",
+      "body": "有空間的日子仍然是安靜的痕跡。看你的節奏，而不是完美。"
+    },
+    {
+      "label": "反思",
+      "headline": "溫柔的反思，只有一次。",
+      "body": "在空間開始之前和結束之後都會出現一次安靜的簽到。"
+    },
+    {
+      "label": "創建",
+      "headline": "立即留出一點空間。",
+      "body": "選擇名稱、日期和時間。不要在你的日程安排中添加任何其他內容。"
+    },
+    {
+      "label": "無壓力",
+      "headline": "無條紋。沒有壓力。",
+      "body": "沒有目標或完成率。只要感覺合適就回來。"
+    },
+    {
+      "label": "隱私",
+      "headline": "無需帳戶。",
+      "body": "您的空間保留在此裝置上。隱私至上。"
+    },
+    {
+      "label": "定價",
+      "headline": "核心功能保持免費。",
+      "body": "今天、週、月、通知和反思都是免費的。刪除廣告是一次性購買。"
+    },
+    {
+      "label": "範例",
+      "headline": "給「什麼都不做」取個名字。",
+      "body": "什麼都不做。慢慢喝茶。步行一小段路。您的空間可以是您自己的。"
+    }
+  ]
+}

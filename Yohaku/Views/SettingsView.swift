@@ -19,7 +19,7 @@ enum AppInfo {
     static let supportEmail = "support@tmkch.io"
     static let supportEmailURL = URL(string: "mailto:support@tmkch.io?subject=Yohaku")!
     static let developerAppsURL = URL(string: "https://tmkch.io/apps")!
-    static let developerName = "Tomokichi"
+    static let developerName = "Tomokichi Studio"
 
     static let legalEnactedDate = DateComponents(
         calendar: .init(identifier: .gregorian),

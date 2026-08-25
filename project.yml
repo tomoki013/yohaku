@@ -20,7 +20,7 @@ targets:
       path: Yohaku/Info.plist
       properties:
         CFBundleDisplayName: Yohaku
-        CFBundleShortVersionString: "1.0.0"
+        CFBundleShortVersionString: "1.0.1"
         CFBundleVersion: "3"
         UILaunchScreen:
           UIImageName: LaunchIcon
