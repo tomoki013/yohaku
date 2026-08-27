@@ -3391,6 +3391,119 @@
         }
       }
     },
+    "legal.canonical": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النسخة المنشورة على الموقع الرسمي هي النسخة المعتمدة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maßgeblich ist die auf der offiziellen Website veröffentlichte Fassung."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The version published on the official website is the authoritative one."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La versión publicada en el sitio web oficial es la auténtica."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La version publiée sur le site officiel fait foi."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आधिकारिक वेबसाइट पर प्रकाशित संस्करण ही प्रामाणिक है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi yang diterbitkan di situs web resmi adalah versi yang berlaku."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fa fede la versione pubblicata sul sito ufficiale."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公式Webサイトに掲載されている内容を正本とします。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "공식 웹사이트에 게시된 내용이 정본입니다."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De versie op de officiële website is de authentieke versie."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wersja opublikowana na oficjalnej stronie jest wiążąca."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A versão publicada no site oficial é a versão oficial."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ฉบับที่เผยแพร่บนเว็บไซต์ทางการถือเป็นฉบับที่มีผลบังคับ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resmî web sitesinde yayımlanan sürüm esas alınır."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản đăng trên trang web chính thức là bản có hiệu lực."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "以官方网站公布的版本为正式版本。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "以官方網站公布的版本為正式版本。"
+          }
+        }
+      }
+    },
     "legal.checking": {
       "extractionState": "manual",
       "localizations": {
@@ -6448,13 +6561,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This Privacy Policy explains how Tomokichi (the “Operator”) handles information in the iOS app Yohaku (the “App”) and the official brand website. The website is authoritative.\n\nEffective date: July 29, 2026\nLast updated: August 4, 2026\n\n1. Information stored on your device\nSpace names, dates, start/end times, created/updated timestamps, optional post-space responses and prompt state, appearance settings, notification settings, a random support client id, and related local settings are stored on your device. No account is required. During ordinary use, space contents and post-space responses are not sent to the Operator’s servers.\n\n2. Advertising and tracking\nThe App uses the Google Mobile Ads SDK. The free version may show banner ads. Google and partners may process device information, IP address, approximate region, advertising identifiers, ad interactions, diagnostics and consent status for delivery, measurement and fraud prevention. With your App Tracking Transparency (ATT) permission, an advertising identifier may be used to deliver and measure personalized ads across other companies’ apps and websites. If you decline, ads may still appear without access to that identifier. The Operator does not provide space contents or support-form names/emails to advertising providers for ads.\n\n3. Consent and choices\nThe App uses Google’s User Messaging Platform (UMP). A consent form may appear by region, and the iOS ATT prompt is shown before tracking is allowed. You can change ATT permission in iOS Settings and, where required, reopen ad privacy choices in the App. If consent cannot be resolved, ads are not requested for that launch. After purchasing ad removal, you are not ad-supported and the ads SDK is generally not started.\n\n4. In-app purchases\n“Remove ads permanently” is a non-consumable one-time purchase via Apple StoreKit. Apple processes payment; the Operator never receives card details. Restore is supported. This is not a subscription.\n\n5. Notifications\nWith permission, local notifications fire shortly before each space begins. Space contents are not sent to an external server for notifications.\n\n6. Support\nOnly when you submit a form may category, name, email, subject, message, app/OS info, locale, timestamps, enquiry id and client id be sent to the support API and email provider. Spaces are never attached automatically.\n\n7. Service providers\nApple (StoreKit, notifications), Google Mobile Ads, UMP, Cloudflare Workers (support API), Resend (email), and website hosting.\n\n8. Retention and deletion\nDeleting a space or uninstalling the App removes on-device data; the Operator cannot restore it. Purchase records are managed by Apple.\n\n9. Contact\nUse in-app support or support@tmkch.io. The latest policy is at https://yohaku.tmkch.io/privacy"
+            "value": "This Privacy Policy explains how Tomokichi (the “Operator”) handles information in the iOS app “Yohaku” (the “App”) and the official brand website. The version published on the official website is authoritative; this text is a reference copy for when you are offline.\n\nEffective date: July 29, 2026\nLast updated: August 4, 2026\n\n1. Operator\nOperator: Tomokichi (individual developer). Contact: the in-app support form, the shared form at https://tmkch.io, or support@tmkch.io.\n\n2. Information stored on your device\nThe App stores on your device (including via SwiftData): space name, date, start time and end time; created and updated timestamps; optional post-space responses and check-in display state; appearance setting; notification settings; a random client id used for support rate limiting; and other local settings the App needs. No account is required, and during ordinary use space contents and post-space responses are not sent to the Operator’s servers.\n\n3. Advertising\nThe App uses the Google Mobile Ads SDK and has carried advertising since its first release. In the free version, an anchored banner ad appears on screens such as Today, Week and Month. Google and advertising partners may process device details, IP address, approximate region derived from IP, advertising identifiers, ad interactions, impression and click data, diagnostics, consent status and privacy choices in order to deliver and measure ads and prevent fraud. The Operator does not provide space names or times, or support-form names and email addresses, to advertising providers for advertising purposes.\n\n4. Consent and privacy settings\nThe App uses Google’s User Messaging Platform (UMP) for consent. A consent form may appear depending on region and law. The App also presents Apple’s App Tracking Transparency (ATT) prompt before an advertising identifier may be used to personalize or measure ads across other companies’ apps and websites. If you decline ATT, ads may still appear without access to that identifier. You can change ATT permission in iOS Settings, and where required, advertising privacy choices can be reopened from the App’s Settings. While consent cannot be resolved, the App does not request ads. After purchasing “Remove ads permanently” you are not ad-supported; the App generally does not request ATT or start the ads SDK.\n\n5. In-app purchases\nThe non-consumable one-time product “Remove ads permanently” (¥400, tax included) is processed through Apple’s StoreKit. Apple handles payment and the Operator never receives card details. The App only checks the entitlement needed to remove ads. Purchase history, refunds and Apple Account data are managed by Apple. Restore purchases is supported. This is not a subscription.\n\n6. Notifications\nLocal notifications are used only with your permission, normally three to seven minutes before a space begins. For spaces created at short notice, timing may be adjusted or the notification skipped when useful advance notice is no longer possible. Space contents are not sent to an external server for notifications.\n\n7. Support\nOnly when you explicitly submit the in-app or shared support form may the following be sent to the support API and email delivery provider: category, name, subject, message; app version, build number, OS name and version, locale; submission time, enquiry id, random client id, source and target app; and details needed to prevent abuse and rate-limit submissions. An email address is sent only when you ask for a reply. Space records are never attached automatically.\n\n8. Service providers\nWhere needed, the Service uses Apple (StoreKit, local notifications, system features), Google Mobile Ads, Google User Messaging Platform, Cloudflare Workers (support API), Resend (support email delivery), and website hosting infrastructure. Each provider processes information under its own policies.\n\n9. Display of legal documents\nThe App loads the latest Privacy Policy and Terms from the official website. When offline, a bundled reference copy is shown. The website version is authoritative.\n\n10. Retention and deletion\nDeleting a space removes it from the device. Uninstalling the App deletes on-device space data, which the Operator cannot recover. Support information is kept as needed for response, law, security and abuse prevention. Apple-managed purchase records cannot be deleted from the App.\n\n11. Disclosure, security and minors\nExcept where required by law, the Operator does not improperly disclose personal information to third parties. The Operator takes reasonable security measures, and on-device data is protected by standard iOS security mechanisms. If a minor uses the App, please do so with a parent or guardian’s consent.\n\n12. Changes and contact\nThis policy may change with law or product updates. Material changes update the last-updated date and are announced on the website or in the App. Questions: support@tmkch.io. The latest version is published at https://yohaku.tmkch.io/privacy."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本ポリシーは、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」（以下「本アプリ」）および公式ブランドサイトにおける利用者情報の取扱いを定めるものです。公式Webサイト掲載版を正本とします。\n\n制定日：2026年7月29日\n最終更新日：2026年8月4日\n\n1. 端末内に保存する情報\n余白の名前・日付・開始時刻・終了時刻、作成／更新日時、任意の終了後回答と表示状態、外観設定、通知設定、サポート用のランダムなクライアントIDなどは端末内に保存されます。アカウント登録は不要で、通常利用では余白の内容や終了後回答を運営者のサーバーへ送信しません。\n\n2. 広告とトラッキング\n本アプリはGoogle Mobile Ads SDKを使用します。無料版ではバナー広告が表示される場合があります。Googleおよび広告パートナーは、広告配信・効果測定・不正防止等のため、端末情報、IPアドレス、推定地域、広告識別子、広告への反応、診断情報、同意状況等を取り扱う場合があります。App Tracking Transparency（ATT）を許可した場合、他社のアプリやWebサイトをまたぐ広告の最適化・効果測定に広告識別子が使われることがあります。許可しない場合も、広告識別子を使わない広告が表示される場合があります。運営者は余白の内容や問い合わせの氏名・メールアドレスを広告目的で広告事業者へ提供しません。\n\n3. 広告の同意と選択\n同意管理にGoogle User Messaging Platform（UMP）を使用します。地域により同意画面が表示され、トラッキングを開始する前にiOSのATT画面を表示します。ATTの許可はiOSの設定から変更でき、必要な地域ではアプリの設定から広告プライバシー設定を再表示できます。同意取得に失敗した場合、その起動中は広告を要求しません。広告削除購入済みの場合は広告配信対象外となり、原則として広告SDKを起動しません。\n\n4. アプリ内課金\n「広告を永久に削除」はAppleのStoreKitによる非消耗型の一回払いです。決済はAppleが処理し、運営者はカード情報を取得しません。購入復元に対応しています。サブスクリプションではありません。\n\n5. 通知\n許可した場合に限り、余白の開始少し前にローカル通知を表示します。通知のために余白内容を外部サーバーへ送信しません。\n\n6. お問い合わせ\nフォーム送信時のみ、カテゴリ、名前、メール、件名、本文、アプリ／OS情報、ロケール、送信日時、問い合わせID、クライアントID等がサポートAPIおよびメール配信事業者へ送られます。余白の記録は自動添付されません。\n\n7. 外部サービス\nApple（StoreKit・通知等）、Google Mobile Ads、UMP、Cloudflare Workers（サポートAPI）、Resend（メール）等を利用します。\n\n8. 保存期間と削除\n余白の削除またはアプリ削除で端末内データは削除され、運営者は復旧できません。購入記録はAppleが管理します。\n\n9. お問い合わせ\nアプリ内お問い合わせまたはsupport@tmkch.ioへご連絡ください。最新版は https://yohaku.tmkch.io/privacy に掲載します。"
+            "value": "本ポリシーは、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」（以下「本アプリ」）および公式ブランドサイトにおける利用者情報の取扱いを定めるものです。公式Webサイト掲載版を正本とし、本文書はオフライン時の参照用コピーです。\n\n制定日：2026年7月29日\n最終更新日：2026年8月4日\n\n1. 運営者\n運営者：Tomokichi（個人開発者）。お問い合わせはアプリ内フォーム、https://tmkch.io の共通サポートフォーム、または support@tmkch.io へ。\n\n2. 端末内に保存する情報\n余白の名前・日付・開始時刻・終了時刻、作成／更新日時、任意の終了後回答と確認カードの表示状態、外観設定、通知設定、サポート用のランダムなクライアントID、その他の動作に必要なローカル設定を端末内（SwiftData等）に保存します。アカウント登録は不要で、通常利用では余白の内容や終了後回答を運営者のサーバーへ送信しません。\n\n3. 広告\n本アプリは広告表示のためGoogle Mobile Ads SDKを使用し、初回リリースより広告を掲載しています。無料版では、Today・Week・Monthなどの画面にアンカー型バナー広告が表示されます。Googleおよび広告配信パートナーは、広告の配信・効果測定・不正防止等のため、端末情報、IPアドレス、IPアドレスから推定されるおおよその地域、広告識別子、広告への反応、表示・クリック情報、診断情報、同意状況、プライバシー選択などを取り扱う場合があります。運営者は、余白の名前・日時や、問い合わせで入力された氏名・メールアドレスを広告目的で広告配信事業者へ提供しません。\n\n4. 広告の同意とプライバシー設定\n同意管理にGoogle User Messaging Platform（UMP）を使用します。地域や法令に応じて同意画面が表示される場合があります。また、他社のアプリやWebサイトをまたぐ広告の最適化・効果測定に広告識別子を利用してよいか、App Tracking Transparency（ATT）のシステム画面で確認します。ATTを許可しない場合も、広告識別子を利用しない広告が表示される場合があります。ATTの許可はiOSの「設定」から変更でき、必要な地域ではアプリの設定画面から広告プライバシー設定を再表示できます。同意取得に失敗した場合、その間は広告を要求しません。「広告を永久に削除」を購入済みの場合は広告配信の対象外となり、原則としてATTを要求せず、広告SDKも起動しません。\n\n5. アプリ内課金\n非消耗型の一回払い商品「広告を永久に削除」（¥400・税込）は、AppleのStoreKitを通じて処理されます。Appleが決済を処理し、運営者はクレジットカード情報を取得しません。アプリが確認するのは広告削除に必要な購入権利のみです。購入履歴、返金、Apple Account情報はAppleが管理します。購入復元に対応しており、サブスクリプションではありません。\n\n6. 通知\n利用者が許可した場合に限り、端末上のローカル通知を利用します。通知は通常、登録した余白の開始時刻の3〜7分前に表示されます。直前に作成された場合は、残り時間に応じて通知時刻を調整するか、開始に間に合わない通知を送らない場合があります。通知のために余白の内容を外部サーバーへ送信しません。\n\n7. お問い合わせ\nアプリ内または公式サポートフォームを明示的に送信した場合に限り、カテゴリ、名前、件名、本文、アプリバージョン、ビルド番号、OS名・OSバージョン、ロケール、送信日時、問い合わせID、ランダムなクライアントID、送信元、対象アプリ、不正送信防止・回数制限に必要な情報が、サポートAPIおよびメール配信事業者へ送信されることがあります。メールアドレスは、返信をご希望の場合にのみ送信されます。余白の記録は自動添付されません。\n\n8. 外部サービス\nApple（StoreKit、ローカル通知、システム機能）、Google Mobile Ads（広告配信）、Google User Messaging Platform（同意管理）、Cloudflare Workers（お問い合わせAPI）、Resend（お問い合わせメール配送）、公式Webサイトの配信基盤を、提供に必要な範囲で利用します。\n\n9. 法務文書の表示\n本アプリは、最新のプライバシーポリシーおよび利用規約を公式Webサイトから取得して表示します。通信できない場合は、アプリ内に保存された参照用文書を表示します。Web版を正本として扱います。\n\n10. 保存期間と削除\n余白を削除すると、その記録は端末内から削除されます。本アプリをアンインストールすると端末内の余白データは削除され、運営者が復旧することはできません。サポート情報は対応、法令、セキュリティ、不正防止に必要な期間保存します。Appleが管理する購入記録はアプリ内から削除できません。\n\n11. 第三者提供・安全管理・未成年者\n法令に基づく場合を除き、利用者の個人情報を不当に第三者へ提供しません。取り扱う情報について合理的な安全管理措置を講じ、端末内の情報はiOSの標準的なセキュリティ機構のもとで保護されます。未成年の方は保護者の同意を得たうえでご利用ください。\n\n12. 改定とお問い合わせ\n法令または機能の変更に応じて本ポリシーを改定することがあります。重要な変更がある場合は最終更新日を更新し、公式サイトまたはアプリ内で周知します。ご不明な点は support@tmkch.io までご連絡ください。最新版は https://yohaku.tmkch.io/privacy に掲載します。"
           }
         }
       }
@@ -8273,109 +8386,109 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "عند الإرسال، تُرسل الفئة والاسم (اختياري) والبريد الإلكتروني والموضوع والرسالة وإصدار التطبيق ورقم البناء وإصدار النظام ولغة العرض ووقت الإرسال ومعرّفات استفسار عشوائية إلى واجهة الدعم المشتركة. لا تُرفق سجلات يوهاكو أبدًا."
+            "value": "عند الإرسال، تُرسل الفئة والاسم والموضوع والنص وإصدار التطبيق ورقم البناء وإصدار النظام واللغة ووقت الإرسال ومعرّفات عشوائية للطلب إلى واجهة الدعم المشتركة. ولا يُضمّن البريد الإلكتروني إلا إذا طلبت ردًا. ولا تُرفق سجلات Yohaku أبدًا."
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Beim Senden werden Kategorie, Name (optional), E-Mail, Betreff, Nachricht, App-Version, Build-Nummer, OS-Version, Sprache, Sendezeit und zufällige Anfrage-Kennungen an die gemeinsame Support-API übertragen. Yohaku-Einträge werden nie angehängt."
+            "value": "Beim Senden werden Kategorie, Name, Betreff, Nachricht, App-Version, Build-Nummer, OS-Version, Sprache, Sendezeit und zufällige Anfrage-IDs an die gemeinsame Support-API übertragen. Eine E-Mail-Adresse ist nur enthalten, wenn du eine Antwort wünschst. Yohaku-Einträge werden nie angehängt."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "When you submit, your category, name (optional), email, subject, message, app version, build number, OS version, language, submission time, and random inquiry identifiers are sent to the shared support API. Yohaku records are never attached."
+            "value": "When you submit, your category, name, subject, message, app version, build number, OS version, language, submission time, and random inquiry identifiers are sent to the shared support API. An email address is included only when you ask for a reply. Yohaku records are never attached."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Al enviar, se transmiten a la API de soporte compartida la categoría, el nombre (opcional), el correo, el asunto, el mensaje, la versión de la app, el número de compilación, la versión del sistema, el idioma, la hora de envío e identificadores aleatorios de consulta. Nunca se adjuntan tus registros de Yohaku."
+            "value": "Al enviar, se transmiten a la API de soporte compartida la categoría, el nombre, el asunto, el mensaje, la versión de la app, el número de compilación, la versión del sistema, el idioma, la hora de envío e identificadores aleatorios de la consulta. El correo electrónico solo se incluye si pides una respuesta. Nunca se adjuntan tus registros de Yohaku."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "À l'envoi, la catégorie, le nom (facultatif), l'e-mail, l'objet, le message, la version de l'app, le numéro de build, la version du système, la langue, l'heure d'envoi et des identifiants de demande aléatoires sont transmis à l'API d'assistance commune. Vos enregistrements Yohaku ne sont jamais joints."
+            "value": "À l’envoi, la catégorie, le nom, l’objet, le message, la version de l’app, le numéro de build, la version du système, la langue, l’heure d’envoi et des identifiants aléatoires de demande sont transmis à l’API de support commune. Une adresse e-mail n’est incluse que si vous souhaitez une réponse. Vos enregistrements Yohaku ne sont jamais joints."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "भेजने पर श्रेणी, नाम (वैकल्पिक), ईमेल, विषय, संदेश, ऐप संस्करण, बिल्ड नंबर, OS संस्करण, भाषा, भेजने का समय और यादृच्छिक पूछताछ पहचानकर्ता साझा सहायता API को भेजे जाते हैं। योहाकु के रिकॉर्ड कभी संलग्न नहीं होते।"
+            "value": "भेजने पर श्रेणी, नाम, विषय, संदेश, ऐप संस्करण, बिल्ड नंबर, OS संस्करण, भाषा, भेजने का समय और यादृच्छिक पूछताछ पहचानकर्ता साझा सहायता API को भेजे जाते हैं। ईमेल पता तभी शामिल होता है जब आप उत्तर चाहते हों। Yohaku के रिकॉर्ड कभी संलग्न नहीं किए जाते।"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Saat dikirim, kategori, nama (opsional), email, subjek, pesan, versi aplikasi, nomor build, versi OS, bahasa, waktu pengiriman, dan pengidentifikasi acak dikirim ke API dukungan bersama. Catatan Yohaku tidak pernah dilampirkan."
+            "value": "Saat dikirim, kategori, nama, subjek, pesan, versi aplikasi, nomor build, versi OS, bahasa, waktu pengiriman, dan pengenal acak dikirim ke API dukungan bersama. Alamat email hanya disertakan jika Anda meminta balasan. Catatan Yohaku tidak pernah dilampirkan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "All'invio, categoria, nome (facoltativo), e-mail, oggetto, messaggio, versione dell'app, numero di build, versione del sistema, lingua, ora di invio e identificatori casuali vengono inviati all'API di assistenza condivisa. I tuoi dati Yohaku non vengono mai allegati."
+            "value": "All’invio, categoria, nome, oggetto, messaggio, versione dell’app, numero di build, versione del sistema, lingua, ora di invio e identificatori casuali della richiesta vengono inviati all’API di supporto condivisa. L’indirizzo e-mail è incluso solo se desideri una risposta. I tuoi dati Yohaku non vengono mai allegati."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "送信すると、カテゴリ、氏名（任意）、メールアドレス、件名、内容、アプリバージョン、ビルド番号、OSバージョン、表示言語、送信日時、ランダムな問い合わせ識別子が共通サポートAPIへ送信されます。余白の記録が添付されることはありません。"
+            "value": "送信すると、カテゴリ、お名前、件名、内容、アプリバージョン、ビルド番号、OSバージョン、表示言語、送信日時、ランダムな問い合わせ識別子が共通サポートAPIへ送信されます。メールアドレスは、返信をご希望の場合のみ含まれます。余白の記録が添付されることはありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "보내면 카테고리, 이름(선택), 이메일 주소, 제목, 내용, 앱 버전, 빌드 번호, OS 버전, 표시 언어, 전송 일시, 무작위 문의 식별자가 공통 지원 API로 전송됩니다. 여백 기록이 첨부되는 일은 없습니다."
+            "value": "보내면 카테고리, 이름, 제목, 내용, 앱 버전, 빌드 번호, OS 버전, 표시 언어, 전송 일시, 임의의 문의 식별자가 공통 지원 API로 전송됩니다. 이메일 주소는 답장을 원하실 때만 포함됩니다. 여백 기록이 첨부되는 일은 없습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bij verzending worden categorie, naam (optioneel), e-mail, onderwerp, bericht, appversie, buildnummer, OS-versie, taal, verzendtijd en willekeurige aanvraag-ID's naar de gedeelde support-API gestuurd. Yohaku-gegevens worden nooit bijgevoegd."
+            "value": "Bij verzenden gaan categorie, naam, onderwerp, bericht, appversie, buildnummer, OS-versie, taal, verzendtijd en willekeurige aanvraag-id’s naar de gedeelde support-API. Een e-mailadres wordt alleen meegestuurd als je een antwoord wilt. Yohaku-gegevens worden nooit bijgevoegd."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Po wysłaniu kategoria, imię (opcjonalnie), e-mail, temat, treść, wersja aplikacji, numer kompilacji, wersja systemu, język, czas wysyłki i losowe identyfikatory zgłoszenia trafiają do wspólnego API wsparcia. Zapisy Yohaku nigdy nie są dołączane."
+            "value": "Po wysłaniu kategoria, imię, temat, treść, wersja aplikacji, numer kompilacji, wersja systemu, język, czas wysłania i losowe identyfikatory zgłoszenia trafiają do wspólnego API wsparcia. Adres e-mail jest dołączany tylko wtedy, gdy chcesz otrzymać odpowiedź. Zapisy Yohaku nigdy nie są załączane."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ao enviar, categoria, nome (opcional), e-mail, assunto, mensagem, versão do app, número da build, versão do sistema, idioma, horário de envio e identificadores aleatórios são enviados à API de suporte compartilhada. Seus registros do Yohaku nunca são anexados."
+            "value": "Ao enviar, categoria, nome, assunto, mensagem, versão do app, número da build, versão do sistema, idioma, horário de envio e identificadores aleatórios são enviados à API de suporte compartilhada. O e-mail só é incluído se você pedir uma resposta. Seus registros do Yohaku nunca são anexados."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "เมื่อส่ง ประเภท ชื่อ (ไม่บังคับ) อีเมล หัวข้อ เนื้อหา เวอร์ชันแอป หมายเลขบิลด์ เวอร์ชัน OS ภาษา เวลาที่ส่ง และตัวระบุคำถามแบบสุ่ม จะถูกส่งไปยัง API ฝ่ายสนับสนุนส่วนกลาง บันทึกใน Yohaku จะไม่ถูกแนบไปด้วย"
+            "value": "เมื่อส่ง ระบบจะส่งหมวดหมู่ ชื่อ หัวข้อ ข้อความ เวอร์ชันแอป หมายเลขบิลด์ เวอร์ชันระบบ ภาษา เวลาที่ส่ง และรหัสคำถามแบบสุ่มไปยัง API ฝ่ายสนับสนุนส่วนกลาง อีเมลจะรวมอยู่ด้วยเฉพาะเมื่อคุณต้องการการตอบกลับ บันทึกใน Yohaku จะไม่ถูกแนบไปด้วย"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gönderdiğinde kategori, ad (isteğe bağlı), e-posta, konu, mesaj, uygulama sürümü, derleme numarası, işletim sistemi sürümü, dil, gönderim zamanı ve rastgele talep tanımlayıcıları ortak destek API'sine iletilir. Yohaku kayıtların asla eklenmez."
+            "value": "Gönderdiğinde kategori, ad, konu, mesaj, uygulama sürümü, derleme numarası, işletim sistemi sürümü, dil, gönderim zamanı ve rastgele talep kimlikleri ortak destek API’sine iletilir. E-posta adresi yalnızca yanıt istediğinde eklenir. Yohaku kayıtların asla eklenmez."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Khi gửi, loại yêu cầu, tên (không bắt buộc), email, tiêu đề, nội dung, phiên bản ứng dụng, số bản dựng, phiên bản hệ điều hành, ngôn ngữ, thời điểm gửi và mã yêu cầu ngẫu nhiên sẽ được gửi tới API hỗ trợ dùng chung. Dữ liệu Yohaku không bao giờ được đính kèm."
+            "value": "Khi gửi, danh mục, tên, tiêu đề, nội dung, phiên bản ứng dụng, số bản dựng, phiên bản hệ điều hành, ngôn ngữ, thời điểm gửi và mã yêu cầu ngẫu nhiên sẽ được gửi tới API hỗ trợ dùng chung. Địa chỉ email chỉ được đính kèm khi bạn muốn nhận phản hồi. Dữ liệu Yohaku không bao giờ được đính kèm."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "发送时，类别、姓名（可选）、邮箱、主题、内容、应用版本、构建号、系统版本、显示语言、发送时间以及随机咨询标识符会发送至共用支持 API。你的余白记录不会被附加。"
+            "value": "发送后，类别、姓名、主题、内容、应用版本、构建号、系统版本、显示语言、发送时间以及随机的咨询标识符会发送至通用支持 API。仅在您希望收到回复时才会包含邮箱地址。您的余白记录不会被附加。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "傳送時，類別、姓名（選填）、信箱、主旨、內容、應用程式版本、建置編號、系統版本、顯示語言、傳送時間以及隨機諮詢識別碼會傳送至共用支援 API。你的餘白記錄不會被附加。"
+            "value": "送出後，類別、姓名、主旨、內容、App 版本、建置編號、系統版本、顯示語言、送出時間以及隨機的詢問識別碼會傳送至共用支援 API。僅在您希望收到回覆時才會包含信箱地址。您的餘白記錄不會被附加。"
           }
         }
       }
@@ -8951,109 +9064,109 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "بريدك الإلكتروني (اختياري)"
+            "value": "البريد الإلكتروني للرد"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deine E-Mail-Adresse (optional)"
+            "value": "Antwort-E-Mail-Adresse"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Your email (optional)"
+            "value": "Reply-to email address"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tu correo electrónico (opcional)"
+            "value": "Correo electrónico de respuesta"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Votre e-mail (facultatif)"
+            "value": "Adresse e-mail de réponse"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "आपका ईमेल (वैकल्पिक)"
+            "value": "उत्तर के लिए ईमेल पता"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Email Anda (opsional)"
+            "value": "Alamat email untuk balasan"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "La tua e-mail (facoltativa)"
+            "value": "Indirizzo e-mail per la risposta"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "返信先メールアドレス（任意）"
+            "value": "返信先メールアドレス"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "회신 받을 이메일 주소(선택)"
+            "value": "회신 받을 이메일 주소"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Je e-mailadres (optioneel)"
+            "value": "E-mailadres voor antwoord"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Twój e-mail (opcjonalnie)"
+            "value": "Adres e-mail do odpowiedzi"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Seu e-mail (opcional)"
+            "value": "E-mail para resposta"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "อีเมลของคุณ (ไม่บังคับ)"
+            "value": "อีเมลสำหรับตอบกลับ"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "E-posta adresin (isteğe bağlı)"
+            "value": "Yanıt e-posta adresi"
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Email của bạn (không bắt buộc)"
+            "value": "Địa chỉ email nhận phản hồi"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "回复用邮箱（可选）"
+            "value": "回复用邮箱"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "回覆用信箱（選填）"
+            "value": "回覆用信箱"
           }
         }
       }
@@ -12448,115 +12561,341 @@
         }
       }
     },
+    "support.message.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نص الرسالة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nachricht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Message"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensaje"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Message"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संदेश"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pesan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お問い合わせ内容"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "문의 내용"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiadomość"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensagem"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ข้อความ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesaj"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nội dung"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "咨询内容"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "詢問內容"
+          }
+        }
+      }
+    },
     "support.name": {
       "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "الاسم (اختياري)"
+            "value": "الاسم"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Name (optional)"
+            "value": "Name"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Name (optional)"
+            "value": "Name"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nombre (opcional)"
+            "value": "Nombre"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nom (facultatif)"
+            "value": "Nom"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "नाम (वैकल्पिक)"
+            "value": "नाम"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nama (opsional)"
+            "value": "Nama"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nome (facoltativo)"
+            "value": "Nome"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "お名前（任意）"
+            "value": "お名前"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이름(선택)"
+            "value": "이름"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Naam (optioneel)"
+            "value": "Naam"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Imię (opcjonalnie)"
+            "value": "Imię"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nome (opcional)"
+            "value": "Nome"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ชื่อ (ไม่บังคับ)"
+            "value": "ชื่อ"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ad (isteğe bağlı)"
+            "value": "Ad"
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tên (không bắt buộc)"
+            "value": "Tên"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "姓名（可选）"
+            "value": "姓名"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "姓名（選填）"
+            "value": "姓名"
+          }
+        }
+      }
+    },
+    "support.name.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أدخل اسمك"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Namen eingeben"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter your name"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe tu nombre"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saisissez votre nom"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना नाम लिखें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masukkan nama Anda"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inserisci il tuo nome"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お名前を入力してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이름을 입력해 주세요"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul je naam in"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wpisz swoje imię"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Digite seu nome"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กรอกชื่อของคุณ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adını gir"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhập tên của bạn"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请输入姓名"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "請輸入姓名"
           }
         }
       }
@@ -12670,6 +13009,571 @@
           "stringUnit": {
             "state": "translated",
             "value": "傳送其他諮詢"
+          }
+        }
+      }
+    },
+    "support.optional": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختياري"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optional"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optional"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facultatif"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वैकल्पिक"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opsional"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facoltativo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任意"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "선택"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optioneel"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcjonalne"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่บังคับ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İsteğe bağlı"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không bắt buộc"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选填"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選填"
+          }
+        }
+      }
+    },
+    "support.reply.note": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يمكنك تركه مغلقًا والإرسال. لا نطلب بريدك الإلكتروني إلا إذا كنت ترغب في الحصول على رد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du kannst dies aus lassen und trotzdem senden. Wir fragen nur nach einer E-Mail-Adresse, wenn du eine Antwort möchtest."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can leave this off and still send the form. We only ask for an email address if you want a reply."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes dejarlo desactivado y enviar igualmente. Solo pedimos un correo electrónico si quieres una respuesta."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous pouvez laisser cette option désactivée et envoyer quand même. Nous ne demandons une adresse e-mail que si vous souhaitez une réponse."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे बंद रखकर भी भेजा जा सकता है। ईमेल पता तभी पूछा जाता है जब आप उत्तर चाहते हों।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anda tetap bisa mengirim meski ini nonaktif. Kami hanya meminta alamat email jika Anda ingin dibalas."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puoi lasciarlo disattivato e inviare comunque. Chiediamo un indirizzo e-mail solo se desideri una risposta."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフのままでも送信できます。返信をご希望の場合のみ、メールアドレスをお伺いします。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "꺼둔 상태로도 보낼 수 있습니다. 답장을 원하실 때만 이메일 주소를 여쭤봅니다."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je kunt dit uit laten staan en toch versturen. We vragen alleen om een e-mailadres als je een antwoord wilt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Możesz zostawić tę opcję wyłączoną i mimo to wysłać. O adres e-mail pytamy tylko wtedy, gdy chcesz otrzymać odpowiedź."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você pode deixar desativado e enviar mesmo assim. Só pedimos um e-mail se você quiser uma resposta."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ปล่อยปิดไว้ก็ส่งได้ เราจะขออีเมลเฉพาะเมื่อคุณต้องการการตอบกลับเท่านั้น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunu kapalı bırakıp yine de gönderebilirsin. E-posta adresini yalnızca yanıt istiyorsan sorarız."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bạn vẫn có thể gửi khi tắt mục này. Chúng tôi chỉ hỏi địa chỉ email nếu bạn muốn nhận phản hồi."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保持关闭也可以发送。仅在您希望收到回复时才会询问邮箱地址。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保持關閉也可以送出。僅在您希望收到回覆時才會詢問信箱地址。"
+          }
+        }
+      }
+    },
+    "support.reply.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أريد الحصول على رد"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ich möchte eine Antwort"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I’d like a reply"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quiero recibir una respuesta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je souhaite une réponse"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मुझे उत्तर चाहिए"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saya ingin dibalas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorrei una risposta"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "返信を希望する"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "답장을 받고 싶습니다"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ik wil graag een antwoord"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chcę otrzymać odpowiedź"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quero receber uma resposta"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องการรับการตอบกลับ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yanıt istiyorum"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tôi muốn nhận phản hồi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "希望收到回复"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "希望收到回覆"
+          }
+        }
+      }
+    },
+    "support.required": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مطلوب"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pflicht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Required"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obligatorio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obligatoire"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आवश्यक"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wajib"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obbligatorio"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "必須"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "필수"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verplicht"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wymagane"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obrigatório"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "จำเป็น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zorunlu"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bắt buộc"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "必填"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "必填"
+          }
+        }
+      }
+    },
+    "support.subject.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أدخل الموضوع"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betreff eingeben"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter a subject"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe un asunto"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saisissez un objet"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विषय लिखें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masukkan subjek"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inserisci un oggetto"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "件名を入力してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "제목을 입력해 주세요"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul een onderwerp in"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wpisz temat"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Digite um assunto"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กรอกหัวข้อ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konu gir"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhập tiêu đề"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请输入主题"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "請輸入主旨"
           }
         }
       }
@@ -13584,13 +14488,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "These Terms govern the iOS app Yohaku and the official brand website provided by Tomokichi (the “Operator”).\n\nEffective date: July 29, 2026\nLast updated: August 4, 2026\n\n1. The Service\nYohaku lets you leave time with nothing planned—named and timed—and review it on Today, Week and Month. Core features are free; no account is required.\n\n2. Advertising\nThe free version may show banner ads via an external provider.\n\n3. Support purchase\nA non-consumable one-time “Remove ads permanently” purchase removes ads. It does not unlock extra core features and is not a subscription. Purchases, restores and refunds follow Apple’s terms; the App Store price is authoritative.\n\n4. Prohibited conduct\nDo not break the law, gain unauthorized access, disrupt the service, evade payment, manipulate ads, unlawfully copy the App, or abuse support.\n\n5. Data\nSpaces are stored on your device. There is no Yohaku cloud sync, export or import. The Operator cannot restore data lost to uninstall, device failure or similar events.\n\n6. Notifications\nNotifications are an aid only; delivery is not guaranteed. Do not rely on them as a critical alarm.\n\n7. Medical disclaimer\nThe App is not a medical device and does not guarantee health outcomes.\n\n8. Disclaimer and liability\nThe Service is provided “as is.” Except for willful misconduct, gross negligence or mandatory law, liability is limited to the extent permitted by law.\n\n9. Changes and governing law\nThe Operator may change the Service or these Terms. Japanese law applies; unless mandatory consumer law provides otherwise, the Tokyo District Court has exclusive first-instance jurisdiction.\n\n10. Contact\nIn-app support or support@tmkch.io. Latest Terms: https://yohaku.tmkch.io/terms"
+            "value": "These Terms govern the iOS app “Yohaku” and the official brand website (together, the “Service”) provided by Tomokichi (the “Operator”). The version published on the official website is authoritative; this text is a reference copy for when you are offline.\n\nEffective date: July 29, 2026\nLast updated: August 4, 2026\n\nArticle 1 — Application\nBy downloading the App or using the Service, you agree to these Terms.\n\nArticle 2 — The Service\nYohaku lets you leave time with nothing planned by giving it a name and times, then review those spaces on Today, Week and Month. Core features are free and no account is required.\n\nArticle 3 — Advertising\nThe App has carried advertising since its first release. In the free version, an anchored banner ad appears on screens such as Today, Week and Month. Ads are intended to stay unobtrusive, but complete non-interference is not guaranteed. Advertising uses an external provider (Google Mobile Ads), and the Operator does not individually select which ads appear or in what order. Ads do not appear after the “Remove ads permanently” purchase described in Article 4.\n\nArticle 4 — In-app purchase\nThe App offers one non-consumable, one-time product: “Remove ads permanently” (¥400, tax included). Buying it permanently stops ads as a thank-you for supporting development. It does not unlock extra core features, and it is neither a subscription nor a product that expires. On the same Apple Account, the purchase can be restored from Settings. Purchases, restores and refunds follow Apple’s terms, and Apple decides whether a refund is granted. The tax-inclusive price shown on the App Store product page and the in-app purchase screen is authoritative.\n\nArticle 5 — License\nSubject to these Terms, the Operator grants a personal, non-exclusive, non-transferable right to use the App.\n\nArticle 6 — Prohibited conduct\nYou must not: violate law or public order; gain unauthorized access, disrupt operations, or abuse system vulnerabilities; evade payment or forge purchase entitlements; manipulate ads fraudulently, including invalid clicks; unlawfully copy or redistribute the App; reverse-engineer where not permitted by law; abuse the support form or harass others; or engage in any other conduct the Operator reasonably finds inappropriate.\n\nArticle 7 — Data\nSpace records are stored on your device. There is no Yohaku cloud sync, device-to-device sync, export or import. Records may be lost if you delete the App, lose or damage the device, or face OS issues; the Operator cannot restore lost spaces.\n\nArticle 8 — Notifications\nNotifications are an aid only and delivery is not guaranteed. Do not rely on them as a critical planner or alarm. OS settings, device state, power saving and permission may prevent delivery.\n\nArticle 9 — Medical disclaimer\nThe App is not a medical device and does not guarantee medical, psychological or health outcomes. Seek qualified help if you have health concerns.\n\nArticle 10 — Disclaimer and limitation of liability\nThe Service is provided “as is.” The Operator does not warrant completeness, accuracy, continuity, uptime or freedom from defects. Except for willful misconduct or gross negligence, and to the extent permitted by law, the Operator is not liable for damages arising from use or inability to use the Service. Where mandatory law such as the Consumer Contract Act disallows full exclusion, liability is limited to what the law allows.\n\nArticle 11 — Changes, suspension, termination\nThe Operator may change, suspend or end the Service for OS support, law, ads, purchases, maintenance, security or similar reasons.\n\nArticle 12 — Changes to these Terms\nThese Terms may be revised. Revised Terms take effect when posted in the App or on the official website.\n\nArticle 13 — Governing law and jurisdiction\nThese Terms are governed by Japanese law. Unless mandatory consumer law provides otherwise, the Tokyo District Court has exclusive first-instance jurisdiction.\n\nArticle 14 — Contact\nQuestions: the in-app support form, the shared support form, or support@tmkch.io. The latest version is published at https://yohaku.tmkch.io/terms."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本規約は、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」および公式ブランドサイトの利用条件を定めます。\n\n制定日：2026年7月29日\n最終更新日：2026年8月4日\n\n第1条（サービス内容）\nYohakuは、何もしない時間を名前と日時で置き、Today・Week・Monthで確認するアプリです。基本機能は無料で、アカウント登録は不要です。\n\n第2条（広告）\n無料版にはバナー広告が表示される場合があります。広告配信には外部事業者を利用します。\n\n第3条（応援購入）\n非消耗型の一回払い「広告を永久に削除」を購入すると広告が表示されなくなります。基本機能の追加やサブスクリプションではありません。購入・復元・返金はAppleの条件に従い、価格はApp Storeの表示が正しいものとします。\n\n第4条（禁止事項）\n法令違反、不正アクセス、運営妨害、不正な課金回避・広告操作、違法な複製・再配布、サポートの荒らし等を禁止します。\n\n第5条（データ）\n余白は端末内に保存されます。独自同期・書き出し・読み込みはありません。アプリ削除や端末故障等で失われたデータを運営者が復旧することはできません。\n\n第6条（通知）\n通知は補助機能であり配信を保証しません。重要な予定やアラーム用途に依存しないでください。\n\n第7条（医療・健康）\n本アプリは医療機器ではなく、医療・心理・健康上の効果を保証しません。\n\n第8条（保証の否認・責任制限）\n本サービスは現状有姿で提供されます。故意・重過失および強行法規の範囲を除き、法令で認められる範囲で責任を限定します。\n\n第9条（変更・準拠法）\n運営者はサービスや規約を変更することがあります。日本法に準拠し、強行法規に別段の定めがある場合を除き東京地方裁判所を第一審の専属的合意管轄とします。\n\n第10条（お問い合わせ）\nアプリ内お問い合わせまたはsupport@tmkch.ioへご連絡ください。最新版は https://yohaku.tmkch.io/terms に掲載します。"
+            "value": "本規約は、Tomokichi（以下「運営者」）が提供するiOSアプリ「Yohaku」および公式ブランドサイト（あわせて「本サービス」）の利用条件を定めます。公式Webサイト掲載版を正本とし、本文書はオフライン時の参照用コピーです。\n\n制定日：2026年7月29日\n最終更新日：2026年8月4日\n\n第1条（適用）\n利用者は、本アプリをダウンロードまたは本サービスを利用した時点で本規約に同意したものとみなされます。\n\n第2条（サービス内容）\nYohakuは、何もしない時間やゆっくり過ごしたい時間を、名前と日時で置いておくためのアプリです。Today・Week・Monthの画面で余白を確認できます。基本機能は無料で、アカウント登録は不要です。\n\n第3条（広告）\n本アプリは初回リリースより広告を掲載しています。無料版では、Today・Week・Monthなどの画面にアンカー型バナー広告が表示されます。広告は操作を大きく妨げないことを目指していますが、常に完全な非干渉を保証するものではありません。広告配信には外部事業者（Google Mobile Ads）を利用し、広告の内容および表示順は運営者が個別に選定するものではありません。第4条の「広告を永久に削除」を購入した場合、広告は表示されません。\n\n第4条（アプリ内課金）\n非消耗型の一回払い商品「広告を永久に削除」（¥400・税込）を購入すると、開発への応援のお礼として広告が永久に表示されなくなります。基本機能が追加されるものではなく、サブスクリプションでも、有効期限のある商品でもありません。同じApple Accountを利用している場合、設定画面から購入を復元できます。購入・復元・返金はAppleの条件に従い、返金の可否および手続きはAppleが判断します。価格は、App Storeの商品ページおよびアプリ内の購入画面に表示される税込価格が正しいものとします。\n\n第5条（利用許諾）\n運営者は、本規約に従うことを条件として、本アプリを個人的・非独占的・譲渡不能な範囲で利用する権利を許諾します。\n\n第6条（禁止事項）\n法令または公序良俗に違反する行為、不正アクセス・運営妨害・脆弱性の悪用、不正な課金回避や購入権利の偽装、不正クリック等の広告操作、違法な複製・再配布、法令で許されないリバースエンジニアリング、サポートフォームの荒らしや迷惑行為、その他運営者が不適切と合理的に判断する行為を禁止します。\n\n第7条（データ）\n余白の記録は端末内に保存されます。Yohaku独自のクラウド同期、端末間同期、データ書き出し・読み込み機能はありません。アプリ削除、端末故障、紛失、OSの問題等により記録が失われる場合があり、運営者は失われた余白を復旧できません。\n\n第8条（通知）\n通知は補助機能であり、配信を保証するものではありません。重要な予定管理やアラーム用途に依存しないでください。OS設定、端末状態、省電力、通知許可等により届かない場合があります。\n\n第9条（医療・健康上の免責）\n本アプリは医療機器ではなく、医療・心理・健康上の効果を保証しません。心身の不調がある場合は、適切な専門家へご相談ください。\n\n第10条（保証の否認・責任制限）\n本サービスは現状有姿で提供され、運営者は完全性、正確性、継続性、無停止、無欠陥を保証しません。運営者の故意または重過失による場合を除き、法令で認められる範囲で、本サービスの利用または利用不能により生じた損害について責任を負いません。消費者契約法その他の強行法規により制限される場合は、法令上認められる範囲に限定されます。\n\n第11条（変更・中断・終了）\n運営者は、OS対応、法令、広告、課金、保守、セキュリティ等の理由により、本サービスの内容を変更し、または提供を中断・終了することがあります。\n\n第12条（規約変更）\n運営者は本規約を変更することがあります。変更後の規約は、本アプリまたは公式サイトに掲載された時点から効力を生じます。\n\n第13条（準拠法・管轄）\n本規約は日本法に準拠します。消費者契約法その他の強行法規に別段の定めがある場合を除き、東京地方裁判所を第一審の専属的合意管轄裁判所とします。\n\n第14条（お問い合わせ）\nアプリ内お問い合わせフォーム、共通サポートフォーム、または support@tmkch.io へご連絡ください。最新版は https://yohaku.tmkch.io/terms に掲載します。"
           }
         }
       }

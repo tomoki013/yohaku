@@ -49,6 +49,16 @@ enum AppInfo {
         appStoreID.flatMap { URL(string: "https://apps.apple.com/app/id\($0)?action=write-review") }
     }
 
+    /// TestFlight installs carry a sandbox receipt. Diagnostics gated on this
+    /// never reach an App Store customer.
+    static var isTestFlightBuild: Bool {
+        #if DEBUG
+        return true
+        #else
+        return Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
+        #endif
+    }
+
     static var version: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
     }
@@ -99,6 +109,10 @@ struct SettingsView: View {
                                     systemImage: "hand.raised"
                                 )
                             }
+                        }
+                        if AppInfo.isTestFlightBuild && !purchaseStore.hasRemovedAds {
+                            rowDivider
+                            adDiagnosticsRow
                         }
                     }
 
@@ -327,6 +341,25 @@ struct SettingsView: View {
         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18))
     }
 
+    /// Deliberately unlocalized: this is a build-time readout for the developer,
+    /// not product copy, and it is only reachable from a TestFlight install.
+    private var adDiagnosticsRow: some View {
+        HStack(alignment: .top, spacing: 14) {
+            Image(systemName: "stethoscope")
+                .frame(width: 24)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(verbatim: "Ad diagnostics (TestFlight only)")
+                    .font(.subheadline.weight(.medium))
+                Text(verbatim: adConsentManager.diagnosticSummary)
+                    .font(.caption2.monospaced())
+                    .foregroundStyle(.secondary)
+                    .textSelection(.enabled)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(15)
+    }
+
     private var appearanceRow: some View {
         VStack(alignment: .leading, spacing: 12) {
             Label("appearance.title", systemImage: "circle.lefthalf.filled")
@@ -488,6 +521,14 @@ struct MonoToggleStyle: ToggleStyle {
 
 struct ContactView: View {
     @State private var viewModel = SupportViewModel()
+    @FocusState private var focusedField: Field?
+
+    private enum Field {
+        case name
+        case subject
+        case message
+        case email
+    }
 
     var body: some View {
         Group {
@@ -503,70 +544,153 @@ struct ContactView: View {
                 }
                 .accessibilityValue(Text(verbatim: response.requestId.uuidString))
             } else {
-                Form {
-                    Section {
-                        Picker("settings.contact.category", selection: $viewModel.category) {
-                            ForEach(SupportCategory.allCases) { category in
-                                Text(LocalizedStringKey(category.localizationKey))
-                                    .tag(category)
-                            }
-                        }
-
-                        TextField("support.name", text: $viewModel.name)
-                            .textContentType(.name)
-                        TextField("settings.contact.subject", text: $viewModel.subject)
-                        TextField("settings.contact.email", text: $viewModel.email)
-                            .textContentType(.emailAddress)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled()
-                            .keyboardType(.emailAddress)
-
-                        TextEditor(text: $viewModel.message)
-                            .frame(minHeight: 180)
-                            .overlay(alignment: .topLeading) {
-                                if viewModel.message.isEmpty {
-                                    Text("settings.contact.message")
-                                        .foregroundStyle(.tertiary)
-                                        .padding(.top, 8)
-                                        .allowsHitTesting(false)
-                                }
-                            }
-                    } footer: {
-                        Text("settings.contact.api_privacy")
-                    }
-
-                    if case .failure(let error) = viewModel.state {
-                        Section {
-                            Label {
-                                Text(error.localizedDescription)
-                            } icon: {
-                                Image(systemName: "exclamationmark.triangle")
-                                    .foregroundStyle(.red)
-                            }
-                        }
-                    }
-
-                    Section {
-                        Button {
-                            Task { await viewModel.submit() }
-                        } label: {
-                            HStack {
-                                if viewModel.isSubmitting {
-                                    ProgressView()
-                                } else {
-                                    Image(systemName: "paperplane")
-                                }
-                                Text(viewModel.isSubmitting ? "support.submitting" : "support.submit")
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
-                        .disabled(!viewModel.canSubmit)
-                    }
-                }
+                form
             }
         }
         .navigationTitle("settings.contact")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var form: some View {
+        Form {
+            Section {
+                Picker("settings.contact.category", selection: $viewModel.category) {
+                    ForEach(SupportCategory.allCases) { category in
+                        Text(LocalizedStringKey(category.localizationKey))
+                            .tag(category)
+                    }
+                }
+
+                field("support.name", isRequired: false) {
+                    TextField("support.name.placeholder", text: $viewModel.name)
+                        .textContentType(.name)
+                        .focused($focusedField, equals: .name)
+                        .submitLabel(.next)
+                        .onSubmit { focusedField = .subject }
+                        .accessibilityIdentifier("support-name")
+                }
+
+                field("settings.contact.subject", isRequired: true) {
+                    TextField("support.subject.placeholder", text: $viewModel.subject)
+                        .focused($focusedField, equals: .subject)
+                        .submitLabel(.next)
+                        // Never send focus to the address field from here: it
+                        // is not on screen unless a reply was asked for, and
+                        // focusing a hidden field leaves the keyboard up with
+                        // nothing to type into.
+                        .onSubmit { focusedField = .message }
+                        .accessibilityIdentifier("support-subject")
+                }
+
+                field("support.message.label", isRequired: true) {
+                    TextEditor(text: $viewModel.message)
+                        .frame(minHeight: 180)
+                        .focused($focusedField, equals: .message)
+                        .overlay(alignment: .topLeading) {
+                            if viewModel.message.isEmpty {
+                                Text("settings.contact.message")
+                                    .foregroundStyle(.tertiary)
+                                    .padding(.top, 8)
+                                    .allowsHitTesting(false)
+                            }
+                        }
+                        .accessibilityIdentifier("support-message")
+                }
+            } footer: {
+                Text("settings.contact.api_privacy")
+            }
+
+            // Below the message, not above it: whether you want an answer is a
+            // decision about what you have just written.
+            Section {
+                if viewModel.showsReplyToggle {
+                    Toggle("support.reply.title", isOn: $viewModel.wantsReply)
+                        .font(.subheadline.weight(.medium))
+                        .tint(.primary)
+                        .accessibilityIdentifier("support-wants-reply")
+                }
+
+                if viewModel.requiresEmail {
+                    field("settings.contact.email", isRequired: true) {
+                        TextField(text: $viewModel.email) {
+                            Text(verbatim: "name@example.com")
+                        }
+                        .textContentType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .keyboardType(.emailAddress)
+                        .focused($focusedField, equals: .email)
+                        .submitLabel(.done)
+                        .accessibilityIdentifier("support-email")
+                    }
+                }
+            } footer: {
+                if viewModel.showsReplyToggle {
+                    Text("support.reply.note")
+                }
+            }
+
+            if case .failure(let error) = viewModel.state {
+                Section {
+                    Label {
+                        Text(error.localizedDescription)
+                    } icon: {
+                        Image(systemName: "exclamationmark.triangle")
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+
+            Section {
+                Button {
+                    Task { await viewModel.submit() }
+                } label: {
+                    HStack {
+                        if viewModel.isSubmitting {
+                            ProgressView()
+                        } else {
+                            Image(systemName: "paperplane")
+                        }
+                        Text(viewModel.isSubmitting ? "support.submitting" : "support.submit")
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .disabled(!viewModel.canSubmit)
+                .accessibilityIdentifier("support-submit")
+            }
+        }
+    }
+
+    private func field(
+        _ title: LocalizedStringKey,
+        isRequired: Bool,
+        @ViewBuilder control: () -> some View
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            fieldLabel(title, isRequired: isRequired)
+            control()
+        }
+        .padding(.vertical, 4)
+    }
+
+    /// Every field says which it is, in the same place and the same shape. The
+    /// form used to mark only the optional ones, which left the rest meaning
+    /// "required" by inference — and the address said "optional" while refusing
+    /// to send without it.
+    private func fieldLabel(_ title: LocalizedStringKey, isRequired: Bool) -> some View {
+        HStack(spacing: 6) {
+            Text(title)
+                .font(.subheadline.weight(.medium))
+            Text(isRequired ? "support.required" : "support.optional")
+                .font(.caption2.weight(.bold))
+                .foregroundStyle(isRequired ? Color(.systemBackground) : Color.secondary)
+                .padding(.horizontal, 6)
+                .padding(.vertical, 2)
+                .background(
+                    isRequired ? Color.primary : Color.primary.opacity(0.1),
+                    in: RoundedRectangle(cornerRadius: 5, style: .continuous)
+                )
+        }
     }
 }
 
