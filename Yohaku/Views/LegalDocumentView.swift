@@ -144,12 +144,18 @@ private struct OfflineLegalDocument: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 24) {
-                Label("legal.offline", systemImage: "wifi.slash")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .padding(14)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14))
+                // The bundled text is a reference copy, and saying so is part
+                // of the document: whoever reads this offline needs to know
+                // which version actually governs.
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("legal.offline", systemImage: "wifi.slash")
+                    Label("legal.canonical", systemImage: "checkmark.seal")
+                }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14))
 
                 Text(titleKey)
                     .font(.title2)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		012BE91CE516F1A5D2EC1761 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E8F9029F435EED2B26CF /* NotificationManager.swift */; };
+		0158D1BE92CEC2A1AF4575E3 /* SupportFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8525CC5C9523FFB7AD9508 /* SupportFormTests.swift */; };
 		04114A8DA6E57582B28180A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314A97A44EE3FE18D4CCA35A /* SettingsView.swift */; };
 		13447149DBF9BD3A3E89B21C /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C240DE3A181745C5FFFFF6 /* MonthView.swift */; };
 		1489BB258FE2AD0446CC606E /* ReflectionPromptCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9627DF73BE475A3497475B /* ReflectionPromptCard.swift */; };
@@ -89,6 +90,7 @@
 		AFA22930B2811E2E60D4F972 /* YohakuExperienceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YohakuExperienceUITests.swift; sourceTree = "<group>"; };
 		BAD0EF608C05347081410519 /* SupportPurchaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPurchaseStore.swift; sourceTree = "<group>"; };
 		BF5D4DBEDAD84CBC80FD3689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BF8525CC5C9523FFB7AD9508 /* SupportFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFormTests.swift; sourceTree = "<group>"; };
 		C1073B44E97149119A726B64 /* AdConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConsentManager.swift; sourceTree = "<group>"; };
 		C2235A2B380E063EB2C2A8B4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C31F952F4FE199553764631D /* YohakuTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = YohakuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD3D06BAB59B74915CF73E /* AdDisplayPolicyTests.swift */,
+				BF8525CC5C9523FFB7AD9508 /* SupportFormTests.swift */,
 				DA5DD48A150FE24098DC775C /* YohakuExperiencePolicyTests.swift */,
 			);
 			path = YohakuTests;
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				360AB918DDF22982C586E598 /* AdDisplayPolicyTests.swift in Sources */,
+				0158D1BE92CEC2A1AF4575E3 /* SupportFormTests.swift in Sources */,
 				1B738CC9874B96F18ACFEA6A /* YohakuExperiencePolicyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,7 +577,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
-				YOHAKU_APP_STORE_ID = "";
+				YOHAKU_APP_STORE_ID = 6798718923;
 				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
 			};
 			name = Debug;
@@ -647,7 +651,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
-				YOHAKU_APP_STORE_ID = "";
+				YOHAKU_APP_STORE_ID = 6798718923;
 				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
 			};
 			name = Release;

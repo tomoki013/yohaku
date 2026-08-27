@@ -22,6 +22,16 @@ enum SupportCategory: String, CaseIterable, Codable, Identifiable, Sendable {
         case .other: "support.category.other"
         }
     }
+
+    /// Whether picking this category is itself a request for an answer. Those
+    /// ask for an address up front; the rest never ask unless the person says
+    /// they want a reply.
+    var impliesReply: Bool {
+        switch self {
+        case .question: true
+        case .bug, .feature, .other: false
+        }
+    }
 }
 
 struct SupportRequest: Codable, Sendable {
@@ -225,6 +235,11 @@ final class SupportViewModel {
     var subject = ""
     var email = ""
     var message = ""
+
+    /// Off by default: an address is not collected from someone who never asked
+    /// to hear back.
+    var wantsReply = false
+
     private(set) var state: SubmissionState = .idle
 
     private let apiClient: any SupportAPIClientProtocol
@@ -237,15 +252,32 @@ final class SupportViewModel {
 
     var isSubmitting: Bool { state == .submitting }
 
-    var canSubmit: Bool {
+    var isEmailValid: Bool {
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let emailParts = trimmedEmail.split(separator: "@", omittingEmptySubsequences: false)
-        let isEmailValid = emailParts.count == 2 &&
+        return emailParts.count == 2 &&
             !emailParts[0].isEmpty &&
             emailParts[1].contains(".") &&
             !trimmedEmail.contains(where: \.isWhitespace)
+    }
+
+    /// Whether an address has to be filled in before sending. There is no third
+    /// "optional address" state: it is either required or not asked for.
+    var requiresEmail: Bool { category.impliesReply || wantsReply }
+
+    /// The toggle is pointless where the category already implies a reply.
+    var showsReplyToggle: Bool { !category.impliesReply }
+
+    /// What actually leaves the device. Anything typed before the toggle went
+    /// back off stays in the form but is not sent.
+    var outgoingEmail: String {
+        guard requiresEmail else { return "" }
+        return email.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    var canSubmit: Bool {
         let trimmedSubject = subject.trimmingCharacters(in: .whitespacesAndNewlines)
-        return isEmailValid &&
+        return (!requiresEmail || isEmailValid) &&
             name.count <= 100 &&
             !trimmedSubject.isEmpty &&
             trimmedSubject.count <= 200 &&
@@ -264,7 +296,7 @@ final class SupportViewModel {
             app: "yohaku",
             category: category,
             name: name.trimmingCharacters(in: .whitespacesAndNewlines),
-            email: email.trimmingCharacters(in: .whitespacesAndNewlines),
+            email: outgoingEmail,
             message: "\(NSLocalizedString("support.subject_prefix", comment: "")): \(subject.trimmingCharacters(in: .whitespacesAndNewlines))\n\n\(message)",
             appVersion: AppInfo.version,
             buildNumber: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1",
@@ -291,6 +323,7 @@ final class SupportViewModel {
         subject = ""
         email = ""
         message = ""
+        wantsReply = false
         requestId = UUID()
         state = .idle
     }

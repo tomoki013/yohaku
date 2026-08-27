@@ -5,7 +5,8 @@ import SwiftUI
 /// size while loading, then collapses entirely if the request fails.
 struct AdaptiveBannerAd: View {
     let unitID: String
-    let onFailure: () -> Void
+    let onLoaded: () -> Void
+    let onFailure: (Error) -> Void
 
     @State private var loadState: LoadState = .loading
     @State private var availableWidth: CGFloat = UIScreen.main.bounds.width
@@ -28,13 +29,13 @@ struct AdaptiveBannerAd: View {
                 AdaptiveBannerView(
                     unitID: unitID,
                     adSize: adSize,
-                    onLoaded: { loadState = .loaded },
-                    onFailed: {
-                        #if DEBUG
-                        print("Yohaku banner ad failed to load")
-                        #endif
+                    onLoaded: {
+                        loadState = .loaded
+                        onLoaded()
+                    },
+                    onFailed: { error in
                         loadState = .failed
-                        onFailure()
+                        onFailure(error)
                     }
                 )
                 .frame(width: adSize.size.width, height: adSize.size.height)
@@ -77,10 +78,15 @@ private struct YohakuBannerModifier: ViewModifier {
                         Color.clear
                             .frame(height: 16)
 
-                        AdaptiveBannerAd(unitID: AdConfiguration.bannerUnitID) {
-                            bannerLoadFailed = true
-                            scheduleRetry()
-                        }
+                        AdaptiveBannerAd(
+                            unitID: AdConfiguration.bannerUnitID,
+                            onLoaded: { adConsentManager.recordBannerLoaded() },
+                            onFailure: { error in
+                                adConsentManager.recordBannerFailure(error)
+                                bannerLoadFailed = true
+                                scheduleRetry()
+                            }
+                        )
                     }
                     .background(Color(.systemBackground))
                 }
@@ -137,7 +143,7 @@ private struct AdaptiveBannerView: UIViewRepresentable {
     let unitID: String
     let adSize: AdSize
     let onLoaded: () -> Void
-    let onFailed: () -> Void
+    let onFailed: (Error) -> Void
 
     func makeUIView(context: Context) -> BannerView {
         let banner = BannerView(adSize: adSize)
@@ -158,10 +164,10 @@ private struct AdaptiveBannerView: UIViewRepresentable {
     @MainActor
     final class Coordinator: NSObject, BannerViewDelegate {
         private let onLoaded: () -> Void
-        private let onFailed: () -> Void
+        private let onFailed: (Error) -> Void
         private var requestedSize: CGSize?
 
-        init(onLoaded: @escaping () -> Void, onFailed: @escaping () -> Void) {
+        init(onLoaded: @escaping () -> Void, onFailed: @escaping (Error) -> Void) {
             self.onLoaded = onLoaded
             self.onFailed = onFailed
         }
@@ -179,28 +185,11 @@ private struct AdaptiveBannerView: UIViewRepresentable {
         }
 
         func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
-            #if DEBUG
-            print("Yohaku banner error: \(error.localizedDescription)")
-            #endif
-            onFailed()
+            onFailed(error)
         }
 
         func bannerViewDidRecordClick(_ bannerView: BannerView) {
-            #if DEBUG
-            print("Yohaku banner clicked")
-            #endif
-        }
-
-        func bannerViewWillPresentScreen(_ bannerView: BannerView) {
-            #if DEBUG
-            print("Yohaku banner will present")
-            #endif
-        }
-
-        func bannerViewDidDismissScreen(_ bannerView: BannerView) {
-            #if DEBUG
-            print("Yohaku banner dismissed")
-            #endif
+            AdConfiguration.log.notice("Banner clicked.")
         }
     }
 }

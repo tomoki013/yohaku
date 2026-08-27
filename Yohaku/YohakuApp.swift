@@ -3,6 +3,7 @@ import SwiftData
 
 @main
 struct YohakuApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @AppStorage("appearanceMode") private var appearanceMode = AppearanceMode.system.rawValue
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @State private var purchaseStore = SupportPurchaseStore()
@@ -32,10 +33,14 @@ struct YohakuApp: App {
                     )
                 )
                 .task(id: "\(purchaseStore.entitlementCheckCompleted)-\(purchaseStore.hasRemovedAds)") {
-                    await adConsentManager.prepareIfEligible(
-                        entitlementCheckCompleted: purchaseStore.entitlementCheckCompleted,
-                        hasRemovedAds: purchaseStore.hasRemovedAds
-                    )
+                    await prepareAds()
+                }
+                // Consent that failed to resolve at launch leaves the session
+                // with no ads at all. Returning to the foreground is the next
+                // honest chance to ask again.
+                .onChange(of: scenePhase) { _, phase in
+                    guard phase == .active else { return }
+                    Task { await prepareAds() }
                 }
                 .fullScreenCover(isPresented: isOnboardingPresented) {
                     OnboardingView {
@@ -44,5 +49,12 @@ struct YohakuApp: App {
                 }
         }
         .modelContainer(for: YohakuBlock.self)
+    }
+
+    private func prepareAds() async {
+        await adConsentManager.prepareIfEligible(
+            entitlementCheckCompleted: purchaseStore.entitlementCheckCompleted,
+            hasRemovedAds: purchaseStore.hasRemovedAds
+        )
     }
 }
