@@ -34,14 +34,33 @@ echo "$icon_info" | grep -Fq 'pixelWidth: 1024' || fail 'App icon width must be 
 echo "$icon_info" | grep -Fq 'pixelHeight: 1024' || fail 'App icon height must be 1024'
 echo "$icon_info" | grep -Fq 'hasAlpha: no' || fail 'App icon must not have alpha'
 
-screenshot_count=$(find AppStore/Screenshots/generated -name '*.png' -type f | wc -l | tr -d ' ')
-[ "$screenshot_count" = "8" ] || fail 'Expected 8 generated App Store screenshots'
-for screenshot in AppStore/Screenshots/generated/*.png
+# Every shipping language needs the full set of shots. Both lists are read
+# from the files that define them, so adding a locale to the string catalog or
+# a shot to the UI test extends this check instead of silently passing.
+locales=$(jq -r '[.strings[].localizations // {} | keys[]] | unique[]' Yohaku/Resources/Localizable.xcstrings)
+shots=$(grep -oE '\(prefix\)-[a-z0-9-]+' YohakuUITests/AppStoreScreenshotTests.swift | sed 's/^(prefix)-//' | sort -u)
+[ -n "$locales" ] || fail 'Could not read locales from Localizable.xcstrings'
+[ -n "$shots" ] || fail 'Could not read screenshot names from AppStoreScreenshotTests.swift'
+
+expected_count=0
+missing=''
+for locale in $locales
 do
-  screenshot_info=$(sips -g pixelWidth -g pixelHeight "$screenshot")
-  echo "$screenshot_info" | grep -Fq 'pixelWidth: 1320' || fail "$screenshot must be 1320px wide"
-  echo "$screenshot_info" | grep -Fq 'pixelHeight: 2868' || fail "$screenshot must be 2868px tall"
+  for shot in $shots
+  do
+    expected_count=$((expected_count + 1))
+    [ -f "AppStore/Screenshots/generated/$locale-$shot.png" ] || missing="$missing $locale-$shot"
+  done
 done
+[ -z "$missing" ] || fail "Missing generated App Store screenshots:$missing"
+
+screenshot_count=$(find AppStore/Screenshots/generated -name '*.png' -type f | wc -l | tr -d ' ')
+[ "$screenshot_count" = "$expected_count" ] ||
+  fail "Expected $expected_count generated App Store screenshots, found $screenshot_count"
+
+wrong_size=$(sips -g pixelWidth -g pixelHeight AppStore/Screenshots/generated/*.png |
+  awk '/^\//{file=$0} /pixelWidth:/{w=$2} /pixelHeight:/{h=$2; if (w != 1320 || h != 2868) print file}')
+[ -z "$wrong_size" ] || fail "Generated screenshots must be 1320x2868: $wrong_size"
 
 CONFIGURATION=Release \
 ADMOB_APP_ID=ca-app-pub-8687520805381056~6166567024 \
