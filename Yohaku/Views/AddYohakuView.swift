@@ -152,7 +152,10 @@ struct AddYohakuView: View {
                 }
             }
         }
-        .yohakuBanner()
+        // No banner on this sheet. A bottom safe-area inset inside a sheet
+        // pushes the place/save button out of the card's visible area, and the
+        // keyboard toggling the banner made it appear and vanish while typing.
+        // The presenting tab already hides its own banner while this is up.
         .tint(.primary)
         .presentationDetents([.large])
         .presentationDragIndicator(.hidden)
