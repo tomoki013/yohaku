@@ -85,3 +85,69 @@ final class SupportFormTests: XCTestCase {
         XCTAssertEqual(viewModel.category, .question)
     }
 }
+
+/// What leaves the device. The shared support API accepts only the sources it
+/// knows and, once enforced, only requests carrying the shared client key.
+final class SupportAPIRequestTests: XCTestCase {
+    private final class RecordingClient: SupportAPIClientProtocol, @unchecked Sendable {
+        private(set) var sent: [SupportRequest] = []
+
+        func submit(_ request: SupportRequest) async throws -> SupportResponse {
+            sent.append(request)
+            return SupportResponse(requestId: request.requestId)
+        }
+    }
+
+    private func sampleRequest() -> SupportRequest {
+        SupportRequest(
+            requestId: UUID(),
+            clientId: UUID(),
+            source: "yohaku-ios",
+            app: "yohaku",
+            category: .bug,
+            name: "",
+            email: "",
+            message: "置いた余白が翌日に消えていました。",
+            appVersion: "1.0.1",
+            buildNumber: "4",
+            osVersion: "iOS 26.0",
+            locale: "ja_JP",
+            submittedAt: Date(timeIntervalSince1970: 0),
+            website: ""
+        )
+    }
+
+    func testPostsToTheVersionedPath() throws {
+        let request = try SupportAPIClient(clientKey: nil).urlRequest(for: sampleRequest())
+
+        XCTAssertEqual(request.httpMethod, "POST")
+        XCTAssertEqual(request.url?.absoluteString, "https://api.tmkch.io/api/v1/support")
+    }
+
+    func testPresentsTheClientKeyWhenTheBuildHasOne() throws {
+        let request = try SupportAPIClient(clientKey: "shared-key").urlRequest(for: sampleRequest())
+
+        XCTAssertEqual(request.value(forHTTPHeaderField: "X-Support-Client"), "shared-key")
+    }
+
+    func testSendsNoKeyHeaderWithoutAKey() throws {
+        let request = try SupportAPIClient(clientKey: nil).urlRequest(for: sampleRequest())
+
+        XCTAssertNil(request.value(forHTTPHeaderField: "X-Support-Client"))
+    }
+
+    @MainActor
+    func testTheFormIdentifiesItselfAsYohaku() async throws {
+        let client = RecordingClient()
+        let viewModel = SupportViewModel(apiClient: client)
+        viewModel.category = .bug
+        viewModel.subject = "余白が消える"
+        viewModel.message = "置いた余白が翌日に消えていました。"
+
+        await viewModel.submit()
+
+        let sent = try XCTUnwrap(client.sent.first)
+        XCTAssertEqual(sent.source, "yohaku-ios")
+        XCTAssertEqual(sent.app, "yohaku")
+    }
+}

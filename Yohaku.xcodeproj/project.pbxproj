@@ -579,6 +579,7 @@
 				TARGETED_DEVICE_FAMILY = 1;
 				YOHAKU_APP_STORE_ID = 6798718923;
 				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
+				YOHAKU_SUPPORT_CLIENT_KEY = "";
 			};
 			name = Debug;
 		};
@@ -653,6 +654,7 @@
 				TARGETED_DEVICE_FAMILY = 1;
 				YOHAKU_APP_STORE_ID = 6798718923;
 				YOHAKU_SITE_BASE_URL = "https://yohaku.tmkch.io/";
+				YOHAKU_SUPPORT_CLIENT_KEY = "";
 			};
 			name = Release;
 		};

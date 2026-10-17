@@ -31,6 +31,7 @@ targets:
         ITSAppUsesNonExemptEncryption: false
         YohakuSiteBaseURL: $(YOHAKU_SITE_BASE_URL)
         YohakuAppStoreID: $(YOHAKU_APP_STORE_ID)
+        YohakuSupportClientKey: $(YOHAKU_SUPPORT_CLIENT_KEY)
         SKAdNetworkItems:
           - SKAdNetworkIdentifier: cstr6suwn9.skadnetwork
           - SKAdNetworkIdentifier: 4fzdc2evr5.skadnetwork
@@ -93,6 +94,11 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.yohaku
         YOHAKU_SITE_BASE_URL: https://yohaku.tmkch.io/
         YOHAKU_APP_STORE_ID: "6798718923"
+        # Presented as X-Support-Client to the shared support API (api.tmkch.io);
+        # the same value the other apps posting there carry. Empty means no
+        # header is sent, which the API accepts until SUPPORT_CLIENT_KEY is set
+        # there, so this must be filled in before that happens.
+        YOHAKU_SUPPORT_CLIENT_KEY: ""
       configs:
         Debug:
           # Google's official iOS test IDs. Never requests the live unit while developing.
