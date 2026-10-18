@@ -3,7 +3,24 @@ import Observation
 import UIKit
 
 enum SupportAPIConfiguration {
-    static let endpoint = URL(string: "https://api.tmkch.io/api/support")!
+    /// The versioned path, the one the other apps use. `/api/support` stays
+    /// served for builds already in people's hands.
+    static let endpoint = URL(string: "https://api.tmkch.io/api/v1/support")!
+    /// What the shared support API reads `clientKey` from.
+    static let clientHeader = "X-Support-Client"
+
+    /// The key the shared support API checks once `SUPPORT_CLIENT_KEY` is set
+    /// there, the same one every app posting to it carries. Not a credential:
+    /// it ships in the binary. It keeps anything merely claiming
+    /// `source: "yohaku-ios"` off the route. Injected from the build setting
+    /// `YOHAKU_SUPPORT_CLIENT_KEY`; nil when a build has none, and then no
+    /// header is sent at all.
+    static var clientKey: String? {
+        let value = (Bundle.main.object(forInfoDictionaryKey: "YohakuSupportClientKey") as? String)?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let value, !value.isEmpty, !value.hasPrefix("$(") else { return nil }
+        return value
+    }
 }
 
 enum SupportCategory: String, CaseIterable, Codable, Identifiable, Sendable {
@@ -126,17 +143,24 @@ protocol SupportAPIClientProtocol: Sendable {
 
 struct SupportAPIClient: SupportAPIClientProtocol {
     private let session: URLSession
+    private let clientKey: String?
 
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared, clientKey: String? = SupportAPIConfiguration.clientKey) {
         self.session = session
+        self.clientKey = clientKey
     }
 
-    func submit(_ request: SupportRequest) async throws -> SupportResponse {
+    /// The request as it leaves the device. Separate from `submit` so what is
+    /// sent — path, headers, body — can be checked without a network.
+    func urlRequest(for request: SupportRequest) throws -> URLRequest {
         var urlRequest = URLRequest(url: SupportAPIConfiguration.endpoint)
         urlRequest.httpMethod = "POST"
         urlRequest.timeoutInterval = 20
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let clientKey {
+            urlRequest.setValue(clientKey, forHTTPHeaderField: SupportAPIConfiguration.clientHeader)
+        }
 
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
@@ -144,6 +168,11 @@ struct SupportAPIClient: SupportAPIClientProtocol {
             throw SupportAPIError.invalidRequest
         }
         urlRequest.httpBody = body
+        return urlRequest
+    }
+
+    func submit(_ request: SupportRequest) async throws -> SupportResponse {
+        let urlRequest = try urlRequest(for: request)
 
         do {
             let (data, response) = try await session.data(for: urlRequest)

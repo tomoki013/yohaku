@@ -246,5 +246,7 @@
 	<string>$(YOHAKU_APP_STORE_ID)</string>
 	<key>YohakuSiteBaseURL</key>
 	<string>$(YOHAKU_SITE_BASE_URL)</string>
+	<key>YohakuSupportClientKey</key>
+	<string>$(YOHAKU_SUPPORT_CLIENT_KEY)</string>
 </dict>
 </plist>
